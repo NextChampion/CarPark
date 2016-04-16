@@ -47,6 +47,22 @@
 		C2DE9A2B1CC1CE3400263791 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C2DE9A111CC1CE3400263791 /* .gitignore */; };
 		C2DE9A2C1CC1CE3400263791 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C2DE9A131CC1CE3400263791 /* .gitignore */; };
 		C2DE9A2D1CC1CE3400263791 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C2DE9A151CC1CE3400263791 /* .gitignore */; };
+		C2DE9A341CC1D2E300263791 /* NCAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DE9A311CC1D2E300263791 /* NCAnimationView.m */; };
+		C2DE9A351CC1D2E300263791 /* NCAnimationViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DE9A331CC1D2E300263791 /* NCAnimationViewItem.m */; };
+		C2DE9A451CC1D32700263791 /* bg-addbutton-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = C2DE9A371CC1D32700263791 /* bg-addbutton-highlighted.png */; };
+		C2DE9A461CC1D32700263791 /* bg-addbutton-highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2DE9A381CC1D32700263791 /* bg-addbutton-highlighted@2x.png */; };
+		C2DE9A471CC1D32700263791 /* bg-addbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = C2DE9A391CC1D32700263791 /* bg-addbutton.png */; };
+		C2DE9A481CC1D32700263791 /* bg-addbutton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2DE9A3A1CC1D32700263791 /* bg-addbutton@2x.png */; };
+		C2DE9A491CC1D32700263791 /* bg-menuitem-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = C2DE9A3B1CC1D32700263791 /* bg-menuitem-highlighted.png */; };
+		C2DE9A4A1CC1D32700263791 /* bg-menuitem-highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2DE9A3C1CC1D32700263791 /* bg-menuitem-highlighted@2x.png */; };
+		C2DE9A4B1CC1D32700263791 /* bg-menuitem.png in Resources */ = {isa = PBXBuildFile; fileRef = C2DE9A3D1CC1D32700263791 /* bg-menuitem.png */; };
+		C2DE9A4C1CC1D32700263791 /* bg-menuitem@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2DE9A3E1CC1D32700263791 /* bg-menuitem@2x.png */; };
+		C2DE9A4D1CC1D32700263791 /* icon-plus-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = C2DE9A3F1CC1D32700263791 /* icon-plus-highlighted.png */; };
+		C2DE9A4E1CC1D32700263791 /* icon-plus-highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2DE9A401CC1D32700263791 /* icon-plus-highlighted@2x.png */; };
+		C2DE9A4F1CC1D32700263791 /* icon-plus.png in Resources */ = {isa = PBXBuildFile; fileRef = C2DE9A411CC1D32700263791 /* icon-plus.png */; };
+		C2DE9A501CC1D32700263791 /* icon-plus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2DE9A421CC1D32700263791 /* icon-plus@2x.png */; };
+		C2DE9A511CC1D32700263791 /* icon-star.png in Resources */ = {isa = PBXBuildFile; fileRef = C2DE9A431CC1D32700263791 /* icon-star.png */; };
+		C2DE9A521CC1D32700263791 /* icon-star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2DE9A441CC1D32700263791 /* icon-star@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +120,24 @@
 		C2DE9A111CC1CE3400263791 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		C2DE9A131CC1CE3400263791 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		C2DE9A151CC1CE3400263791 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		C2DE9A301CC1D2E300263791 /* NCAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCAnimationView.h; sourceTree = "<group>"; };
+		C2DE9A311CC1D2E300263791 /* NCAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NCAnimationView.m; sourceTree = "<group>"; };
+		C2DE9A321CC1D2E300263791 /* NCAnimationViewItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCAnimationViewItem.h; sourceTree = "<group>"; };
+		C2DE9A331CC1D2E300263791 /* NCAnimationViewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NCAnimationViewItem.m; sourceTree = "<group>"; };
+		C2DE9A371CC1D32700263791 /* bg-addbutton-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-addbutton-highlighted.png"; sourceTree = "<group>"; };
+		C2DE9A381CC1D32700263791 /* bg-addbutton-highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-addbutton-highlighted@2x.png"; sourceTree = "<group>"; };
+		C2DE9A391CC1D32700263791 /* bg-addbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-addbutton.png"; sourceTree = "<group>"; };
+		C2DE9A3A1CC1D32700263791 /* bg-addbutton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-addbutton@2x.png"; sourceTree = "<group>"; };
+		C2DE9A3B1CC1D32700263791 /* bg-menuitem-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-menuitem-highlighted.png"; sourceTree = "<group>"; };
+		C2DE9A3C1CC1D32700263791 /* bg-menuitem-highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-menuitem-highlighted@2x.png"; sourceTree = "<group>"; };
+		C2DE9A3D1CC1D32700263791 /* bg-menuitem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-menuitem.png"; sourceTree = "<group>"; };
+		C2DE9A3E1CC1D32700263791 /* bg-menuitem@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-menuitem@2x.png"; sourceTree = "<group>"; };
+		C2DE9A3F1CC1D32700263791 /* icon-plus-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-plus-highlighted.png"; sourceTree = "<group>"; };
+		C2DE9A401CC1D32700263791 /* icon-plus-highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-plus-highlighted@2x.png"; sourceTree = "<group>"; };
+		C2DE9A411CC1D32700263791 /* icon-plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-plus.png"; sourceTree = "<group>"; };
+		C2DE9A421CC1D32700263791 /* icon-plus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-plus@2x.png"; sourceTree = "<group>"; };
+		C2DE9A431CC1D32700263791 /* icon-star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-star.png"; sourceTree = "<group>"; };
+		C2DE9A441CC1D32700263791 /* icon-star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-star@2x.png"; sourceTree = "<group>"; };
 		D22859644F039E2E1964D154 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -256,6 +290,7 @@
 		C2269EEE1CBE78AC00A63BD4 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				C2DE9A361CC1D32700263791 /* NCAnimationImage */,
 				C2269EEF1CBE78C100A63BD4 /* nav_menu_icon@2x.png */,
 			);
 			path = Image;
@@ -264,6 +299,7 @@
 		C2269EF11CBE796400A63BD4 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				C2DE9A2E1CC1D2AE00263791 /* NCAnimationView */,
 				C2269EF31CBE798E00A63BD4 /* CarPark.pch */,
 			);
 			path = Tools;
@@ -572,6 +608,46 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		C2DE9A2E1CC1D2AE00263791 /* NCAnimationView */ = {
+			isa = PBXGroup;
+			children = (
+				C2DE9A2F1CC1D2E300263791 /* View */,
+			);
+			path = NCAnimationView;
+			sourceTree = "<group>";
+		};
+		C2DE9A2F1CC1D2E300263791 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C2DE9A301CC1D2E300263791 /* NCAnimationView.h */,
+				C2DE9A311CC1D2E300263791 /* NCAnimationView.m */,
+				C2DE9A321CC1D2E300263791 /* NCAnimationViewItem.h */,
+				C2DE9A331CC1D2E300263791 /* NCAnimationViewItem.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C2DE9A361CC1D32700263791 /* NCAnimationImage */ = {
+			isa = PBXGroup;
+			children = (
+				C2DE9A371CC1D32700263791 /* bg-addbutton-highlighted.png */,
+				C2DE9A381CC1D32700263791 /* bg-addbutton-highlighted@2x.png */,
+				C2DE9A391CC1D32700263791 /* bg-addbutton.png */,
+				C2DE9A3A1CC1D32700263791 /* bg-addbutton@2x.png */,
+				C2DE9A3B1CC1D32700263791 /* bg-menuitem-highlighted.png */,
+				C2DE9A3C1CC1D32700263791 /* bg-menuitem-highlighted@2x.png */,
+				C2DE9A3D1CC1D32700263791 /* bg-menuitem.png */,
+				C2DE9A3E1CC1D32700263791 /* bg-menuitem@2x.png */,
+				C2DE9A3F1CC1D32700263791 /* icon-plus-highlighted.png */,
+				C2DE9A401CC1D32700263791 /* icon-plus-highlighted@2x.png */,
+				C2DE9A411CC1D32700263791 /* icon-plus.png */,
+				C2DE9A421CC1D32700263791 /* icon-plus@2x.png */,
+				C2DE9A431CC1D32700263791 /* icon-star.png */,
+				C2DE9A441CC1D32700263791 /* icon-star@2x.png */,
+			);
+			path = NCAnimationImage;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -633,6 +709,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2DE9A4B1CC1D32700263791 /* bg-menuitem.png in Resources */,
 				C2DE9A251CC1CE3400263791 /* .gitignore in Resources */,
 				C2DE9A261CC1CE3400263791 /* .gitignore in Resources */,
 				C2DE9A211CC1CE3400263791 /* .gitignore in Resources */,
@@ -644,19 +721,32 @@
 				C2DE9A2D1CC1CE3400263791 /* .gitignore in Resources */,
 				C2DE9A161CC1CE3400263791 /* .gitignore in Resources */,
 				C2DE9A221CC1CE3400263791 /* .gitignore in Resources */,
+				C2DE9A481CC1D32700263791 /* bg-addbutton@2x.png in Resources */,
+				C2DE9A4F1CC1D32700263791 /* icon-plus.png in Resources */,
 				C2DE9A181CC1CE3400263791 /* .gitignore in Resources */,
 				C2DE9A2A1CC1CE3400263791 /* .gitignore in Resources */,
+				C2DE9A451CC1D32700263791 /* bg-addbutton-highlighted.png in Resources */,
+				C2DE9A4A1CC1D32700263791 /* bg-menuitem-highlighted@2x.png in Resources */,
+				C2DE9A4C1CC1D32700263791 /* bg-menuitem@2x.png in Resources */,
 				C2DE9A1D1CC1CE3400263791 /* .gitignore in Resources */,
 				C2DE9A1C1CC1CE3400263791 /* .gitignore in Resources */,
 				C2269EDA1CBE613200A63BD4 /* LaunchScreen.storyboard in Resources */,
+				C2DE9A471CC1D32700263791 /* bg-addbutton.png in Resources */,
+				C2DE9A511CC1D32700263791 /* icon-star.png in Resources */,
+				C2DE9A501CC1D32700263791 /* icon-plus@2x.png in Resources */,
 				C2269ED71CBE613200A63BD4 /* Assets.xcassets in Resources */,
 				C2DE9A1F1CC1CE3400263791 /* .gitignore in Resources */,
 				C2DE9A241CC1CE3400263791 /* .gitignore in Resources */,
 				C2DE9A291CC1CE3400263791 /* .gitignore in Resources */,
 				C2269EF01CBE78C100A63BD4 /* nav_menu_icon@2x.png in Resources */,
 				C2DE9A201CC1CE3400263791 /* .gitignore in Resources */,
+				C2DE9A521CC1D32700263791 /* icon-star@2x.png in Resources */,
 				C2DE9A171CC1CE3400263791 /* .gitignore in Resources */,
 				C2DE9A1A1CC1CE3400263791 /* .gitignore in Resources */,
+				C2DE9A4D1CC1D32700263791 /* icon-plus-highlighted.png in Resources */,
+				C2DE9A491CC1D32700263791 /* bg-menuitem-highlighted.png in Resources */,
+				C2DE9A461CC1D32700263791 /* bg-addbutton-highlighted@2x.png in Resources */,
+				C2DE9A4E1CC1D32700263791 /* icon-plus-highlighted@2x.png in Resources */,
 				C2DE9A1E1CC1CE3400263791 /* .gitignore in Resources */,
 				C2DE9A231CC1CE3400263791 /* .gitignore in Resources */,
 				C2DE9A2B1CC1CE3400263791 /* .gitignore in Resources */,
@@ -723,8 +813,10 @@
 				C2269F051CBE7CC000A63BD4 /* BaseCollectionViewCell.m in Sources */,
 				C2269EFC1CBE7C7400A63BD4 /* BaseViewController.m in Sources */,
 				C2269F081CBE7CDB00A63BD4 /* BaseCollectionViewController.m in Sources */,
+				C2DE9A341CC1D2E300263791 /* NCAnimationView.m in Sources */,
 				C2269EEA1CBE76C700A63BD4 /* DrawerViewController.m in Sources */,
 				C2269EFF1CBE7C8900A63BD4 /* BaseModel.m in Sources */,
+				C2DE9A351CC1D2E300263791 /* NCAnimationViewItem.m in Sources */,
 				C2269F021CBE7CA400A63BD4 /* BaseTableViewCell.m in Sources */,
 				C2269ECF1CBE613200A63BD4 /* AppDelegate.m in Sources */,
 				C2269ECC1CBE613200A63BD4 /* main.m in Sources */,

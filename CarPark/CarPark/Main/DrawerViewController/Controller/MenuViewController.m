@@ -111,6 +111,33 @@
     return cell;
 }
 
+
+// 选中cell的相应事件
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    // 获取抽屉对象
+    DrawerViewController *menuController = (DrawerViewController *)((AppDelegate *)[[UIApplication sharedApplication] delegate]).drawerViewController;
+    if (indexPath.row == 0) {
+        UIViewController *viewController = [[UIViewController alloc] init];
+        viewController.view.backgroundColor = [UIColor redColor];
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:viewController];
+        [menuController setRootViewController:navController animated:YES];
+    }else if (indexPath.row == 1){
+        UITableViewController *controller = [[UITableViewController alloc] init];
+        controller.view.backgroundColor = [UIColor blueColor];
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+        [menuController setRootViewController:navController animated:YES];
+    }else if (indexPath.row == 2){
+        UITableViewController *controller = [[UITableViewController alloc] init];
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+        [menuController setRootViewController:navController animated:YES];
+    }else if (indexPath.row == 3){
+        UITableViewController *controller = [[UITableViewController alloc] init];
+        controller.view.backgroundColor = [UIColor grayColor];
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+        [menuController setRootViewController:navController animated:YES];
+    }
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

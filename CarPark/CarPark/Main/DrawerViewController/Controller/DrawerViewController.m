@@ -155,9 +155,6 @@
         showingLeftView = NO;  // 将左侧菜单栏的显示状态切换为 不显示
     }];
     
-    
-    
-#warning  这句判断不理解  为什么要这么判断??
     if (!animated) {  // 动画效果执行以后  如果 动画为不显示
         [UIView setAnimationsEnabled:_enabled];  //  动画执行过程中 不可以调用执行动画的效果 ,避免出现uibug
     }
@@ -176,8 +173,7 @@
     CGRect frame = self.view.bounds; // 创建一个框架  接收跟视图控制器的边界
     frame.size.width = kMenuFullWidth; // 这个框架的宽等于屏幕的宽度
     frame.size.height = ScreenHeight - 64;
-#warning 因为菜单栏控制器我没用XIB 所以自定义了视图的y的值 
-    
+
     
 //    self.headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 64, frame.size.width, 100)];
 //    self.headerView.backgroundColor = [UIColor redColor];

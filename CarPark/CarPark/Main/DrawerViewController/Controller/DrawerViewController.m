@@ -7,6 +7,7 @@
 //
 
 #import "DrawerViewController.h"
+#import "ImportNewsViewController.h"
 
 
 
@@ -57,6 +58,8 @@
         [tap setEnabled:NO];
         _tap = tap;
     }
+    
+    
 }
 
 // 点击手势  关闭该点击手势并且调用方法使页面返回当前视图控制器

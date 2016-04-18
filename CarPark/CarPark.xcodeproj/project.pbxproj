@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		00935FC93493F945D5862800 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 89954F290A804B134971FBB4 /* libPods.a */; };
+		C2048E861CC48D2D00292A39 /* ImportScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2048E841CC48D2D00292A39 /* ImportScrollViewController.m */; settings = {ASSET_TAGS = (); }; };
+		C2048E871CC48D2D00292A39 /* ImportScrollViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2048E851CC48D2D00292A39 /* ImportScrollViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		C2048E8A1CC4901A00292A39 /* ImportNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2048E891CC4901A00292A39 /* ImportNewsViewController.m */; settings = {ASSET_TAGS = (); }; };
+		C2048E8D1CC4903B00292A39 /* ImportModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2048E8C1CC4903B00292A39 /* ImportModel.m */; settings = {ASSET_TAGS = (); }; };
 		C2269ECC1CBE613200A63BD4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C2269ECB1CBE613200A63BD4 /* main.m */; };
 		C2269ECF1CBE613200A63BD4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2269ECE1CBE613200A63BD4 /* AppDelegate.m */; };
 		C2269ED21CBE613200A63BD4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2269ED11CBE613200A63BD4 /* ViewController.m */; };
@@ -78,6 +82,13 @@
 /* Begin PBXFileReference section */
 		89954F290A804B134971FBB4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		97CF78AAFE90DC8CFE4CCA72 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		C2048E831CC48D2D00292A39 /* ImportScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImportScrollViewController.h; sourceTree = "<group>"; };
+		C2048E841CC48D2D00292A39 /* ImportScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImportScrollViewController.m; sourceTree = "<group>"; };
+		C2048E851CC48D2D00292A39 /* ImportScrollViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImportScrollViewController.xib; sourceTree = "<group>"; };
+		C2048E881CC4901A00292A39 /* ImportNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImportNewsViewController.h; sourceTree = "<group>"; };
+		C2048E891CC4901A00292A39 /* ImportNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImportNewsViewController.m; sourceTree = "<group>"; };
+		C2048E8B1CC4903B00292A39 /* ImportModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImportModel.h; sourceTree = "<group>"; };
+		C2048E8C1CC4903B00292A39 /* ImportModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImportModel.m; sourceTree = "<group>"; };
 		C2269EC71CBE613200A63BD4 /* CarPark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarPark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2269ECB1CBE613200A63BD4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C2269ECD1CBE613200A63BD4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
@@ -412,6 +423,8 @@
 			isa = PBXGroup;
 			children = (
 				C2DE99E71CC1CE3300263791 /* .gitignore */,
+				C2048E881CC4901A00292A39 /* ImportNewsViewController.h */,
+				C2048E891CC4901A00292A39 /* ImportNewsViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -420,6 +433,8 @@
 			isa = PBXGroup;
 			children = (
 				C2DE99E91CC1CE3300263791 /* .gitignore */,
+				C2048E8B1CC4903B00292A39 /* ImportModel.h */,
+				C2048E8C1CC4903B00292A39 /* ImportModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -428,6 +443,9 @@
 			isa = PBXGroup;
 			children = (
 				C2DE99EB1CC1CE3300263791 /* .gitignore */,
+				C2048E831CC48D2D00292A39 /* ImportScrollViewController.h */,
+				C2048E841CC48D2D00292A39 /* ImportScrollViewController.m */,
+				C2048E851CC48D2D00292A39 /* ImportScrollViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -762,6 +780,7 @@
 				C2DE9A281CC1CE3400263791 /* .gitignore in Resources */,
 				C2DE9A191CC1CE3400263791 /* .gitignore in Resources */,
 				C2DE9A2C1CC1CE3400263791 /* .gitignore in Resources */,
+				C2048E871CC48D2D00292A39 /* ImportScrollViewController.xib in Resources */,
 				C2DE9A2D1CC1CE3400263791 /* .gitignore in Resources */,
 				C2DE9A161CC1CE3400263791 /* .gitignore in Resources */,
 				C2DE9A221CC1CE3400263791 /* .gitignore in Resources */,
@@ -855,10 +874,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2048E861CC48D2D00292A39 /* ImportScrollViewController.m in Sources */,
 				C2269ED21CBE613200A63BD4 /* ViewController.m in Sources */,
 				C2DE9A791CC1DFF700263791 /* NewCarsModel.m in Sources */,
 				C2269F051CBE7CC000A63BD4 /* BaseCollectionViewCell.m in Sources */,
 				C2AD2C501CC4EF82004D5889 /* RecommandTableCell.m in Sources */,
+				C2048E8A1CC4901A00292A39 /* ImportNewsViewController.m in Sources */,
 				C2269EFC1CBE7C7400A63BD4 /* BaseViewController.m in Sources */,
 				C2DE9A821CC1E6FD00263791 /* NewCarsViewController.m in Sources */,
 				C2AD2C4D1CC4EF66004D5889 /* RecommandModel.m in Sources */,
@@ -872,6 +893,7 @@
 				C2DE9A7C1CC1E01300263791 /* NewCarsCell.m in Sources */,
 				C2269ECF1CBE613200A63BD4 /* AppDelegate.m in Sources */,
 				C2269ECC1CBE613200A63BD4 /* main.m in Sources */,
+				C2048E8D1CC4903B00292A39 /* ImportModel.m in Sources */,
 				C2269F0B1CBE806F00A63BD4 /* MenuViewController.m in Sources */,
 				C2AD2C551CC4FC5E004D5889 /* RecommandViewController.m in Sources */,
 			);
@@ -986,6 +1008,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/CarPark/Tools/CarPark.pch";
 				INFOPLIST_FILE = CarPark/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lcarpark.zfw.CarPark;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -999,6 +1022,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/CarPark/Tools/CarPark.pch";
 				INFOPLIST_FILE = CarPark/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lcarpark.zfw.CarPark;
 				PRODUCT_NAME = "$(TARGET_NAME)";

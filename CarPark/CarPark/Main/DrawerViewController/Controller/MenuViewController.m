@@ -12,6 +12,7 @@
 #import "MenuTableViewController.h"
 
 #import "NewCarsViewController.h"
+#import "RecommandViewController.h"
 
 
 #import "BaseViewController.h"
@@ -123,13 +124,6 @@
     DrawerViewController *menuController = (DrawerViewController *)((AppDelegate *)[[UIApplication sharedApplication] delegate]).drawerViewController;
     if (indexPath.row == 0) {
         BaseViewController *viewController = [[BaseViewController alloc] init];
-        viewController.view.backgroundColor = [UIColor redColor];
-        
-        
-        
-        
-        
-        
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:viewController];
         [menuController setRootViewController:navController animated:YES];
     }else if (indexPath.row == 1){
@@ -144,6 +138,11 @@
     }else if (indexPath.row == 3){
         UITableViewController *controller = [[UITableViewController alloc] init];
         controller.view.backgroundColor = [UIColor grayColor];
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+        [menuController setRootViewController:navController animated:YES];
+    }else if (indexPath.row == 4){
+        RecommandViewController *controller = [[RecommandViewController alloc] init];
+//        controller.view.backgroundColor = [UIColor grayColor];
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
         [menuController setRootViewController:navController animated:YES];
     }else if (indexPath.row == 5){

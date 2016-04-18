@@ -13,7 +13,7 @@
 #define EndRadios 65.0f   // 动画结束以后 最终展开的效果
 #define FarRadios 75.0f // 动画执行时候,弹动效果的最远半径
 #define StartPoint CGPointMake([UIScreen mainScreen].bounds.size.width - 50,[UIScreen mainScreen].bounds.size.height - 50) // 视图位置屏幕中的位置
-#define TimeOffSet 0.026f // 动画执行时间
+#define TimeOffSet 0.01f // 动画执行时间
 
 
 @interface NCAnimationView ()<NCAnimationViewItemDelegate>
@@ -122,7 +122,7 @@
     
     // 旋转加号按钮
     float angle = self.isExpanding ? -M_PI_4 : 0.0f;
-    [UIView animateWithDuration:0.2f animations:^{
+    [UIView animateWithDuration:0.1f animations:^{
         _addButton.transform = CGAffineTransformMakeRotation(angle);
     }];
     
@@ -264,7 +264,7 @@
     
     CAAnimationGroup *animationgroup = [CAAnimationGroup animation];
     animationgroup.animations = [NSArray arrayWithObjects:positionAnimation, scaleAnimation, opacityAnimation, nil];
-    animationgroup.duration = 0.3f;
+    animationgroup.duration = 0.1f;
     animationgroup.fillMode = kCAFillModeForwards;
     
     return animationgroup;
@@ -284,7 +284,7 @@
     
     CAAnimationGroup *animationgroup = [CAAnimationGroup animation];
     animationgroup.animations = [NSArray arrayWithObjects:positionAnimation, scaleAnimation, opacityAnimation, nil];
-    animationgroup.duration = 0.3f;
+    animationgroup.duration = 0.15f;
     animationgroup.fillMode = kCAFillModeForwards;
     
     return animationgroup;

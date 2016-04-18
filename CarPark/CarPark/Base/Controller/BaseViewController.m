@@ -7,21 +7,55 @@
 //
 
 #import "BaseViewController.h"
+#import "NCAnimationView.h"
 
-@interface BaseViewController ()
+@interface BaseViewController ()<NCAnimationViewDelegate>
 
 @end
 
 @implementation BaseViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    UIImage *storyMenuItemImage = [UIImage imageNamed:@"bg-menuitem.png"];
+    UIImage *storyMenuItemImagePressed = [UIImage imageNamed:@"bg-menuitem-highlighted.png"];
+    
+    // Camera MenuItem.
+    NCAnimationViewItem *cameraMenuItem = [[NCAnimationViewItem alloc] initWithImage:storyMenuItemImage
+                                                                    highlightedImage:storyMenuItemImagePressed
+                                                                        ContentImage:[UIImage imageNamed:@"icon-star.png"]
+                                                             highlightedContentImage:nil];
+    // People MenuItem.
+    NCAnimationViewItem *peopleMenuItem = [[NCAnimationViewItem alloc] initWithImage:storyMenuItemImage
+                                                                    highlightedImage:storyMenuItemImagePressed
+                                                                        ContentImage:[UIImage imageNamed:@"icon-star.png"]
+                                                             highlightedContentImage:nil];
+    // Place MenuItem.
+    NCAnimationViewItem *placeMenuItem = [[NCAnimationViewItem alloc] initWithImage:storyMenuItemImage
+                                                                   highlightedImage:storyMenuItemImagePressed
+                                                                       ContentImage:[UIImage imageNamed:@"icon-star.png"]
+                                                            highlightedContentImage:nil];
+    // Music MenuItem.
+    NCAnimationViewItem *musicMenuItem = [[NCAnimationViewItem alloc] initWithImage:storyMenuItemImage
+                                                                   highlightedImage:storyMenuItemImagePressed
+                                                                       ContentImage:[UIImage imageNamed:@"icon-star.png"]
+                                                            highlightedContentImage:nil];
+    
+    NSArray *menus = [NSArray arrayWithObjects:cameraMenuItem, peopleMenuItem, placeMenuItem,musicMenuItem, nil];
+    
+    NCAnimationView *menu = [NCAnimationView viewWithFrame:self.view.frame viewArray:menus];
+    menu.userInteractionEnabled = YES;
+    menu.delegate = self;
+    [[UIApplication sharedApplication].keyWindow addSubview:menu];
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)animationView:(NCAnimationView *)view didSelectedIndex:(NSInteger)index{
+    NSLog(@"点击了第%ld个button",index);
 }
 
 /*

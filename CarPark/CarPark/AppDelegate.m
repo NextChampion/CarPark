@@ -8,8 +8,8 @@
 
 #import "AppDelegate.h"
 #import "DrawerViewController.h"
-#import "MenuTableViewController.h"
 #import "MenuViewController.h"
+
 
 @interface AppDelegate ()
 
@@ -32,23 +32,17 @@
     MenuViewController *leftViewController = [[MenuViewController alloc] init];
     rootViewController.leftViewControllrt = leftViewController;
     
+    
+    
     self.window.rootViewController = rootViewController;
     self.window.backgroundColor = [UIColor whiteColor];
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     return YES;
 }
+
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

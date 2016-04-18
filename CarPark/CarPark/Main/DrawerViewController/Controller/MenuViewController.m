@@ -11,6 +11,11 @@
 #import "DrawerViewController.h"
 #import "MenuTableViewController.h"
 
+#import "NewCarsViewController.h"
+
+
+#import "BaseViewController.h"
+
 @interface MenuViewController ()<UITableViewDelegate,UITableViewDataSource>{
     NSMutableArray *list; // 菜单列表数据源
 }
@@ -117,8 +122,14 @@
     // 获取抽屉对象
     DrawerViewController *menuController = (DrawerViewController *)((AppDelegate *)[[UIApplication sharedApplication] delegate]).drawerViewController;
     if (indexPath.row == 0) {
-        UIViewController *viewController = [[UIViewController alloc] init];
+        BaseViewController *viewController = [[BaseViewController alloc] init];
         viewController.view.backgroundColor = [UIColor redColor];
+        
+        
+        
+        
+        
+        
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:viewController];
         [menuController setRootViewController:navController animated:YES];
     }else if (indexPath.row == 1){
@@ -135,9 +146,17 @@
         controller.view.backgroundColor = [UIColor grayColor];
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
         [menuController setRootViewController:navController animated:YES];
+    }else if (indexPath.row == 5){
+        NewCarsViewController *controller = [[NewCarsViewController alloc] init];
+        controller.view.backgroundColor = [UIColor grayColor];
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+        [menuController setRootViewController:navController animated:YES];
     }
 }
 
+- (void)asdf{
+    NSLog(@"这个button可以点击");
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

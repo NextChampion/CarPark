@@ -15,7 +15,6 @@
 		C2269ED71CBE613200A63BD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2269ED61CBE613200A63BD4 /* Assets.xcassets */; };
 		C2269EDA1CBE613200A63BD4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2269ED81CBE613200A63BD4 /* LaunchScreen.storyboard */; };
 		C2269EEA1CBE76C700A63BD4 /* DrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2269EE71CBE76C700A63BD4 /* DrawerViewController.m */; };
-		C2269EEB1CBE76C700A63BD4 /* MenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2269EE91CBE76C700A63BD4 /* MenuTableViewController.m */; };
 		C2269EF01CBE78C100A63BD4 /* nav_menu_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2269EEF1CBE78C100A63BD4 /* nav_menu_icon@2x.png */; };
 		C2269EFC1CBE7C7400A63BD4 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2269EF91CBE7C7400A63BD4 /* BaseViewController.m */; };
 		C2269EFF1CBE7C8900A63BD4 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2269EFE1CBE7C8900A63BD4 /* BaseModel.m */; };
@@ -63,6 +62,11 @@
 		C2DE9A501CC1D32700263791 /* icon-plus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2DE9A421CC1D32700263791 /* icon-plus@2x.png */; };
 		C2DE9A511CC1D32700263791 /* icon-star.png in Resources */ = {isa = PBXBuildFile; fileRef = C2DE9A431CC1D32700263791 /* icon-star.png */; };
 		C2DE9A521CC1D32700263791 /* icon-star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2DE9A441CC1D32700263791 /* icon-star@2x.png */; };
+		C2DE9A711CC1D9BF00263791 /* BaseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2DE9A701CC1D9BF00263791 /* BaseTableViewCell.xib */; };
+		C2DE9A731CC1DC1100263791 /* BaseCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2DE9A721CC1DC1100263791 /* BaseCollectionViewCell.xib */; };
+		C2DE9A791CC1DFF700263791 /* NewCarsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DE9A781CC1DFF700263791 /* NewCarsModel.m */; };
+		C2DE9A7C1CC1E01300263791 /* NewCarsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DE9A7B1CC1E01300263791 /* NewCarsCell.m */; };
+		C2DE9A821CC1E6FD00263791 /* NewCarsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DE9A811CC1E6FD00263791 /* NewCarsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,8 +84,6 @@
 		C2269EDB1CBE613200A63BD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2269EE61CBE76C700A63BD4 /* DrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawerViewController.h; sourceTree = "<group>"; };
 		C2269EE71CBE76C700A63BD4 /* DrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawerViewController.m; sourceTree = "<group>"; };
-		C2269EE81CBE76C700A63BD4 /* MenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableViewController.h; sourceTree = "<group>"; };
-		C2269EE91CBE76C700A63BD4 /* MenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewController.m; sourceTree = "<group>"; };
 		C2269EEF1CBE78C100A63BD4 /* nav_menu_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_menu_icon@2x.png"; sourceTree = "<group>"; };
 		C2269EF31CBE798E00A63BD4 /* CarPark.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarPark.pch; sourceTree = "<group>"; };
 		C2269EF81CBE7C7400A63BD4 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
@@ -138,6 +140,14 @@
 		C2DE9A421CC1D32700263791 /* icon-plus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-plus@2x.png"; sourceTree = "<group>"; };
 		C2DE9A431CC1D32700263791 /* icon-star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-star.png"; sourceTree = "<group>"; };
 		C2DE9A441CC1D32700263791 /* icon-star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-star@2x.png"; sourceTree = "<group>"; };
+		C2DE9A701CC1D9BF00263791 /* BaseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseTableViewCell.xib; sourceTree = "<group>"; };
+		C2DE9A721CC1DC1100263791 /* BaseCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseCollectionViewCell.xib; sourceTree = "<group>"; };
+		C2DE9A771CC1DFF700263791 /* NewCarsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewCarsModel.h; sourceTree = "<group>"; };
+		C2DE9A781CC1DFF700263791 /* NewCarsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewCarsModel.m; sourceTree = "<group>"; };
+		C2DE9A7A1CC1E01300263791 /* NewCarsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewCarsCell.h; sourceTree = "<group>"; };
+		C2DE9A7B1CC1E01300263791 /* NewCarsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewCarsCell.m; sourceTree = "<group>"; };
+		C2DE9A801CC1E6FD00263791 /* NewCarsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewCarsViewController.h; sourceTree = "<group>"; };
+		C2DE9A811CC1E6FD00263791 /* NewCarsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewCarsViewController.m; sourceTree = "<group>"; };
 		D22859644F039E2E1964D154 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -247,8 +257,6 @@
 			children = (
 				C2269EE61CBE76C700A63BD4 /* DrawerViewController.h */,
 				C2269EE71CBE76C700A63BD4 /* DrawerViewController.m */,
-				C2269EE81CBE76C700A63BD4 /* MenuTableViewController.h */,
-				C2269EE91CBE76C700A63BD4 /* MenuTableViewController.m */,
 				C2269F091CBE806F00A63BD4 /* MenuViewController.h */,
 				C2269F0A1CBE806F00A63BD4 /* MenuViewController.m */,
 			);
@@ -330,8 +338,10 @@
 			children = (
 				C2269F001CBE7CA400A63BD4 /* BaseTableViewCell.h */,
 				C2269F011CBE7CA400A63BD4 /* BaseTableViewCell.m */,
+				C2DE9A701CC1D9BF00263791 /* BaseTableViewCell.xib */,
 				C2269F031CBE7CC000A63BD4 /* BaseCollectionViewCell.h */,
 				C2269F041CBE7CC000A63BD4 /* BaseCollectionViewCell.m */,
+				C2DE9A721CC1DC1100263791 /* BaseCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -418,6 +428,8 @@
 			isa = PBXGroup;
 			children = (
 				C2DE99EE1CC1CE3300263791 /* .gitignore */,
+				C2DE9A801CC1E6FD00263791 /* NewCarsViewController.h */,
+				C2DE9A811CC1E6FD00263791 /* NewCarsViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -426,6 +438,8 @@
 			isa = PBXGroup;
 			children = (
 				C2DE99F01CC1CE3300263791 /* .gitignore */,
+				C2DE9A771CC1DFF700263791 /* NewCarsModel.h */,
+				C2DE9A781CC1DFF700263791 /* NewCarsModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -434,6 +448,8 @@
 			isa = PBXGroup;
 			children = (
 				C2DE99F21CC1CE3300263791 /* .gitignore */,
+				C2DE9A7A1CC1E01300263791 /* NewCarsCell.h */,
+				C2DE9A7B1CC1E01300263791 /* NewCarsCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -710,6 +726,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2DE9A4B1CC1D32700263791 /* bg-menuitem.png in Resources */,
+				C2DE9A731CC1DC1100263791 /* BaseCollectionViewCell.xib in Resources */,
 				C2DE9A251CC1CE3400263791 /* .gitignore in Resources */,
 				C2DE9A261CC1CE3400263791 /* .gitignore in Resources */,
 				C2DE9A211CC1CE3400263791 /* .gitignore in Resources */,
@@ -722,6 +739,7 @@
 				C2DE9A161CC1CE3400263791 /* .gitignore in Resources */,
 				C2DE9A221CC1CE3400263791 /* .gitignore in Resources */,
 				C2DE9A481CC1D32700263791 /* bg-addbutton@2x.png in Resources */,
+				C2DE9A711CC1D9BF00263791 /* BaseTableViewCell.xib in Resources */,
 				C2DE9A4F1CC1D32700263791 /* icon-plus.png in Resources */,
 				C2DE9A181CC1CE3400263791 /* .gitignore in Resources */,
 				C2DE9A2A1CC1CE3400263791 /* .gitignore in Resources */,
@@ -810,18 +828,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2269ED21CBE613200A63BD4 /* ViewController.m in Sources */,
+				C2DE9A791CC1DFF700263791 /* NewCarsModel.m in Sources */,
 				C2269F051CBE7CC000A63BD4 /* BaseCollectionViewCell.m in Sources */,
 				C2269EFC1CBE7C7400A63BD4 /* BaseViewController.m in Sources */,
+				C2DE9A821CC1E6FD00263791 /* NewCarsViewController.m in Sources */,
 				C2269F081CBE7CDB00A63BD4 /* BaseCollectionViewController.m in Sources */,
 				C2DE9A341CC1D2E300263791 /* NCAnimationView.m in Sources */,
 				C2269EEA1CBE76C700A63BD4 /* DrawerViewController.m in Sources */,
 				C2269EFF1CBE7C8900A63BD4 /* BaseModel.m in Sources */,
 				C2DE9A351CC1D2E300263791 /* NCAnimationViewItem.m in Sources */,
 				C2269F021CBE7CA400A63BD4 /* BaseTableViewCell.m in Sources */,
+				C2DE9A7C1CC1E01300263791 /* NewCarsCell.m in Sources */,
 				C2269ECF1CBE613200A63BD4 /* AppDelegate.m in Sources */,
 				C2269ECC1CBE613200A63BD4 /* main.m in Sources */,
 				C2269F0B1CBE806F00A63BD4 /* MenuViewController.m in Sources */,
-				C2269EEB1CBE76C700A63BD4 /* MenuTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

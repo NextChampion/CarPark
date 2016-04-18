@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "DrawerViewController.h"
 #import "MenuViewController.h"
-
+#import "ImportNewsViewController.h"
 
 @interface AppDelegate ()
 
@@ -21,8 +21,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     // 默认主功能是首页控制器
-    UITableViewController *tableVC = [[UITableViewController alloc] init];
-    UINavigationController *navigationVC = [[UINavigationController alloc] initWithRootViewController:tableVC];
+    ImportNewsViewController *impVC = [[ImportNewsViewController alloc] init];
+
+//    UITableViewController *tableVC = [[UITableViewController alloc] init];
+    UINavigationController *navigationVC = [[UINavigationController alloc] initWithRootViewController:impVC];
     
     // 创建抽屉对象
     DrawerViewController *rootViewController = [[DrawerViewController alloc] initWithRootViewController:navigationVC];

@@ -12,6 +12,7 @@
 #import "MenuTableViewController.h"
 
 #import "NewCarsViewController.h"
+#import "ImportNewsViewController.h"
 
 
 #import "BaseViewController.h"
@@ -122,7 +123,7 @@
     // 获取抽屉对象
     DrawerViewController *menuController = (DrawerViewController *)((AppDelegate *)[[UIApplication sharedApplication] delegate]).drawerViewController;
     if (indexPath.row == 0) {
-        BaseViewController *viewController = [[BaseViewController alloc] init];
+        ImportNewsViewController *viewController = [[ImportNewsViewController alloc] init];
         viewController.view.backgroundColor = [UIColor redColor];
         
         

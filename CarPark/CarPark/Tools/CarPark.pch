@@ -16,3 +16,5 @@
 
 #define ScreenHeight [UIScreen mainScreen].bounds.size.height
 #define ScreenWidth  [UIScreen mainScreen].bounds.size.width
+#import "AFNetworking.h"
+#define ImportNews @"http://api.ycapp.yiche.com/appnews/toutiaov64/?page=1&length=20&platform=2"

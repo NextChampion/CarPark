@@ -12,12 +12,6 @@
 
 @interface BaseTableViewCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UIImageView *image;
-
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
-@property (weak, nonatomic) IBOutlet UILabel *commentLabel;
-
 // 通过model对象设置cell上的数据
 - (void)setDataWithModel:(BaseModel *)model;
 

@@ -1,23 +1,21 @@
 //
-//  ImportScrollViewController.m
+//  TalkCarViewController.m
 //  CarPark
 //
-//  Created by lanou3g on 16/4/18.
+//  Created by lanou3g on 16/4/19.
 //  Copyright © 2016年 com.lcarpark.zfw. All rights reserved.
 //
 
-#import "ImportScrollViewController.h"
-#import "SDCycleScrollView.h"
+#import "TalkCarViewController.h"
 
-
-@interface ImportScrollViewController ()<SDCycleScrollViewDelegate>
+@interface TalkCarViewController ()
 
 @end
 
-@implementation ImportScrollViewController
+@implementation TalkCarViewController
 
 - (void)viewDidLoad {
-    
+    [super viewDidLoad];
     
 }
 

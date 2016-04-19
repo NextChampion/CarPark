@@ -10,4 +10,8 @@
 
 @interface ImportModel : BaseModel
 
+@property(strong,nonatomic)NSString *title;
+@property(strong,nonatomic)NSString *picCover;
+
+
 @end

@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		00935FC93493F945D5862800 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 89954F290A804B134971FBB4 /* libPods.a */; };
-		C2048E861CC48D2D00292A39 /* ImportScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2048E841CC48D2D00292A39 /* ImportScrollViewController.m */; settings = {ASSET_TAGS = (); }; };
-		C2048E871CC48D2D00292A39 /* ImportScrollViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2048E851CC48D2D00292A39 /* ImportScrollViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		C2048E861CC48D2D00292A39 /* ImportTableVIewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2048E841CC48D2D00292A39 /* ImportTableVIewCell.m */; settings = {ASSET_TAGS = (); }; };
+		C2048E871CC48D2D00292A39 /* ImportTableVIewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2048E851CC48D2D00292A39 /* ImportTableVIewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		C2048E8A1CC4901A00292A39 /* ImportNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2048E891CC4901A00292A39 /* ImportNewsViewController.m */; settings = {ASSET_TAGS = (); }; };
 		C2048E8D1CC4903B00292A39 /* ImportModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2048E8C1CC4903B00292A39 /* ImportModel.m */; settings = {ASSET_TAGS = (); }; };
 		C2269ECC1CBE613200A63BD4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C2269ECB1CBE613200A63BD4 /* main.m */; };
@@ -26,6 +26,9 @@
 		C2269F051CBE7CC000A63BD4 /* BaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2269F041CBE7CC000A63BD4 /* BaseCollectionViewCell.m */; };
 		C2269F081CBE7CDB00A63BD4 /* BaseCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2269F071CBE7CDB00A63BD4 /* BaseCollectionViewController.m */; };
 		C2269F0B1CBE806F00A63BD4 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2269F0A1CBE806F00A63BD4 /* MenuViewController.m */; };
+		C2A366A91CC6339500657923 /* TalkCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A366A71CC6339500657923 /* TalkCarViewController.m */; settings = {ASSET_TAGS = (); }; };
+		C2A366AA1CC6339500657923 /* TalkCarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A366A81CC6339500657923 /* TalkCarViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		C2D2B6821CC5D0FB00334AED /* NetWorkRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D2B6811CC5D0FB00334AED /* NetWorkRequestManager.m */; settings = {ASSET_TAGS = (); }; };
 		C2DE9A161CC1CE3400263791 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C2DE99E01CC1CE3300263791 /* .gitignore */; };
 		C2DE9A171CC1CE3400263791 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C2DE99E21CC1CE3300263791 /* .gitignore */; };
 		C2DE9A181CC1CE3400263791 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C2DE99E41CC1CE3300263791 /* .gitignore */; };
@@ -76,9 +79,9 @@
 /* Begin PBXFileReference section */
 		89954F290A804B134971FBB4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		97CF78AAFE90DC8CFE4CCA72 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		C2048E831CC48D2D00292A39 /* ImportScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImportScrollViewController.h; sourceTree = "<group>"; };
-		C2048E841CC48D2D00292A39 /* ImportScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImportScrollViewController.m; sourceTree = "<group>"; };
-		C2048E851CC48D2D00292A39 /* ImportScrollViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImportScrollViewController.xib; sourceTree = "<group>"; };
+		C2048E831CC48D2D00292A39 /* ImportTableVIewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImportTableVIewCell.h; sourceTree = "<group>"; };
+		C2048E841CC48D2D00292A39 /* ImportTableVIewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImportTableVIewCell.m; sourceTree = "<group>"; };
+		C2048E851CC48D2D00292A39 /* ImportTableVIewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImportTableVIewCell.xib; sourceTree = "<group>"; };
 		C2048E881CC4901A00292A39 /* ImportNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImportNewsViewController.h; sourceTree = "<group>"; };
 		C2048E891CC4901A00292A39 /* ImportNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImportNewsViewController.m; sourceTree = "<group>"; };
 		C2048E8B1CC4903B00292A39 /* ImportModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImportModel.h; sourceTree = "<group>"; };
@@ -109,6 +112,11 @@
 		C2269F071CBE7CDB00A63BD4 /* BaseCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCollectionViewController.m; sourceTree = "<group>"; };
 		C2269F091CBE806F00A63BD4 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		C2269F0A1CBE806F00A63BD4 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		C2A366A61CC6339500657923 /* TalkCarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkCarViewController.h; sourceTree = "<group>"; };
+		C2A366A71CC6339500657923 /* TalkCarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkCarViewController.m; sourceTree = "<group>"; };
+		C2A366A81CC6339500657923 /* TalkCarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TalkCarViewController.xib; sourceTree = "<group>"; };
+		C2D2B6801CC5D0FB00334AED /* NetWorkRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkRequestManager.h; sourceTree = "<group>"; };
+		C2D2B6811CC5D0FB00334AED /* NetWorkRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkRequestManager.m; sourceTree = "<group>"; };
 		C2DE99E01CC1CE3300263791 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		C2DE99E21CC1CE3300263791 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		C2DE99E41CC1CE3300263791 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -236,12 +244,12 @@
 		C2269EE11CBE767C00A63BD4 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				C2DE99DE1CC1CE3300263791 /* guide */,
 				C2DE99E51CC1CE3300263791 /* ImportantNews */,
+				C2DE9A011CC1CE3400263791 /* Talk */,
 				C2DE99EC1CC1CE3300263791 /* News */,
+				C2DE99DE1CC1CE3300263791 /* guide */,
 				C2DE99F31CC1CE3300263791 /* Picture */,
 				C2DE99FA1CC1CE3400263791 /* Recommand */,
-				C2DE9A011CC1CE3400263791 /* Talk */,
 				C2DE9A081CC1CE3400263791 /* Text */,
 				C2DE9A0F1CC1CE3400263791 /* Video */,
 				C2269ECD1CBE613200A63BD4 /* AppDelegate.h */,
@@ -318,6 +326,8 @@
 		C2269EF11CBE796400A63BD4 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				C2D2B6801CC5D0FB00334AED /* NetWorkRequestManager.h */,
+				C2D2B6811CC5D0FB00334AED /* NetWorkRequestManager.m */,
 				C2DE9A2E1CC1D2AE00263791 /* NCAnimationView */,
 				C2269EF31CBE798E00A63BD4 /* CarPark.pch */,
 			);
@@ -425,9 +435,9 @@
 			isa = PBXGroup;
 			children = (
 				C2DE99EB1CC1CE3300263791 /* .gitignore */,
-				C2048E831CC48D2D00292A39 /* ImportScrollViewController.h */,
-				C2048E841CC48D2D00292A39 /* ImportScrollViewController.m */,
-				C2048E851CC48D2D00292A39 /* ImportScrollViewController.xib */,
+				C2048E831CC48D2D00292A39 /* ImportTableVIewCell.h */,
+				C2048E841CC48D2D00292A39 /* ImportTableVIewCell.m */,
+				C2048E851CC48D2D00292A39 /* ImportTableVIewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -554,6 +564,9 @@
 			isa = PBXGroup;
 			children = (
 				C2DE9A031CC1CE3400263791 /* .gitignore */,
+				C2A366A61CC6339500657923 /* TalkCarViewController.h */,
+				C2A366A71CC6339500657923 /* TalkCarViewController.m */,
+				C2A366A81CC6339500657923 /* TalkCarViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -753,13 +766,14 @@
 				C2DE9A281CC1CE3400263791 /* .gitignore in Resources */,
 				C2DE9A191CC1CE3400263791 /* .gitignore in Resources */,
 				C2DE9A2C1CC1CE3400263791 /* .gitignore in Resources */,
-				C2048E871CC48D2D00292A39 /* ImportScrollViewController.xib in Resources */,
+				C2048E871CC48D2D00292A39 /* ImportTableVIewCell.xib in Resources */,
 				C2DE9A2D1CC1CE3400263791 /* .gitignore in Resources */,
 				C2DE9A161CC1CE3400263791 /* .gitignore in Resources */,
 				C2DE9A221CC1CE3400263791 /* .gitignore in Resources */,
 				C2DE9A481CC1D32700263791 /* bg-addbutton@2x.png in Resources */,
 				C2DE9A711CC1D9BF00263791 /* BaseTableViewCell.xib in Resources */,
 				C2DE9A4F1CC1D32700263791 /* icon-plus.png in Resources */,
+				C2A366AA1CC6339500657923 /* TalkCarViewController.xib in Resources */,
 				C2DE9A181CC1CE3400263791 /* .gitignore in Resources */,
 				C2DE9A2A1CC1CE3400263791 /* .gitignore in Resources */,
 				C2DE9A451CC1D32700263791 /* bg-addbutton-highlighted.png in Resources */,
@@ -846,7 +860,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2048E861CC48D2D00292A39 /* ImportScrollViewController.m in Sources */,
+				C2048E861CC48D2D00292A39 /* ImportTableVIewCell.m in Sources */,
 				C2269ED21CBE613200A63BD4 /* ViewController.m in Sources */,
 				C2DE9A791CC1DFF700263791 /* NewCarsModel.m in Sources */,
 				C2269F051CBE7CC000A63BD4 /* BaseCollectionViewCell.m in Sources */,
@@ -855,7 +869,9 @@
 				C2DE9A821CC1E6FD00263791 /* NewCarsViewController.m in Sources */,
 				C2269F081CBE7CDB00A63BD4 /* BaseCollectionViewController.m in Sources */,
 				C2DE9A341CC1D2E300263791 /* NCAnimationView.m in Sources */,
+				C2D2B6821CC5D0FB00334AED /* NetWorkRequestManager.m in Sources */,
 				C2269EEA1CBE76C700A63BD4 /* DrawerViewController.m in Sources */,
+				C2A366A91CC6339500657923 /* TalkCarViewController.m in Sources */,
 				C2269EFF1CBE7C8900A63BD4 /* BaseModel.m in Sources */,
 				C2DE9A351CC1D2E300263791 /* NCAnimationViewItem.m in Sources */,
 				C2269F021CBE7CA400A63BD4 /* BaseTableViewCell.m in Sources */,

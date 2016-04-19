@@ -92,8 +92,6 @@
     if (kind == UICollectionElementKindSectionHeader)
     {
         UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView" forIndexPath:indexPath];
-        
-        
         reusableview = headerView;
     }
     
@@ -105,12 +103,10 @@
     //    }
     
     reusableview.backgroundColor = [UIColor blueColor];
-    
     return reusableview;
 
-
-
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

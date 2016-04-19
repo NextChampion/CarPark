@@ -130,16 +130,16 @@
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:viewController];
         [menuController setRootViewController:navController animated:YES];
     }else if (indexPath.row == 1){
-        UITableViewController *controller = [[UITableViewController alloc] init];
+        BaseViewController *controller = [[BaseViewController alloc] init];
         controller.view.backgroundColor = [UIColor blueColor];
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
         [menuController setRootViewController:navController animated:YES];
     }else if (indexPath.row == 2){
-        UITableViewController *controller = [[UITableViewController alloc] init];
+        BaseViewController *controller = [[BaseViewController alloc] init];
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
         [menuController setRootViewController:navController animated:YES];
     }else if (indexPath.row == 3){
-        UITableViewController *controller = [[UITableViewController alloc] init];
+        BaseViewController *controller = [[BaseViewController alloc] init];
         controller.view.backgroundColor = [UIColor grayColor];
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
         [menuController setRootViewController:navController animated:YES];

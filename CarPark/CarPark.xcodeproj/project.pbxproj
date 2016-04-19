@@ -26,9 +26,14 @@
 		C2269F051CBE7CC000A63BD4 /* BaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2269F041CBE7CC000A63BD4 /* BaseCollectionViewCell.m */; };
 		C2269F081CBE7CDB00A63BD4 /* BaseCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2269F071CBE7CDB00A63BD4 /* BaseCollectionViewController.m */; };
 		C2269F0B1CBE806F00A63BD4 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2269F0A1CBE806F00A63BD4 /* MenuViewController.m */; };
-		C2A366A91CC6339500657923 /* TalkCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A366A71CC6339500657923 /* TalkCarViewController.m */; settings = {ASSET_TAGS = (); }; };
-		C2A366AA1CC6339500657923 /* TalkCarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A366A81CC6339500657923 /* TalkCarViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		C2D2B6821CC5D0FB00334AED /* NetWorkRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D2B6811CC5D0FB00334AED /* NetWorkRequestManager.m */; settings = {ASSET_TAGS = (); }; };
+
+		C2AD2C441CC4E780004D5889 /* NewCarsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2AD2C431CC4E780004D5889 /* NewCarsCell.xib */; };
+		C2AD2C471CC4EF26004D5889 /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2AD2C461CC4EF26004D5889 /* BaseTableViewController.m */; };
+		C2AD2C4D1CC4EF66004D5889 /* RecommandModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2AD2C4C1CC4EF66004D5889 /* RecommandModel.m */; };
+		C2AD2C501CC4EF82004D5889 /* RecommandTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2AD2C4F1CC4EF82004D5889 /* RecommandTableCell.m */; };
+		C2AD2C521CC4F8E6004D5889 /* RecommandTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2AD2C511CC4F8E6004D5889 /* RecommandTableCell.xib */; };
+		C2AD2C551CC4FC5E004D5889 /* RecommandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2AD2C541CC4FC5E004D5889 /* RecommandViewController.m */; };
+
 		C2DE9A161CC1CE3400263791 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C2DE99E01CC1CE3300263791 /* .gitignore */; };
 		C2DE9A171CC1CE3400263791 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C2DE99E21CC1CE3300263791 /* .gitignore */; };
 		C2DE9A181CC1CE3400263791 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C2DE99E41CC1CE3300263791 /* .gitignore */; };
@@ -112,11 +117,24 @@
 		C2269F071CBE7CDB00A63BD4 /* BaseCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCollectionViewController.m; sourceTree = "<group>"; };
 		C2269F091CBE806F00A63BD4 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		C2269F0A1CBE806F00A63BD4 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+
 		C2A366A61CC6339500657923 /* TalkCarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkCarViewController.h; sourceTree = "<group>"; };
 		C2A366A71CC6339500657923 /* TalkCarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkCarViewController.m; sourceTree = "<group>"; };
 		C2A366A81CC6339500657923 /* TalkCarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TalkCarViewController.xib; sourceTree = "<group>"; };
 		C2D2B6801CC5D0FB00334AED /* NetWorkRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkRequestManager.h; sourceTree = "<group>"; };
 		C2D2B6811CC5D0FB00334AED /* NetWorkRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkRequestManager.m; sourceTree = "<group>"; };
+
+		C2AD2C431CC4E780004D5889 /* NewCarsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewCarsCell.xib; sourceTree = "<group>"; };
+		C2AD2C451CC4EF26004D5889 /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
+		C2AD2C461CC4EF26004D5889 /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
+		C2AD2C4B1CC4EF66004D5889 /* RecommandModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommandModel.h; sourceTree = "<group>"; };
+		C2AD2C4C1CC4EF66004D5889 /* RecommandModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommandModel.m; sourceTree = "<group>"; };
+		C2AD2C4E1CC4EF82004D5889 /* RecommandTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommandTableCell.h; sourceTree = "<group>"; };
+		C2AD2C4F1CC4EF82004D5889 /* RecommandTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommandTableCell.m; sourceTree = "<group>"; };
+		C2AD2C511CC4F8E6004D5889 /* RecommandTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecommandTableCell.xib; sourceTree = "<group>"; };
+		C2AD2C531CC4FC5E004D5889 /* RecommandViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommandViewController.h; sourceTree = "<group>"; };
+		C2AD2C541CC4FC5E004D5889 /* RecommandViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommandViewController.m; sourceTree = "<group>"; };
+
 		C2DE99E01CC1CE3300263791 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		C2DE99E21CC1CE3300263791 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		C2DE99E41CC1CE3300263791 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -341,6 +359,8 @@
 				C2269EF91CBE7C7400A63BD4 /* BaseViewController.m */,
 				C2269F061CBE7CDB00A63BD4 /* BaseCollectionViewController.h */,
 				C2269F071CBE7CDB00A63BD4 /* BaseCollectionViewController.m */,
+				C2AD2C451CC4EF26004D5889 /* BaseTableViewController.h */,
+				C2AD2C461CC4EF26004D5889 /* BaseTableViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -478,6 +498,7 @@
 				C2DE99F21CC1CE3300263791 /* .gitignore */,
 				C2DE9A7A1CC1E01300263791 /* NewCarsCell.h */,
 				C2DE9A7B1CC1E01300263791 /* NewCarsCell.m */,
+				C2AD2C431CC4E780004D5889 /* NewCarsCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -530,6 +551,8 @@
 			isa = PBXGroup;
 			children = (
 				C2DE99FC1CC1CE3400263791 /* .gitignore */,
+				C2AD2C531CC4FC5E004D5889 /* RecommandViewController.h */,
+				C2AD2C541CC4FC5E004D5889 /* RecommandViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -538,6 +561,8 @@
 			isa = PBXGroup;
 			children = (
 				C2DE99FE1CC1CE3400263791 /* .gitignore */,
+				C2AD2C4B1CC4EF66004D5889 /* RecommandModel.h */,
+				C2AD2C4C1CC4EF66004D5889 /* RecommandModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -546,6 +571,9 @@
 			isa = PBXGroup;
 			children = (
 				C2DE9A001CC1CE3400263791 /* .gitignore */,
+				C2AD2C4E1CC4EF82004D5889 /* RecommandTableCell.h */,
+				C2AD2C4F1CC4EF82004D5889 /* RecommandTableCell.m */,
+				C2AD2C511CC4F8E6004D5889 /* RecommandTableCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -761,6 +789,7 @@
 				C2DE9A251CC1CE3400263791 /* .gitignore in Resources */,
 				C2DE9A261CC1CE3400263791 /* .gitignore in Resources */,
 				C2DE9A211CC1CE3400263791 /* .gitignore in Resources */,
+				C2AD2C521CC4F8E6004D5889 /* RecommandTableCell.xib in Resources */,
 				C2DE9A1B1CC1CE3400263791 /* .gitignore in Resources */,
 				C2DE9A271CC1CE3400263791 /* .gitignore in Resources */,
 				C2DE9A281CC1CE3400263791 /* .gitignore in Resources */,
@@ -799,6 +828,7 @@
 				C2DE9A461CC1D32700263791 /* bg-addbutton-highlighted@2x.png in Resources */,
 				C2DE9A4E1CC1D32700263791 /* icon-plus-highlighted@2x.png in Resources */,
 				C2DE9A1E1CC1CE3400263791 /* .gitignore in Resources */,
+				C2AD2C441CC4E780004D5889 /* NewCarsCell.xib in Resources */,
 				C2DE9A231CC1CE3400263791 /* .gitignore in Resources */,
 				C2DE9A2B1CC1CE3400263791 /* .gitignore in Resources */,
 				C2269ED51CBE613200A63BD4 /* Main.storyboard in Resources */,
@@ -864,10 +894,13 @@
 				C2269ED21CBE613200A63BD4 /* ViewController.m in Sources */,
 				C2DE9A791CC1DFF700263791 /* NewCarsModel.m in Sources */,
 				C2269F051CBE7CC000A63BD4 /* BaseCollectionViewCell.m in Sources */,
+				C2AD2C501CC4EF82004D5889 /* RecommandTableCell.m in Sources */,
 				C2048E8A1CC4901A00292A39 /* ImportNewsViewController.m in Sources */,
 				C2269EFC1CBE7C7400A63BD4 /* BaseViewController.m in Sources */,
 				C2DE9A821CC1E6FD00263791 /* NewCarsViewController.m in Sources */,
+				C2AD2C4D1CC4EF66004D5889 /* RecommandModel.m in Sources */,
 				C2269F081CBE7CDB00A63BD4 /* BaseCollectionViewController.m in Sources */,
+				C2AD2C471CC4EF26004D5889 /* BaseTableViewController.m in Sources */,
 				C2DE9A341CC1D2E300263791 /* NCAnimationView.m in Sources */,
 				C2D2B6821CC5D0FB00334AED /* NetWorkRequestManager.m in Sources */,
 				C2269EEA1CBE76C700A63BD4 /* DrawerViewController.m in Sources */,
@@ -880,6 +913,7 @@
 				C2269ECC1CBE613200A63BD4 /* main.m in Sources */,
 				C2048E8D1CC4903B00292A39 /* ImportModel.m in Sources */,
 				C2269F0B1CBE806F00A63BD4 /* MenuViewController.m in Sources */,
+				C2AD2C551CC4FC5E004D5889 /* RecommandViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

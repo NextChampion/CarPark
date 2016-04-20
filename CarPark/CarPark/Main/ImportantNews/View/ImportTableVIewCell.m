@@ -24,8 +24,5 @@
 }
 
 
--(void)setImportNew:(ImportModel *)ImportNew{
-    
-}
 
 @end

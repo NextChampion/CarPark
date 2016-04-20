@@ -14,7 +14,7 @@
 #import "NewCarsViewController.h"
 #import "RecommandViewController.h"
 #import "ImportNewsViewController.h"
-
+#import "TalkCarViewController.h"
 
 
 #import "BaseViewController.h"
@@ -130,8 +130,8 @@
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:viewController];
         [menuController setRootViewController:navController animated:YES];
     }else if (indexPath.row == 1){
-        BaseViewController *controller = [[BaseViewController alloc] init];
-        controller.view.backgroundColor = [UIColor blueColor];
+      TalkCarViewController  *controller = [[TalkCarViewController alloc] init];
+//        controller.view.backgroundColor = [UIColor yellowColor];
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
         [menuController setRootViewController:navController animated:YES];
     }else if (indexPath.row == 2){

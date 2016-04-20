@@ -26,14 +26,20 @@
 		C2269F051CBE7CC000A63BD4 /* BaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2269F041CBE7CC000A63BD4 /* BaseCollectionViewCell.m */; };
 		C2269F081CBE7CDB00A63BD4 /* BaseCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2269F071CBE7CDB00A63BD4 /* BaseCollectionViewController.m */; };
 		C2269F0B1CBE806F00A63BD4 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2269F0A1CBE806F00A63BD4 /* MenuViewController.m */; };
-
 		C2AD2C441CC4E780004D5889 /* NewCarsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2AD2C431CC4E780004D5889 /* NewCarsCell.xib */; };
 		C2AD2C471CC4EF26004D5889 /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2AD2C461CC4EF26004D5889 /* BaseTableViewController.m */; };
 		C2AD2C4D1CC4EF66004D5889 /* RecommandModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2AD2C4C1CC4EF66004D5889 /* RecommandModel.m */; };
 		C2AD2C501CC4EF82004D5889 /* RecommandTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2AD2C4F1CC4EF82004D5889 /* RecommandTableCell.m */; };
 		C2AD2C521CC4F8E6004D5889 /* RecommandTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2AD2C511CC4F8E6004D5889 /* RecommandTableCell.xib */; };
 		C2AD2C551CC4FC5E004D5889 /* RecommandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2AD2C541CC4FC5E004D5889 /* RecommandViewController.m */; };
-
+		C2B6D5CB1CC7280E00FF7F2B /* TalkCarViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B6D5CA1CC7280E00FF7F2B /* TalkCarViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		C2B6D5CD1CC7281900FF7F2B /* TalkCarViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2B6D5CC1CC7281900FF7F2B /* TalkCarViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		C2B6D5CF1CC738EA00FF7F2B /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B6D5CE1CC738EA00FF7F2B /* Foundation+Log.m */; settings = {ASSET_TAGS = (); }; };
+		C2B6D6111CC77AB600FF7F2B /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C2B6D6101CC77AB600FF7F2B /* 1.jpg */; settings = {ASSET_TAGS = (); }; };
+		C2B6D6181CC7B99E00FF7F2B /* ImportDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B6D6161CC7B99E00FF7F2B /* ImportDetailsViewController.m */; settings = {ASSET_TAGS = (); }; };
+		C2B6D6191CC7B99E00FF7F2B /* ImportDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2B6D6171CC7B99E00FF7F2B /* ImportDetailsViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		C2B6D61C1CC7BAA800FF7F2B /* ImportDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B6D61B1CC7BAA800FF7F2B /* ImportDetailModel.m */; settings = {ASSET_TAGS = (); }; };
+		C2B6D6201CC7BE9900FF7F2B /* TalkCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B6D61F1CC7BE9900FF7F2B /* TalkCarViewController.m */; settings = {ASSET_TAGS = (); }; };
 		C2DE9A161CC1CE3400263791 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C2DE99E01CC1CE3300263791 /* .gitignore */; };
 		C2DE9A171CC1CE3400263791 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C2DE99E21CC1CE3300263791 /* .gitignore */; };
 		C2DE9A181CC1CE3400263791 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C2DE99E41CC1CE3300263791 /* .gitignore */; };
@@ -117,13 +123,8 @@
 		C2269F071CBE7CDB00A63BD4 /* BaseCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCollectionViewController.m; sourceTree = "<group>"; };
 		C2269F091CBE806F00A63BD4 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		C2269F0A1CBE806F00A63BD4 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
-
-		C2A366A61CC6339500657923 /* TalkCarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkCarViewController.h; sourceTree = "<group>"; };
-		C2A366A71CC6339500657923 /* TalkCarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkCarViewController.m; sourceTree = "<group>"; };
-		C2A366A81CC6339500657923 /* TalkCarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TalkCarViewController.xib; sourceTree = "<group>"; };
-		C2D2B6801CC5D0FB00334AED /* NetWorkRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkRequestManager.h; sourceTree = "<group>"; };
-		C2D2B6811CC5D0FB00334AED /* NetWorkRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkRequestManager.m; sourceTree = "<group>"; };
-
+		C2A366A81CC6339500657923 /* TalkCarViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TalkCarViewCell.xib; sourceTree = "<group>"; };
+		C2A366AB1CC65B3400657923 /* TalkCarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkCarViewController.h; sourceTree = "<group>"; };
 		C2AD2C431CC4E780004D5889 /* NewCarsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewCarsCell.xib; sourceTree = "<group>"; };
 		C2AD2C451CC4EF26004D5889 /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
 		C2AD2C461CC4EF26004D5889 /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
@@ -134,7 +135,19 @@
 		C2AD2C511CC4F8E6004D5889 /* RecommandTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecommandTableCell.xib; sourceTree = "<group>"; };
 		C2AD2C531CC4FC5E004D5889 /* RecommandViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommandViewController.h; sourceTree = "<group>"; };
 		C2AD2C541CC4FC5E004D5889 /* RecommandViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommandViewController.m; sourceTree = "<group>"; };
-
+		C2B6D5C91CC7280E00FF7F2B /* TalkCarViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkCarViewCell.h; sourceTree = "<group>"; };
+		C2B6D5CA1CC7280E00FF7F2B /* TalkCarViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkCarViewCell.m; sourceTree = "<group>"; };
+		C2B6D5CC1CC7281900FF7F2B /* TalkCarViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TalkCarViewCell.xib; sourceTree = "<group>"; };
+		C2B6D5CE1CC738EA00FF7F2B /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
+		C2B6D6101CC77AB600FF7F2B /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		C2B6D6151CC7B99E00FF7F2B /* ImportDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImportDetailsViewController.h; sourceTree = "<group>"; };
+		C2B6D6161CC7B99E00FF7F2B /* ImportDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImportDetailsViewController.m; sourceTree = "<group>"; };
+		C2B6D6171CC7B99E00FF7F2B /* ImportDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImportDetailsViewController.xib; sourceTree = "<group>"; };
+		C2B6D61A1CC7BAA800FF7F2B /* ImportDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImportDetailModel.h; sourceTree = "<group>"; };
+		C2B6D61B1CC7BAA800FF7F2B /* ImportDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImportDetailModel.m; sourceTree = "<group>"; };
+		C2B6D61F1CC7BE9900FF7F2B /* TalkCarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkCarViewController.m; sourceTree = "<group>"; };
+		C2D2B6801CC5D0FB00334AED /* NetWorkRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkRequestManager.h; sourceTree = "<group>"; };
+		C2D2B6811CC5D0FB00334AED /* NetWorkRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkRequestManager.m; sourceTree = "<group>"; };
 		C2DE99E01CC1CE3300263791 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		C2DE99E21CC1CE3300263791 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		C2DE99E41CC1CE3300263791 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -244,6 +257,7 @@
 				C2269EE11CBE767C00A63BD4 /* Main */,
 				C2269ED31CBE613200A63BD4 /* Main.storyboard */,
 				C2269ED61CBE613200A63BD4 /* Assets.xcassets */,
+				C2B6D6101CC77AB600FF7F2B /* 1.jpg */,
 				C2269ED81CBE613200A63BD4 /* LaunchScreen.storyboard */,
 				C2269EDB1CBE613200A63BD4 /* Info.plist */,
 				C2269ECA1CBE613200A63BD4 /* Supporting Files */,
@@ -346,6 +360,7 @@
 			children = (
 				C2D2B6801CC5D0FB00334AED /* NetWorkRequestManager.h */,
 				C2D2B6811CC5D0FB00334AED /* NetWorkRequestManager.m */,
+				C2B6D5CE1CC738EA00FF7F2B /* Foundation+Log.m */,
 				C2DE9A2E1CC1D2AE00263791 /* NCAnimationView */,
 				C2269EF31CBE798E00A63BD4 /* CarPark.pch */,
 			);
@@ -437,6 +452,9 @@
 				C2DE99E71CC1CE3300263791 /* .gitignore */,
 				C2048E881CC4901A00292A39 /* ImportNewsViewController.h */,
 				C2048E891CC4901A00292A39 /* ImportNewsViewController.m */,
+				C2B6D6151CC7B99E00FF7F2B /* ImportDetailsViewController.h */,
+				C2B6D6161CC7B99E00FF7F2B /* ImportDetailsViewController.m */,
+				C2B6D6171CC7B99E00FF7F2B /* ImportDetailsViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -447,6 +465,8 @@
 				C2DE99E91CC1CE3300263791 /* .gitignore */,
 				C2048E8B1CC4903B00292A39 /* ImportModel.h */,
 				C2048E8C1CC4903B00292A39 /* ImportModel.m */,
+				C2B6D61A1CC7BAA800FF7F2B /* ImportDetailModel.h */,
+				C2B6D61B1CC7BAA800FF7F2B /* ImportDetailModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -592,9 +612,9 @@
 			isa = PBXGroup;
 			children = (
 				C2DE9A031CC1CE3400263791 /* .gitignore */,
-				C2A366A61CC6339500657923 /* TalkCarViewController.h */,
-				C2A366A71CC6339500657923 /* TalkCarViewController.m */,
-				C2A366A81CC6339500657923 /* TalkCarViewController.xib */,
+				C2A366AB1CC65B3400657923 /* TalkCarViewController.h */,
+				C2B6D61F1CC7BE9900FF7F2B /* TalkCarViewController.m */,
+				C2A366A81CC6339500657923 /* TalkCarViewCell.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -611,6 +631,9 @@
 			isa = PBXGroup;
 			children = (
 				C2DE9A071CC1CE3400263791 /* .gitignore */,
+				C2B6D5C91CC7280E00FF7F2B /* TalkCarViewCell.h */,
+				C2B6D5CA1CC7280E00FF7F2B /* TalkCarViewCell.m */,
+				C2B6D5CC1CC7281900FF7F2B /* TalkCarViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -802,7 +825,6 @@
 				C2DE9A481CC1D32700263791 /* bg-addbutton@2x.png in Resources */,
 				C2DE9A711CC1D9BF00263791 /* BaseTableViewCell.xib in Resources */,
 				C2DE9A4F1CC1D32700263791 /* icon-plus.png in Resources */,
-				C2A366AA1CC6339500657923 /* TalkCarViewController.xib in Resources */,
 				C2DE9A181CC1CE3400263791 /* .gitignore in Resources */,
 				C2DE9A2A1CC1CE3400263791 /* .gitignore in Resources */,
 				C2DE9A451CC1D32700263791 /* bg-addbutton-highlighted.png in Resources */,
@@ -814,8 +836,10 @@
 				C2DE9A471CC1D32700263791 /* bg-addbutton.png in Resources */,
 				C2DE9A511CC1D32700263791 /* icon-star.png in Resources */,
 				C2DE9A501CC1D32700263791 /* icon-plus@2x.png in Resources */,
+				C2B6D5CD1CC7281900FF7F2B /* TalkCarViewCell.xib in Resources */,
 				C2269ED71CBE613200A63BD4 /* Assets.xcassets in Resources */,
 				C2DE9A1F1CC1CE3400263791 /* .gitignore in Resources */,
+				C2B6D6191CC7B99E00FF7F2B /* ImportDetailsViewController.xib in Resources */,
 				C2DE9A241CC1CE3400263791 /* .gitignore in Resources */,
 				C2DE9A291CC1CE3400263791 /* .gitignore in Resources */,
 				C2269EF01CBE78C100A63BD4 /* nav_menu_icon@2x.png in Resources */,
@@ -825,6 +849,7 @@
 				C2DE9A1A1CC1CE3400263791 /* .gitignore in Resources */,
 				C2DE9A4D1CC1D32700263791 /* icon-plus-highlighted.png in Resources */,
 				C2DE9A491CC1D32700263791 /* bg-menuitem-highlighted.png in Resources */,
+				C2B6D6111CC77AB600FF7F2B /* 1.jpg in Resources */,
 				C2DE9A461CC1D32700263791 /* bg-addbutton-highlighted@2x.png in Resources */,
 				C2DE9A4E1CC1D32700263791 /* icon-plus-highlighted@2x.png in Resources */,
 				C2DE9A1E1CC1CE3400263791 /* .gitignore in Resources */,
@@ -891,20 +916,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2048E861CC48D2D00292A39 /* ImportTableVIewCell.m in Sources */,
+				C2B6D5CF1CC738EA00FF7F2B /* Foundation+Log.m in Sources */,
 				C2269ED21CBE613200A63BD4 /* ViewController.m in Sources */,
 				C2DE9A791CC1DFF700263791 /* NewCarsModel.m in Sources */,
+				C2B6D6201CC7BE9900FF7F2B /* TalkCarViewController.m in Sources */,
 				C2269F051CBE7CC000A63BD4 /* BaseCollectionViewCell.m in Sources */,
 				C2AD2C501CC4EF82004D5889 /* RecommandTableCell.m in Sources */,
 				C2048E8A1CC4901A00292A39 /* ImportNewsViewController.m in Sources */,
+				C2B6D6181CC7B99E00FF7F2B /* ImportDetailsViewController.m in Sources */,
 				C2269EFC1CBE7C7400A63BD4 /* BaseViewController.m in Sources */,
 				C2DE9A821CC1E6FD00263791 /* NewCarsViewController.m in Sources */,
 				C2AD2C4D1CC4EF66004D5889 /* RecommandModel.m in Sources */,
 				C2269F081CBE7CDB00A63BD4 /* BaseCollectionViewController.m in Sources */,
 				C2AD2C471CC4EF26004D5889 /* BaseTableViewController.m in Sources */,
 				C2DE9A341CC1D2E300263791 /* NCAnimationView.m in Sources */,
-				C2D2B6821CC5D0FB00334AED /* NetWorkRequestManager.m in Sources */,
+				C2B6D5CB1CC7280E00FF7F2B /* TalkCarViewCell.m in Sources */,
+				C2B6D61C1CC7BAA800FF7F2B /* ImportDetailModel.m in Sources */,
 				C2269EEA1CBE76C700A63BD4 /* DrawerViewController.m in Sources */,
-				C2A366A91CC6339500657923 /* TalkCarViewController.m in Sources */,
 				C2269EFF1CBE7C8900A63BD4 /* BaseModel.m in Sources */,
 				C2DE9A351CC1D2E300263791 /* NCAnimationViewItem.m in Sources */,
 				C2269F021CBE7CA400A63BD4 /* BaseTableViewCell.m in Sources */,

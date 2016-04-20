@@ -14,6 +14,9 @@
 #import "NewCarsViewController.h"
 #import "RecommandViewController.h"
 #import "ImportNewsViewController.h"
+#import "GuideViewController.h"
+#import "PictureViewController.h"
+#import "TextViewController.h"
 
 
 
@@ -135,7 +138,7 @@
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
         [menuController setRootViewController:navController animated:YES];
     }else if (indexPath.row == 2){
-        BaseViewController *controller = [[BaseViewController alloc] init];
+        PictureViewController *controller = [[PictureViewController alloc] init];
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
         [menuController setRootViewController:navController animated:YES];
     }else if (indexPath.row == 3){
@@ -153,7 +156,18 @@
         controller.view.backgroundColor = [UIColor grayColor];
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
         [menuController setRootViewController:navController animated:YES];
+    }else if (indexPath.row == 6){
+        TextViewController *controller = [[TextViewController alloc] init];
+        controller.view.backgroundColor = [UIColor grayColor];
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+        [menuController setRootViewController:navController animated:YES];
+    }else if (indexPath.row == 7){
+        GuideViewController *controller = [[GuideViewController alloc] init];
+//        controller.view.backgroundColor = [UIColor grayColor];
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+        [menuController setRootViewController:navController animated:YES];
     }
+
 }
 
 - (void)asdf{

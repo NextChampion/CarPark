@@ -27,4 +27,5 @@
 
 - (instancetype)initWithFrame:(CGRect)frame viewArray:(NSArray<NCAnimationViewItem *> *)array;
 + (instancetype)viewWithFrame:(CGRect)frame viewArray:(NSArray<NCAnimationViewItem *> *)array;
+
 @end

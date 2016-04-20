@@ -9,6 +9,7 @@
 #import "ImportNewsViewController.h"
 #import "SDCycleScrollView.h"
 
+
 @interface ImportNewsViewController ()<SDCycleScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
 
 @property(strong,nonatomic)UITableView *ImportTableView;
@@ -23,6 +24,7 @@ static NSString* const Identifier = @"cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     
     self.view.backgroundColor = [UIColor grayColor];
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 180)];

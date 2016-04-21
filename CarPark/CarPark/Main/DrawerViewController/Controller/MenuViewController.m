@@ -18,7 +18,7 @@
 #import "PictureViewController.h"
 #import "TextViewController.h"
 #import "TalkCarViewController.h"
-
+#import "ImportDetailsViewController.h"
 
 #import "BaseViewController.h"
 
@@ -148,7 +148,6 @@
         [menuController setRootViewController:navController animated:YES];
     }else if (indexPath.row == 4){
         RecommandViewController *controller = [[RecommandViewController alloc] init];
-//        controller.view.backgroundColor = [UIColor grayColor];
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
         [menuController setRootViewController:navController animated:YES];
     }else if (indexPath.row == 5){

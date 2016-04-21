@@ -7,7 +7,7 @@
 //
 
 #import "ImportDetailsViewController.h"
-
+#import "ImportNewsViewController.h"
 @interface ImportDetailsViewController ()
 
 @end
@@ -16,8 +16,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    self.view.backgroundColor = [UIColor yellowColor];
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:(UIBarButtonItemStyleDone) target:self action:@selector(backAction:)];
+    
+
 }
+
+-(void)backAction:(UIBarButtonItem *)sender{
+    
+   [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

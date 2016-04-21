@@ -10,4 +10,9 @@
 
 @interface PictureModel : BaseModel
 
+@property (assign, nonatomic) NSNumber *commentCount;
+@property (strong, nonatomic) NSString *src;
+@property (strong, nonatomic) NSString *title;
+@property (strong, nonatomic) NSNumber *type;
+
 @end

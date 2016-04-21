@@ -11,13 +11,14 @@
 #import "ImportTableVIewCell.h"
 #import "ImportModel.h"
 #import "AFNetworking.h"
-
+#import "ImportDetailsViewController.h"
 
 @interface ImportNewsViewController ()<SDCycleScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
 
 @property(strong,nonatomic)UITableView *ImportTableView;
 @property (nonatomic, strong) SDCycleScrollView *cycleView;
 @property(strong,nonatomic)NSMutableArray *array;
+
 
 
 @end
@@ -74,8 +75,7 @@
         NSLog(@"*****%@",downloadProgress);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSArray *ReqArray = [[responseObject objectForKey:@"data" ]objectForKey:@"list"];
-        NSArray *reqArray = [NSMutableArray arrayWithArray:ReqArray];
-        for (NSDictionary *dic in reqArray) {
+        for (NSDictionary *dic in ReqArray) {
             ImportModel *model = [[ImportModel alloc]init];
             [model setValuesForKeysWithDictionary:dic];
             //            model.title = dic[@"title"];
@@ -155,7 +155,12 @@
 {
     NSLog(@"---点击了第%ld张图片", (long)index);
     
-    [self.navigationController pushViewController:[NSClassFromString(@"DemoVCWithXib") new] animated:YES];
+    ImportDetailsViewController *detail = [[ImportDetailsViewController alloc]init];
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:detail];
+    
+    [self.view.window.rootViewController presentViewController:nav animated:YES completion:nil];
+    
+//    [self.navigationController pushViewController:[NSClassFromString(@"DemoVCWithXib") new] animated:YES];
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     

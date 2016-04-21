@@ -10,6 +10,12 @@
 		00935FC93493F945D5862800 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 89954F290A804B134971FBB4 /* libPods.a */; };
 		C2048E8A1CC4901A00292A39 /* ImportNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2048E891CC4901A00292A39 /* ImportNewsViewController.m */; };
 		C2048E8D1CC4903B00292A39 /* ImportModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2048E8C1CC4903B00292A39 /* ImportModel.m */; };
+		C21DF7721CC9063400564F5E /* demo－1.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C21DF76C1CC9063400564F5E /* demo－1.tiff */; settings = {ASSET_TAGS = (); }; };
+		C21DF7731CC9063400564F5E /* demo－2.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C21DF76D1CC9063400564F5E /* demo－2.tiff */; settings = {ASSET_TAGS = (); }; };
+		C21DF7741CC9063400564F5E /* demo－3.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C21DF76E1CC9063400564F5E /* demo－3.tiff */; settings = {ASSET_TAGS = (); }; };
+		C21DF7751CC9063400564F5E /* demo－4.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C21DF76F1CC9063400564F5E /* demo－4.tiff */; settings = {ASSET_TAGS = (); }; };
+		C21DF7761CC9063400564F5E /* demo－5.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C21DF7701CC9063400564F5E /* demo－5.tiff */; settings = {ASSET_TAGS = (); }; };
+		C21DF7771CC9063400564F5E /* demo－6.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C21DF7711CC9063400564F5E /* demo－6.tiff */; settings = {ASSET_TAGS = (); }; };
 		C2269ECC1CBE613200A63BD4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C2269ECB1CBE613200A63BD4 /* main.m */; };
 		C2269ECF1CBE613200A63BD4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2269ECE1CBE613200A63BD4 /* AppDelegate.m */; };
 		C2269ED21CBE613200A63BD4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2269ED11CBE613200A63BD4 /* ViewController.m */; };
@@ -64,6 +70,8 @@
 		C2B6D6201CC7BE9900FF7F2B /* TalkCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B6D61F1CC7BE9900FF7F2B /* TalkCarViewController.m */; };
 		C2D557301CC85FBC00B2737C /* ImportTableVIewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D5572E1CC85FBC00B2737C /* ImportTableVIewCell.m */; };
 		C2D557311CC85FBC00B2737C /* ImportTableVIewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2D5572F1CC85FBC00B2737C /* ImportTableVIewCell.xib */; };
+		C2DB145E1CC86A6A0052BCB7 /* ImportDetailsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DB145D1CC86A6A0052BCB7 /* ImportDetailsCell.m */; settings = {ASSET_TAGS = (); }; };
+		C2DB14601CC86A8E0052BCB7 /* ImportDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2DB145F1CC86A8E0052BCB7 /* ImportDetailsCell.xib */; settings = {ASSET_TAGS = (); }; };
 		C2DE9A161CC1CE3400263791 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C2DE99E01CC1CE3300263791 /* .gitignore */; };
 		C2DE9A171CC1CE3400263791 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C2DE99E21CC1CE3300263791 /* .gitignore */; };
 		C2DE9A181CC1CE3400263791 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C2DE99E41CC1CE3300263791 /* .gitignore */; };
@@ -118,6 +126,12 @@
 		C2048E891CC4901A00292A39 /* ImportNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImportNewsViewController.m; sourceTree = "<group>"; };
 		C2048E8B1CC4903B00292A39 /* ImportModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImportModel.h; sourceTree = "<group>"; };
 		C2048E8C1CC4903B00292A39 /* ImportModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImportModel.m; sourceTree = "<group>"; };
+		C21DF76C1CC9063400564F5E /* demo－1.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "demo－1.tiff"; sourceTree = "<group>"; };
+		C21DF76D1CC9063400564F5E /* demo－2.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "demo－2.tiff"; sourceTree = "<group>"; };
+		C21DF76E1CC9063400564F5E /* demo－3.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "demo－3.tiff"; sourceTree = "<group>"; };
+		C21DF76F1CC9063400564F5E /* demo－4.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "demo－4.tiff"; sourceTree = "<group>"; };
+		C21DF7701CC9063400564F5E /* demo－5.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "demo－5.tiff"; sourceTree = "<group>"; };
+		C21DF7711CC9063400564F5E /* demo－6.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "demo－6.tiff"; sourceTree = "<group>"; };
 		C2269EC71CBE613200A63BD4 /* CarPark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarPark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2269ECB1CBE613200A63BD4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C2269ECD1CBE613200A63BD4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
@@ -208,6 +222,9 @@
 		C2D5572D1CC85FBC00B2737C /* ImportTableVIewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImportTableVIewCell.h; sourceTree = "<group>"; };
 		C2D5572E1CC85FBC00B2737C /* ImportTableVIewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImportTableVIewCell.m; sourceTree = "<group>"; };
 		C2D5572F1CC85FBC00B2737C /* ImportTableVIewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImportTableVIewCell.xib; sourceTree = "<group>"; };
+		C2DB145C1CC86A6A0052BCB7 /* ImportDetailsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImportDetailsCell.h; sourceTree = "<group>"; };
+		C2DB145D1CC86A6A0052BCB7 /* ImportDetailsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImportDetailsCell.m; sourceTree = "<group>"; };
+		C2DB145F1CC86A8E0052BCB7 /* ImportDetailsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImportDetailsCell.xib; sourceTree = "<group>"; };
 		C2DE99E01CC1CE3300263791 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		C2DE99E21CC1CE3300263791 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		C2DE99E41CC1CE3300263791 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -319,6 +336,12 @@
 				C2269ED31CBE613200A63BD4 /* Main.storyboard */,
 				C2269ED61CBE613200A63BD4 /* Assets.xcassets */,
 				C2B6D6101CC77AB600FF7F2B /* 1.jpg */,
+				C21DF76C1CC9063400564F5E /* demo－1.tiff */,
+				C21DF76D1CC9063400564F5E /* demo－2.tiff */,
+				C21DF76E1CC9063400564F5E /* demo－3.tiff */,
+				C21DF76F1CC9063400564F5E /* demo－4.tiff */,
+				C21DF7701CC9063400564F5E /* demo－5.tiff */,
+				C21DF7711CC9063400564F5E /* demo－6.tiff */,
 				C2269ED81CBE613200A63BD4 /* LaunchScreen.storyboard */,
 				C2269EDB1CBE613200A63BD4 /* Info.plist */,
 				C2269ECA1CBE613200A63BD4 /* Supporting Files */,
@@ -337,12 +360,12 @@
 		C2269EE11CBE767C00A63BD4 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				C2DE99FA1CC1CE3400263791 /* Recommand */,
 				C2DE99E51CC1CE3300263791 /* ImportantNews */,
 				C2DE9A011CC1CE3400263791 /* Talk */,
 				C2DE99EC1CC1CE3300263791 /* News */,
 				C2DE99DE1CC1CE3300263791 /* guide */,
 				C2DE99F31CC1CE3300263791 /* Picture */,
-				C2DE99FA1CC1CE3400263791 /* Recommand */,
 				C2DE9A081CC1CE3400263791 /* Text */,
 				C2DE9A0F1CC1CE3400263791 /* Video */,
 				C2269ECD1CBE613200A63BD4 /* AppDelegate.h */,
@@ -580,6 +603,9 @@
 				C2D5572D1CC85FBC00B2737C /* ImportTableVIewCell.h */,
 				C2D5572E1CC85FBC00B2737C /* ImportTableVIewCell.m */,
 				C2D5572F1CC85FBC00B2737C /* ImportTableVIewCell.xib */,
+				C2DB145C1CC86A6A0052BCB7 /* ImportDetailsCell.h */,
+				C2DB145D1CC86A6A0052BCB7 /* ImportDetailsCell.m */,
+				C2DB145F1CC86A8E0052BCB7 /* ImportDetailsCell.xib */,
 				C2DE99EB1CC1CE3300263791 /* .gitignore */,
 			);
 			path = View;
@@ -944,11 +970,14 @@
 				C242E51E1CC715400097A119 /* TextCell.xib in Resources */,
 				C2DE9A1B1CC1CE3400263791 /* .gitignore in Resources */,
 				C2DE9A271CC1CE3400263791 /* .gitignore in Resources */,
+				C21DF7741CC9063400564F5E /* demo－3.tiff in Resources */,
 				C2DE9A281CC1CE3400263791 /* .gitignore in Resources */,
+				C21DF7761CC9063400564F5E /* demo－5.tiff in Resources */,
 				C2DE9A191CC1CE3400263791 /* .gitignore in Resources */,
 				C2DE9A2C1CC1CE3400263791 /* .gitignore in Resources */,
 				C2DE9A2D1CC1CE3400263791 /* .gitignore in Resources */,
 				C2DE9A161CC1CE3400263791 /* .gitignore in Resources */,
+				C21DF7731CC9063400564F5E /* demo－2.tiff in Resources */,
 				C2DE9A221CC1CE3400263791 /* .gitignore in Resources */,
 				C2DE9A481CC1D32700263791 /* bg-addbutton@2x.png in Resources */,
 				C2DE9A711CC1D9BF00263791 /* BaseTableViewCell.xib in Resources */,
@@ -958,6 +987,8 @@
 				C2DE9A451CC1D32700263791 /* bg-addbutton-highlighted.png in Resources */,
 				C2DE9A4A1CC1D32700263791 /* bg-menuitem-highlighted@2x.png in Resources */,
 				C242E52E1CC7376D0097A119 /* bg_addbutton_normal.png in Resources */,
+				C21DF7751CC9063400564F5E /* demo－4.tiff in Resources */,
+				C21DF7721CC9063400564F5E /* demo－1.tiff in Resources */,
 				C2DE9A4C1CC1D32700263791 /* bg-menuitem@2x.png in Resources */,
 				C242E58A1CC7BBAE0097A119 /* icon_profile@2x.png in Resources */,
 				C2DE9A1D1CC1CE3400263791 /* .gitignore in Resources */,
@@ -983,7 +1014,9 @@
 				C2DE9A201CC1CE3400263791 /* .gitignore in Resources */,
 				C2DE9A521CC1D32700263791 /* icon-star@2x.png in Resources */,
 				C2DE9A171CC1CE3400263791 /* .gitignore in Resources */,
+				C21DF7771CC9063400564F5E /* demo－6.tiff in Resources */,
 				C2DE9A1A1CC1CE3400263791 /* .gitignore in Resources */,
+				C2DB14601CC86A8E0052BCB7 /* ImportDetailsCell.xib in Resources */,
 				C2DE9A4D1CC1D32700263791 /* icon-plus-highlighted.png in Resources */,
 				C2DE9A491CC1D32700263791 /* bg-menuitem-highlighted.png in Resources */,
 				C2B6D6111CC77AB600FF7F2B /* 1.jpg in Resources */,
@@ -1086,6 +1119,7 @@
 				C2269F021CBE7CA400A63BD4 /* BaseTableViewCell.m in Sources */,
 				C2DE9A7C1CC1E01300263791 /* NewCarsCell.m in Sources */,
 				C2269ECF1CBE613200A63BD4 /* AppDelegate.m in Sources */,
+				C2DB145E1CC86A6A0052BCB7 /* ImportDetailsCell.m in Sources */,
 				C242E5211CC716F70097A119 /* GuideCell.m in Sources */,
 				C242E5191CC7151F0097A119 /* TextModel.m in Sources */,
 				C2269ECC1CBE613200A63BD4 /* main.m in Sources */,

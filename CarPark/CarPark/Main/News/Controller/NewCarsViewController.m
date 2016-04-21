@@ -13,10 +13,11 @@
 
 //#define ScreenWidth [UIScreen mainScreen].bounds.size.width
 
-@interface NewCarsViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
+@interface NewCarsViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,SDCycleScrollViewDelegate>
 
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) NSMutableArray *collectionDataArray;
+@property (nonatomic, strong) SDCycleScrollView *scrollview;
 
 @end
 
@@ -34,6 +35,8 @@
 //    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"Cell"];
     // Do any additional setup after loading the view.
     [self setupView];
+    [self setUpScroll];
+    
 }
 
 - (void)setupView{
@@ -106,6 +109,33 @@
     return reusableview;
 
 }
+
+
+-(void)setUpScroll{
+    
+    NSArray *imageUrl = @[@"https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1461153522&di=234814c99ea6fa939b8c593376bae916&src=http://img1a.xgo-img.com.cn/pics/1538/a1537491.jpg"
+                          ,@"http://static.sporttery.cn/images/130517/18-13051G32G3-52.jpg"];
+    NSArray *titleUrl = @[@"打打瞌睡的奇偶",@"圣诞节哦我"];
+    
+    CGFloat scrollX = 0;
+    CGFloat scrollY = 0;
+    CGFloat scrollW = ScreenWidth;
+    CGFloat scrollH = ScreenHeight / 4;
+    self.scrollview = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(scrollX, scrollY, scrollW, scrollH) delegate:self placeholderImage:[UIImage imageNamed:@"1.jpg"]];
+    self.scrollview.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
+    self.scrollview.titlesGroup = titleUrl;
+    self.scrollview.currentPageDotColor = [UIColor redColor];
+    self.scrollview.autoScrollTimeInterval = 3;
+    [self.collectionView addSubview:self.scrollview];
+    self.scrollview.imageURLStringsGroup = imageUrl;
+    
+    
+}
+
+
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

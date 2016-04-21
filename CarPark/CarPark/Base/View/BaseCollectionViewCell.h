@@ -12,10 +12,7 @@
 
 @interface BaseCollectionViewCell : UICollectionViewCell
 
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (weak, nonatomic) IBOutlet UILabel *titileLabel;
-@property (weak, nonatomic) IBOutlet UILabel *originLabel;
-@property (weak, nonatomic) IBOutlet UILabel *commentLabel;
+
 
 // 通过model对象设置cell上的数据
 - (void)setDataWithModel:(BaseModel *)model;

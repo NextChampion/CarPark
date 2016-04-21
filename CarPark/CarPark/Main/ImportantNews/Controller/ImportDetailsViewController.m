@@ -1,24 +1,22 @@
 //
-//  ImportScrollViewController.m
+//  ImportDetailsViewController.m
 //  CarPark
 //
-//  Created by lanou3g on 16/4/18.
+//  Created by lanou3g on 16/4/20.
 //  Copyright © 2016年 com.lcarpark.zfw. All rights reserved.
 //
 
-#import "ImportScrollViewController.h"
-#import "SDCycleScrollView.h"
+#import "ImportDetailsViewController.h"
 
-
-@interface ImportScrollViewController ()<SDCycleScrollViewDelegate>
+@interface ImportDetailsViewController ()
 
 @end
 
-@implementation ImportScrollViewController
+@implementation ImportDetailsViewController
 
 - (void)viewDidLoad {
-    
-    
+    [super viewDidLoad];
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {

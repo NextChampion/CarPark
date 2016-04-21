@@ -33,12 +33,10 @@
     // 创建左侧菜单对象
     MenuViewController *leftViewController = [[MenuViewController alloc] init];
     rootViewController.leftViewControllrt = leftViewController;
-    
-    
-    
+   
     self.window.rootViewController = rootViewController;
     self.window.backgroundColor = [UIColor whiteColor];
-    
+    [self.window makeKeyAndVisible];
     
     return YES;
 }

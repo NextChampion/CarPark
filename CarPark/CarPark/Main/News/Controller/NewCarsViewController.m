@@ -33,6 +33,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     //    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"Cell"];
     // Do any additional setup after loading the view.
     
@@ -68,12 +69,11 @@
     self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(collectionViewX, collectionViewY, collectionViewW, collectionViewH) collectionViewLayout:flowLayout];
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
-    self.collectionView.backgroundColor = [UIColor redColor];
     
     //    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"Cell"];
     [self.collectionView registerNib:[UINib nibWithNibName:@"NewCarsCell" bundle:nil] forCellWithReuseIdentifier:@"NewCarsCell_id"];
     [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView"];
-    
+        self.collectionView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.collectionView];
 }
 - (void)reloadUpData{

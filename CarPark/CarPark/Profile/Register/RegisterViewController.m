@@ -30,7 +30,7 @@
     
     // 返回上一页按钮
     UIButton *back = [UIButton buttonWithType:UIButtonTypeSystem];
-    [back setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+    [back setTitleColor:BackGroudColor forState:UIControlStateNormal];
     [back setTitle:@"返回" forState:UIControlStateNormal];
     [back addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:back];
@@ -140,20 +140,23 @@
     
     // logo
     UIImageView *logo = [[UIImageView alloc] init];
-    logo.backgroundColor = [UIColor orangeColor];
+//    logo.backgroundColor = BackGroudColor;
+    [logo sd_setImageWithURL:nil placeholderImage:[UIImage imageNamed:@"logo_word.png"]];
+    [logo setContentMode:UIViewContentModeScaleToFill];
     [self.view addSubview:logo];
     [logo mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(weakSelf.view.mas_centerX);
-        make.bottom.equalTo(line.mas_top);
+        make.bottom.equalTo(line.mas_top).offset(-35);
         make.width.equalTo(@(ScreenWidth / 2));
-        make.height.equalTo(@(ScreenHeight / 5));
+        make.height.equalTo(@(ScreenHeight / 10));
     }];
     
     
     // 登录按钮
     UIButton *registerButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [registerButton setTitle:@"提交" forState:UIControlStateNormal];
-    registerButton.backgroundColor = [UIColor orangeColor];
+    [registerButton setTitle:@"提        交" forState:UIControlStateNormal];
+    [registerButton setTintColor:[UIColor whiteColor]];
+    registerButton.backgroundColor = BackGroudColor;
     [registerButton addTarget:self action:@selector(registerButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:registerButton];
     [registerButton mas_makeConstraints:^(MASConstraintMaker *make) {

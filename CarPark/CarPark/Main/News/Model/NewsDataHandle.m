@@ -11,7 +11,9 @@
 #import "NewCarsModel.h"
 
 @interface NewsDataHandle ()
+
 @property(nonatomic,assign)NSInteger index;
+
 @end
 
 @implementation NewsDataHandle

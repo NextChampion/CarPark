@@ -83,7 +83,7 @@
     CGFloat headerViewH = 100;
     CGRect headerFrame =  CGRectMake(headerViewX, headerViewY, headerViewW, headerViewH);
     self.headerView.frame = headerFrame;
-    self.headerView.backgroundColor = [UIColor grayColor];
+    self.headerView.backgroundColor = BackGroudColor;
     [self.view addSubview:self.headerView];
     
     // 2 中部的tableView
@@ -101,7 +101,7 @@
     CGFloat footerViewH = 80;
     CGRect footerFrame = CGRectMake(footerViewX, footerViewY, footerViewW, footerViewH);
     self.footerView.frame = footerFrame;
-    self.footerView.backgroundColor = [UIColor grayColor];
+    self.footerView.backgroundColor = BackGroudColor;
     [self.view addSubview:self.footerView];
 }
 

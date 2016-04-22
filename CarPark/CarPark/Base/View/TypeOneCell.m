@@ -18,6 +18,7 @@
 
 @implementation TypeOneCell
 
+
 - (UIImageView *)picCoverImage{
     if (!_picCoverImage) {
         _picCoverImage = [[UIImageView alloc] init];
@@ -27,7 +28,7 @@
             make.top.equalTo(weakSelf.contentView.mas_top).offset(8);
             make.left.equalTo(weakSelf.contentView.mas_left).offset(8);
             make.bottom.equalTo(weakSelf.contentView.mas_bottom).offset(-8);
-            make.width.equalTo(@(weakSelf.contentView.bounds.size.width/3));
+            make.width.equalTo(@(weakSelf.contentView.bounds.size.width/3.5));
         }];
     }
     return _picCoverImage;
@@ -53,6 +54,7 @@
     if (!_srcLabel) {
         _srcLabel = [[UILabel alloc] init];
         _srcLabel.font = [UIFont systemFontOfSize:12];
+        [_srcLabel setTextColor:[UIColor lightGrayColor]];
         [self.contentView addSubview:_srcLabel];
         __weak typeof (self) weakSelf = self;
         [_srcLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -68,6 +70,7 @@
     if (!_commentLabel) {
         _commentLabel = [[UILabel alloc] init];
         _commentLabel.font = [UIFont systemFontOfSize:12];
+        [_commentLabel setTextColor:[UIColor lightGrayColor]];
         [self.contentView addSubview:_commentLabel];
         __weak typeof (self) weakSelf = self;
         [_commentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -92,13 +95,6 @@
         }];
     }
     return _commentImage;
-}
-
-// 自适应高度
-- (CGFloat)stringHeight:(NSString *)aString{
-    // !!!: 1 传参数的时候,宽度最好和以前的label宽度一样  2 字体的大小,最好和label上面字体的大小一样
-    CGRect temp = [aString boundingRectWithSize:CGSizeMake(355, 10000000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:17]} context:nil];
-    return temp.size.height;
 }
 
 - (void)setDataWithModel:(DataModel *)model{

@@ -65,7 +65,7 @@
         }
         
         // 添加加号button
-        _addButton = [NCAnimationViewItem itemWithImage:[UIImage imageNamed:@"bg-addbutton.png"] highlightedImage:[UIImage imageNamed:@"bg-addbutton-highlighted.png"] ContentImage:[UIImage imageNamed:@"icon-plus.png"] highlightedContentImage:[UIImage imageNamed:@"icon-plus-highlighted.png"]];
+        _addButton = [NCAnimationViewItem itemWithImage:[UIImage imageNamed:@"bg_addbutton.png"] highlightedImage:[UIImage imageNamed:@"bg_addbutton_highlighted.png"] ContentImage:[UIImage imageNamed:@"icon-plus.png"] highlightedContentImage:[UIImage imageNamed:@"icon-plus-highlighted.png"]];
         _addButton.delegate = self;
         _addButton.center = StartPoint;
         [self addSubview:_addButton];

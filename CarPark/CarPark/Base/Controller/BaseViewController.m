@@ -28,26 +28,29 @@
     return _menu;
 }
 
+
+
+
 // 控制器加载完成 添加悬浮按钮
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.view.backgroundColor = [UIColor whiteColor];
 //    [self setupMenuView];
 }
 
 - (void)setupMenuView{
-    UIImage *storyMenuItemImage = [UIImage imageNamed:@"bg-menuitem.png"];
-    UIImage *storyMenuItemImagePressed = [UIImage imageNamed:@"bg-menuitem-highlighted.png"];
+    UIImage *storyMenuItemImage = [UIImage imageNamed:@"bg_menuitem.png"];
+    UIImage *storyMenuItemImagePressed = [UIImage imageNamed:@"bg_menuitem_highlighted.png"];
     
     // Camera MenuItem.
     NCAnimationViewItem *profileMenuItem = [[NCAnimationViewItem alloc] initWithImage:storyMenuItemImage
                                                                     highlightedImage:storyMenuItemImagePressed
-                                                                        ContentImage:[UIImage imageNamed:@"icon-star.png"]
+                                                                        ContentImage:[UIImage imageNamed:@"profile.png"]
                                                              highlightedContentImage:nil];
     // People MenuItem.
-    NCAnimationViewItem *peopleMenuItem = [[NCAnimationViewItem alloc] initWithImage:storyMenuItemImage
+    NCAnimationViewItem *collectionMenuItem = [[NCAnimationViewItem alloc] initWithImage:storyMenuItemImage
                                                                     highlightedImage:storyMenuItemImagePressed
-                                                                        ContentImage:[UIImage imageNamed:@"icon-star.png"]
+                                                                        ContentImage:[UIImage imageNamed:@"collection.png"]
                                                              highlightedContentImage:nil];
     // Place MenuItem.
     NCAnimationViewItem *placeMenuItem = [[NCAnimationViewItem alloc] initWithImage:storyMenuItemImage
@@ -59,7 +62,7 @@
                                                                    highlightedImage:storyMenuItemImagePressed
                                                                        ContentImage:[UIImage imageNamed:@"icon-star.png"]
                                                             highlightedContentImage:nil];
-    NSArray *menus = [NSArray arrayWithObjects:profileMenuItem, peopleMenuItem, placeMenuItem,musicMenuItem, nil];
+    NSArray *menus = [NSArray arrayWithObjects:profileMenuItem, collectionMenuItem, placeMenuItem,musicMenuItem, nil];
     self.menu = [NCAnimationView viewWithFrame:self.view.frame viewArray:menus];
     self.menu.userInteractionEnabled = YES;
     self.menu.alpha = 0.3;

@@ -56,7 +56,7 @@
             NewCarsModel *model = [NewCarsModel new];
             [model setValuesForKeysWithDictionary:d];
             [self.newsArray addObject:model];
-            //    NSLog(@"%@",model);
+            NSLog(@"%@",model);
         }
         reloadDataBlock();
     }];

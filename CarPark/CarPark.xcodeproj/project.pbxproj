@@ -10,6 +10,7 @@
 		00935FC93493F945D5862800 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 89954F290A804B134971FBB4 /* libPods.a */; };
 		30DFEEAB1CC8A8E100BCBF88 /* ToolData.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DFEEAA1CC8A8E100BCBF88 /* ToolData.m */; };
 		30DFEEAE1CC8A96200BCBF88 /* NewsDataHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DFEEAD1CC8A96200BCBF88 /* NewsDataHandle.m */; };
+		30DFEEB11CC9215C00BCBF88 /* downloads.png in Resources */ = {isa = PBXBuildFile; fileRef = 30DFEEB01CC9215C00BCBF88 /* downloads.png */; };
 		C2048E8A1CC4901A00292A39 /* ImportNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2048E891CC4901A00292A39 /* ImportNewsViewController.m */; };
 		C2048E8D1CC4903B00292A39 /* ImportModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2048E8C1CC4903B00292A39 /* ImportModel.m */; };
 		C21DF7721CC9063400564F5E /* demo－1.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C21DF76C1CC9063400564F5E /* demo－1.tiff */; };
@@ -132,6 +133,7 @@
 		30DFEEAA1CC8A8E100BCBF88 /* ToolData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolData.m; sourceTree = "<group>"; };
 		30DFEEAC1CC8A96200BCBF88 /* NewsDataHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsDataHandle.h; sourceTree = "<group>"; };
 		30DFEEAD1CC8A96200BCBF88 /* NewsDataHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsDataHandle.m; sourceTree = "<group>"; };
+		30DFEEB01CC9215C00BCBF88 /* downloads.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = downloads.png; sourceTree = "<group>"; };
 		89954F290A804B134971FBB4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		97CF78AAFE90DC8CFE4CCA72 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C2048E881CC4901A00292A39 /* ImportNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImportNewsViewController.h; sourceTree = "<group>"; };
@@ -313,6 +315,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		30DFEEAF1CC9215C00BCBF88 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				30DFEEB01CC9215C00BCBF88 /* downloads.png */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
 		40C3DF913EDD2AD22968FE81 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -351,6 +361,7 @@
 		C2269EC91CBE613200A63BD4 /* CarPark */ = {
 			isa = PBXGroup;
 			children = (
+				30DFEEAF1CC9215C00BCBF88 /* Image */,
 				C242E56E1CC77B1A0097A119 /* Profile */,
 				C2269EF11CBE796400A63BD4 /* Tools */,
 				C2269EEC1CBE78AC00A63BD4 /* Base */,
@@ -1064,6 +1075,7 @@
 				C242E5261CC72EBA0097A119 /* icon_plus_highlighted.png in Resources */,
 				C2DE9A231CC1CE3400263791 /* .gitignore in Resources */,
 				C242E5271CC72EBA0097A119 /* icon_plus_normal.png in Resources */,
+				30DFEEB11CC9215C00BCBF88 /* downloads.png in Resources */,
 				C2DE9A2B1CC1CE3400263791 /* .gitignore in Resources */,
 				C242E52C1CC7376D0097A119 /* bg_addbutton_highlighted.png in Resources */,
 				C2269ED51CBE613200A63BD4 /* Main.storyboard in Resources */,

@@ -205,7 +205,6 @@
         return ScreenHeight/3;
     }
     return 80;
-    
 }
 
 /*

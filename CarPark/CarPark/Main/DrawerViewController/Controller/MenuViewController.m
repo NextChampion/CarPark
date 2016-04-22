@@ -18,7 +18,7 @@
 #import "PictureViewController.h"
 #import "TextViewController.h"
 #import "TalkCarViewController.h"
-
+#import "ImportDetailsViewController.h"
 
 #import "BaseViewController.h"
 

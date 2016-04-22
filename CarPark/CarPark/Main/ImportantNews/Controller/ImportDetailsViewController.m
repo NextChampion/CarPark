@@ -12,6 +12,9 @@
 #import "ImportDetailModel.h"
 #import "ImportantDetailheaderModel.h"
 #import "ImportantDetailHeaderView.h"
+#import "ImportNewsViewController.h"
+#import "DataModel.h"
+
 
 
 @interface ImportDetailsViewController ()<UITableViewDataSource,UITableViewDelegate>
@@ -32,6 +35,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+<<<<<<< HEAD
     // Do any additional setup after loading the view from its nib.
     [self handleData];
     
@@ -135,7 +139,18 @@
     // !!!: 1 传参数的时候,宽度最好和以前的label宽度一样  2 字体的大小,最好和label上面字体的大小一样
     CGRect temp = [aString boundingRectWithSize:CGSizeMake(ScreenWidth - 40, 10000000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:15]} context:nil];
     return temp.size.height;
+=======
+    self.view.backgroundColor = [UIColor yellowColor];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:(UIBarButtonItemStyleDone) target:self action:@selector(backAction:)];
+   
 }
+
+-(void)backAction:(UIBarButtonItem *)sender{
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    
+>>>>>>> aff6d1802112b867b6f69ce46559b07c7d16f0ca
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

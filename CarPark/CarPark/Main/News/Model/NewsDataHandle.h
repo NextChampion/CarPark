@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+
 //block用来回调刷新界面
 typedef void(^ReloadDataBlock)();
 

@@ -1,34 +1,23 @@
 //
-//  ImportDetailsViewController.m
+//  TalkCarDetailViewController.m
 //  CarPark
 //
-//  Created by lanou3g on 16/4/20.
+//  Created by lanou3g on 16/4/22.
 //  Copyright © 2016年 com.lcarpark.zfw. All rights reserved.
 //
 
-#import "ImportDetailsViewController.h"
-#import "ImportNewsViewController.h"
-#import "DataModel.h"
+#import "TalkCarDetailViewController.h"
 
-
-@interface ImportDetailsViewController ()
+@interface TalkCarDetailViewController ()
 
 @end
 
-@implementation ImportDetailsViewController
+@implementation TalkCarDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor yellowColor];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:(UIBarButtonItemStyleDone) target:self action:@selector(backAction:)];
-   
 }
-
--(void)backAction:(UIBarButtonItem *)sender{
-    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
-    
-}
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

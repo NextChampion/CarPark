@@ -10,4 +10,5 @@
 
 @interface ImportDetailModel : BaseModel
 
+
 @end

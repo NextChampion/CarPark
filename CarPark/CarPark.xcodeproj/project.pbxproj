@@ -57,6 +57,9 @@
 		C242E5861CC77BDF0097A119 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C242E5851CC77BDF0097A119 /* RegisterViewController.m */; };
 		C242E5891CC7BBAE0097A119 /* icon_profile.png in Resources */ = {isa = PBXBuildFile; fileRef = C242E5871CC7BBAE0097A119 /* icon_profile.png */; };
 		C242E58A1CC7BBAE0097A119 /* icon_profile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C242E5881CC7BBAE0097A119 /* icon_profile@2x.png */; };
+		C28EE9681CCA31E000C709B6 /* TalkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C28EE9671CCA31E000C709B6 /* TalkModel.m */; settings = {ASSET_TAGS = (); }; };
+		C28EE96C1CCA33C500C709B6 /* ImportDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C28EE96A1CCA33C500C709B6 /* ImportDetailsViewController.m */; settings = {ASSET_TAGS = (); }; };
+		C28EE9701CCA6C5A00C709B6 /* TalkCarDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C28EE96F1CCA6C5A00C709B6 /* TalkCarDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
 		C2AD2C441CC4E780004D5889 /* NewCarsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2AD2C431CC4E780004D5889 /* NewCarsCell.xib */; };
 		C2AD2C471CC4EF26004D5889 /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2AD2C461CC4EF26004D5889 /* BaseTableViewController.m */; };
 		C2AD2C4D1CC4EF66004D5889 /* RecommandModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2AD2C4C1CC4EF66004D5889 /* RecommandModel.m */; };
@@ -67,8 +70,6 @@
 		C2B6D5CD1CC7281900FF7F2B /* TalkCarViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2B6D5CC1CC7281900FF7F2B /* TalkCarViewCell.xib */; };
 		C2B6D5CF1CC738EA00FF7F2B /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B6D5CE1CC738EA00FF7F2B /* Foundation+Log.m */; };
 		C2B6D6111CC77AB600FF7F2B /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C2B6D6101CC77AB600FF7F2B /* 1.jpg */; };
-		C2B6D6181CC7B99E00FF7F2B /* ImportDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B6D6161CC7B99E00FF7F2B /* ImportDetailsViewController.m */; };
-		C2B6D6191CC7B99E00FF7F2B /* ImportDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2B6D6171CC7B99E00FF7F2B /* ImportDetailsViewController.xib */; };
 		C2B6D61C1CC7BAA800FF7F2B /* ImportDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B6D61B1CC7BAA800FF7F2B /* ImportDetailModel.m */; };
 		C2B6D6201CC7BE9900FF7F2B /* TalkCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B6D61F1CC7BE9900FF7F2B /* TalkCarViewController.m */; };
 		C2D557301CC85FBC00B2737C /* ImportTableVIewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D5572E1CC85FBC00B2737C /* ImportTableVIewCell.m */; };
@@ -208,7 +209,12 @@
 		C242E5851CC77BDF0097A119 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		C242E5871CC7BBAE0097A119 /* icon_profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_profile.png; sourceTree = "<group>"; };
 		C242E5881CC7BBAE0097A119 /* icon_profile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_profile@2x.png"; sourceTree = "<group>"; };
-		C2A366A81CC6339500657923 /* TalkCarViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TalkCarViewCell.xib; sourceTree = "<group>"; };
+		C28EE9661CCA31E000C709B6 /* TalkModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkModel.h; sourceTree = "<group>"; };
+		C28EE9671CCA31E000C709B6 /* TalkModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkModel.m; sourceTree = "<group>"; };
+		C28EE9691CCA33C500C709B6 /* ImportDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImportDetailsViewController.h; sourceTree = "<group>"; };
+		C28EE96A1CCA33C500C709B6 /* ImportDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImportDetailsViewController.m; sourceTree = "<group>"; };
+		C28EE96E1CCA6C5A00C709B6 /* TalkCarDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkCarDetailViewController.h; sourceTree = "<group>"; };
+		C28EE96F1CCA6C5A00C709B6 /* TalkCarDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkCarDetailViewController.m; sourceTree = "<group>"; };
 		C2A366AB1CC65B3400657923 /* TalkCarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkCarViewController.h; sourceTree = "<group>"; };
 		C2AD2C431CC4E780004D5889 /* NewCarsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewCarsCell.xib; sourceTree = "<group>"; };
 		C2AD2C451CC4EF26004D5889 /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
@@ -225,9 +231,6 @@
 		C2B6D5CC1CC7281900FF7F2B /* TalkCarViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TalkCarViewCell.xib; sourceTree = "<group>"; };
 		C2B6D5CE1CC738EA00FF7F2B /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 		C2B6D6101CC77AB600FF7F2B /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
-		C2B6D6151CC7B99E00FF7F2B /* ImportDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImportDetailsViewController.h; sourceTree = "<group>"; };
-		C2B6D6161CC7B99E00FF7F2B /* ImportDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImportDetailsViewController.m; sourceTree = "<group>"; };
-		C2B6D6171CC7B99E00FF7F2B /* ImportDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImportDetailsViewController.xib; sourceTree = "<group>"; };
 		C2B6D61A1CC7BAA800FF7F2B /* ImportDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImportDetailModel.h; sourceTree = "<group>"; };
 		C2B6D61B1CC7BAA800FF7F2B /* ImportDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImportDetailModel.m; sourceTree = "<group>"; };
 		C2B6D61F1CC7BE9900FF7F2B /* TalkCarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkCarViewController.m; sourceTree = "<group>"; };
@@ -622,12 +625,11 @@
 		C2DE99E61CC1CE3300263791 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C28EE9691CCA33C500C709B6 /* ImportDetailsViewController.h */,
+				C28EE96A1CCA33C500C709B6 /* ImportDetailsViewController.m */,
 				C2DE99E71CC1CE3300263791 /* .gitignore */,
 				C2048E881CC4901A00292A39 /* ImportNewsViewController.h */,
 				C2048E891CC4901A00292A39 /* ImportNewsViewController.m */,
-				C2B6D6151CC7B99E00FF7F2B /* ImportDetailsViewController.h */,
-				C2B6D6161CC7B99E00FF7F2B /* ImportDetailsViewController.m */,
-				C2B6D6171CC7B99E00FF7F2B /* ImportDetailsViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -802,7 +804,8 @@
 				C2DE9A031CC1CE3400263791 /* .gitignore */,
 				C2A366AB1CC65B3400657923 /* TalkCarViewController.h */,
 				C2B6D61F1CC7BE9900FF7F2B /* TalkCarViewController.m */,
-				C2A366A81CC6339500657923 /* TalkCarViewCell.xib */,
+				C28EE96E1CCA6C5A00C709B6 /* TalkCarDetailViewController.h */,
+				C28EE96F1CCA6C5A00C709B6 /* TalkCarDetailViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -811,6 +814,8 @@
 			isa = PBXGroup;
 			children = (
 				C2DE9A051CC1CE3400263791 /* .gitignore */,
+				C28EE9661CCA31E000C709B6 /* TalkModel.h */,
+				C28EE9671CCA31E000C709B6 /* TalkModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1050,7 +1055,6 @@
 				C2269ED71CBE613200A63BD4 /* Assets.xcassets in Resources */,
 				C2DE9A1F1CC1CE3400263791 /* .gitignore in Resources */,
 				C2D557311CC85FBC00B2737C /* ImportTableVIewCell.xib in Resources */,
-				C2B6D6191CC7B99E00FF7F2B /* ImportDetailsViewController.xib in Resources */,
 				C2DE9A241CC1CE3400263791 /* .gitignore in Resources */,
 				C2DE9A291CC1CE3400263791 /* .gitignore in Resources */,
 				C242E52D1CC7376D0097A119 /* bg_addbutton_highlighted@2x.png in Resources */,
@@ -1110,14 +1114,15 @@
 				C242E5801CC77BB70097A119 /* CollectionViewController.m in Sources */,
 				C2D557341CC8C3D100B2737C /* DataModel.m in Sources */,
 				C242E5861CC77BDF0097A119 /* RegisterViewController.m in Sources */,
+				C28EE9681CCA31E000C709B6 /* TalkModel.m in Sources */,
 				C2B6D5CF1CC738EA00FF7F2B /* Foundation+Log.m in Sources */,
 				C2269ED21CBE613200A63BD4 /* ViewController.m in Sources */,
 				C2DE9A791CC1DFF700263791 /* NewCarsModel.m in Sources */,
 				C2B6D6201CC7BE9900FF7F2B /* TalkCarViewController.m in Sources */,
+				C28EE96C1CCA33C500C709B6 /* ImportDetailsViewController.m in Sources */,
 				C2269F051CBE7CC000A63BD4 /* BaseCollectionViewCell.m in Sources */,
 				C2AD2C501CC4EF82004D5889 /* RecommandTableCell.m in Sources */,
 				C2048E8A1CC4901A00292A39 /* ImportNewsViewController.m in Sources */,
-				C2B6D6181CC7B99E00FF7F2B /* ImportDetailsViewController.m in Sources */,
 				C2D557441CC8D89800B2737C /* TypeFourCell.m in Sources */,
 				C2269EFC1CBE7C7400A63BD4 /* BaseViewController.m in Sources */,
 				C2D557411CC8D88C00B2737C /* TypeThreeCell.m in Sources */,
@@ -1142,6 +1147,7 @@
 				C242E5831CC77BD10097A119 /* LoginViewController.m in Sources */,
 				C242E5091CC713780097A119 /* PictureModel.m in Sources */,
 				C2269F021CBE7CA400A63BD4 /* BaseTableViewCell.m in Sources */,
+				C28EE9701CCA6C5A00C709B6 /* TalkCarDetailViewController.m in Sources */,
 				C2DE9A7C1CC1E01300263791 /* NewCarsCell.m in Sources */,
 				C2269ECF1CBE613200A63BD4 /* AppDelegate.m in Sources */,
 				C2DB145E1CC86A6A0052BCB7 /* ImportDetailsCell.m in Sources */,

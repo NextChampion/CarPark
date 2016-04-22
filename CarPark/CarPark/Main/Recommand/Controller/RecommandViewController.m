@@ -57,15 +57,6 @@ static NSString *const RecommandId = @"cell";
     [self.tableView registerNib:[UINib nibWithNibName:@"RecommandTableCell" bundle:nil] forCellReuseIdentifier:RecommandId];
    [self.view addSubview:self.tableView];
     
-//这个方法貌似弃用了
-//    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-//
-//        [self.tableView reloadData];
-//    }];
-//    self.tableView.footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
-//       
-//        [self.tableView reloadData];
-//    }];
 //添加上拉刷新的header
     MJRefreshAutoGifFooter *footer = [MJRefreshAutoGifFooter footerWithRefreshingTarget:self refreshingAction:@selector(requestData)];
 //添加下拉加载的footer动画
@@ -76,9 +67,7 @@ static NSString *const RecommandId = @"cell";
     }
     [footer setImages:arrayImg duration:2 forState:(MJRefreshStateRefreshing)];
     self.tableView.mj_footer = footer;
-    
 
-//    self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(requestData)];
 }
 
 -(void)requestData{

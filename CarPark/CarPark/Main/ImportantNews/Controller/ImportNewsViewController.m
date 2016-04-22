@@ -82,7 +82,7 @@
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 180)];
     headerView.backgroundColor = [UIColor whiteColor];
     [headerView addSubview:self.cycleView];
-    self.ImportTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 64,ScreenWidth ,ScreenHeight- 64) style:(UITableViewStylePlain)];
+    self.ImportTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 64,ScreenWidth ,ScreenHeight - 64) style:(UITableViewStylePlain)];
     [self.ImportTableView registerClass:[TypeFourCell class] forCellReuseIdentifier:@"cell4"];
     [self.ImportTableView registerClass:[TypeThreeCell class] forCellReuseIdentifier:@"cell3"];
     [self.ImportTableView registerClass:[TypeTwoCell class] forCellReuseIdentifier:@"cell2"];
@@ -109,6 +109,10 @@
         }
         [self setupTableView];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.ImportTableView animated:YES];
+        hud.mode = MBProgressHUDModeText;
+        hud.labelText = @"您的网络不给力";
+        [hud hide:YES afterDelay:2];
         NSLog(@"error = %@",error);
     }];
 }
@@ -213,13 +217,6 @@
     return 80;
 }
 
-/*
- // 滚动到第几张图回调
- - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didScrollToIndex:(NSInteger)index
- {
- NSLog(@">>>>>> 滚动到第%ld张图", (long)index);
- }
- */
 
 
 - (void)didReceiveMemoryWarning {

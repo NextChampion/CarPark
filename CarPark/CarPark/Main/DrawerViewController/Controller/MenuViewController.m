@@ -109,6 +109,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return list.count;
 }
+
 #pragma mark - UITableViewDataSource
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CustomCellIdentifier = @"CellIdentifier";
@@ -129,12 +130,10 @@
     DrawerViewController *menuController = (DrawerViewController *)((AppDelegate *)[[UIApplication sharedApplication] delegate]).drawerViewController;
     if (indexPath.row == 0) {
         ImportNewsViewController *viewController = [[ImportNewsViewController alloc] init];
-        viewController.view.backgroundColor = [UIColor redColor];
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:viewController];
         [menuController setRootViewController:navController animated:YES];
     }else if (indexPath.row == 1){
       TalkCarViewController  *controller = [[TalkCarViewController alloc] init];
-//        controller.view.backgroundColor = [UIColor yellowColor];
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
         [menuController setRootViewController:navController animated:YES];
     }else if (indexPath.row == 2){
@@ -143,7 +142,6 @@
         [menuController setRootViewController:navController animated:YES];
     }else if (indexPath.row == 3){
         BaseViewController *controller = [[BaseViewController alloc] init];
-        controller.view.backgroundColor = [UIColor grayColor];
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
         [menuController setRootViewController:navController animated:YES];
     }else if (indexPath.row == 4){
@@ -152,26 +150,21 @@
         [menuController setRootViewController:navController animated:YES];
     }else if (indexPath.row == 5){
         NewCarsViewController *controller = [[NewCarsViewController alloc] init];
-        controller.view.backgroundColor = [UIColor grayColor];
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
         [menuController setRootViewController:navController animated:YES];
     }else if (indexPath.row == 6){
         TextViewController *controller = [[TextViewController alloc] init];
-        controller.view.backgroundColor = [UIColor grayColor];
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
         [menuController setRootViewController:navController animated:YES];
     }else if (indexPath.row == 7){
         GuideViewController *controller = [[GuideViewController alloc] init];
-//        controller.view.backgroundColor = [UIColor grayColor];
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
         [menuController setRootViewController:navController animated:YES];
     }
 
 }
 
-- (void)asdf{
-    NSLog(@"这个button可以点击");
-}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

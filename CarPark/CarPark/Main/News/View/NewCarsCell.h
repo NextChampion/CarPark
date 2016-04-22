@@ -10,5 +10,8 @@
 
 @interface NewCarsCell : BaseCollectionViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *commentLabel;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
+@property (weak, nonatomic) IBOutlet UIImageView *carImageView;
 @end

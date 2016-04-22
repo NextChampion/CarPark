@@ -13,7 +13,8 @@
 
 
 - (void)setDataWithModel:(NewCarsModel *)model{
-    
+    self.titleLabel.text = model.title;
+    self.commentLabel.text = [NSString stringWithFormat:@"%@",model.commentCount];
 }
 
 

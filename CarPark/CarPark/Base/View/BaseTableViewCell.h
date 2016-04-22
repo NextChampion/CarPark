@@ -13,6 +13,7 @@
 @interface BaseTableViewCell : UITableViewCell
 
 // 通过model对象设置cell上的数据
-- (void)setDataWithModel:(BaseModel *)model;
+
+//- (void)setDataWithModel:(BaseModel *)model;
 
 @end

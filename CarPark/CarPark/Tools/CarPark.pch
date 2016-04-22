@@ -19,4 +19,7 @@
 #import "masonry.h"
 #import "AFNetworking.h"
 #import "SDCycleScrollView.h"
+#import "UIImageView+WebCache.h"
+
 #define ImportNews @"http://api.ycapp.yiche.com/appnews/toutiaov64/?page=1&length=20&platform=2"
+

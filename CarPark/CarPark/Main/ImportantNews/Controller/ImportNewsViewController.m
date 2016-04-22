@@ -12,17 +12,33 @@
 #import "ImportModel.h"
 #import "AFNetworking.h"
 
+#import "DataModel.h"
+#import "TypeOneCell.h"
+
+#import "TypeOneCell.h"
+#import "TypeTwoCell.h"
+#import "TypeThreeCell.h"
+#import "TypeFourCell.h"
+
 
 @interface ImportNewsViewController ()<SDCycleScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
 
 @property(strong,nonatomic)UITableView *ImportTableView;
 @property (nonatomic, strong) SDCycleScrollView *cycleView;
 @property(strong,nonatomic)NSMutableArray *array;
+@property (nonatomic, strong) NSMutableArray *tableArray;
 
 
 @end
 
 @implementation ImportNewsViewController
+
+- (NSMutableArray *)tableArray{
+    if (!_tableArray) {
+        _tableArray = [[NSMutableArray alloc] init];
+    }
+    return _tableArray;
+}
 
 -(NSMutableArray *)array{
     if (!_array) {
@@ -39,30 +55,87 @@
 //    self.view.backgroundColor = [UIColor grayColor];
 //    self.title = @"要   闻";
     [self RequestData];
+    [self requestData];// 加载table数据
     //创建headerView
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 180)];
-    headerView.backgroundColor = [UIColor whiteColor];
-    [headerView addSubview:self.cycleView];
-    
-    self.ImportTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0,ScreenWidth ,ScreenHeight) style:(UITableViewStylePlain)];
-    [self.ImportTableView registerNib:[UINib nibWithNibName:@"ImportTableVIewCell" bundle:nil] forCellReuseIdentifier:@"ImportTableVIewCell"];
-    self.ImportTableView.tableHeaderView = headerView;    
-    self.ImportTableView.delegate = self;
-    self.ImportTableView.dataSource = self;
-    [self.view addSubview:self.ImportTableView];
+//    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 180)];
+//    headerView.backgroundColor = [UIColor whiteColor];
+//    [headerView addSubview:self.cycleView];
+//    
+//    self.ImportTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0,ScreenWidth ,ScreenHeight) style:(UITableViewStylePlain)];
+//    [self.ImportTableView registerClass:[TypeFourCell class] forCellReuseIdentifier:@"cell4"];
+//    [self.ImportTableView registerClass:[TypeThreeCell class] forCellReuseIdentifier:@"cell3"];
+//    [self.ImportTableView registerClass:[TypeTwoCell class] forCellReuseIdentifier:@"cell2"];
+//    [self.ImportTableView registerClass:[TypeOneCell class] forCellReuseIdentifier:@"cell1"];
+//    
+//    self.ImportTableView.tableHeaderView = headerView;    
+//    self.ImportTableView.delegate = self;
+//    self.ImportTableView.dataSource = self;
+//    [self.view addSubview:self.ImportTableView];
     
     
 }
 
+- (void)setupTableView{
+    
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 180)];
+    headerView.backgroundColor = [UIColor whiteColor];
+    [headerView addSubview:self.cycleView];
+    self.ImportTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 64,ScreenWidth ,ScreenHeight- 64) style:(UITableViewStylePlain)];
+    [self.ImportTableView registerClass:[TypeFourCell class] forCellReuseIdentifier:@"cell4"];
+    [self.ImportTableView registerClass:[TypeThreeCell class] forCellReuseIdentifier:@"cell3"];
+    [self.ImportTableView registerClass:[TypeTwoCell class] forCellReuseIdentifier:@"cell2"];
+    [self.ImportTableView registerClass:[TypeOneCell class] forCellReuseIdentifier:@"cell1"];
+    
+    self.ImportTableView.tableHeaderView = headerView;
+    self.ImportTableView.delegate = self;
+    self.ImportTableView.dataSource = self;
+    [self.view addSubview:self.ImportTableView];
+}
+
+- (void)requestData{
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    [manager GET:ImportNews parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        NSDictionary *dataDic = responseObject;
+        NSArray *array = dataDic[@"data"][@"list"];
+        for (NSDictionary *dic in array) {
+            DataModel *model = [[DataModel alloc] init];
+            [model setValuesForKeysWithDictionary:dic];
+            [self.tableArray addObject:model];
+            
+        }
+        [self setupTableView];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"error = %@",error);
+    }];
+}
+
+
 -(NSInteger )tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 50;
+    NSLog(@"cell ========= %ld",self.tableArray.count);
+    return self.tableArray.count;
+    
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    ImportTableVIewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ImportTableVIewCell"forIndexPath:indexPath];
+    DataModel *model = self.tableArray[indexPath.row];
+     NSInteger type = model.type;
+
+    if (type == 1 || type == 22 || type == 5) {
+        TypeOneCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell1" forIndexPath:indexPath];
+        [cell setDataWithModel:model];
+        return cell;
+    }
+    if (type == 4) {
+        TypeFourCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell4" forIndexPath:indexPath];
+        [cell setDataWithModel:model];
+        return cell;
+    }
     
-    
+    TypeThreeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell3" forIndexPath:indexPath];
+    [cell setDataWithModel:model];
     return cell;
     
 }
@@ -78,45 +151,13 @@
         for (NSDictionary *dic in reqArray) {
             ImportModel *model = [[ImportModel alloc]init];
             [model setValuesForKeysWithDictionary:dic];
-            //            model.title = dic[@"title"];
-            //            model.picCover = dic[@"picCover"];
             [self.array addObject:model];
-         
         }
         [self setupCycleView];
-//        NSLog(@"_____打印请求成功的返回信息%@",responseObject);
-        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"Error=====%@",error);
     }];
     
-    
- /*
-    NSURLSession *session = [NSURLSession sharedSession];
-    NSURL *url = [NSURL URLWithString:ImportNews];
-    NSURLSessionTask *task = [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {;
-    
-            NSError *Reqerror;
-            NSDictionary *dataDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&Reqerror];
-            
-            NSArray *ReqArray = [[dataDic objectForKey:@"data" ]objectForKey:@"list"];
-            
-            NSArray *reqArray = [NSMutableArray arrayWithArray:ReqArray];
-            NSLog(@"dic = %@",reqArray);
-            for (NSDictionary *dic in reqArray) {
-                NSLog(@"+++++%@",dic);
-                ImportModel *model = [[ImportModel alloc]init];
-                
-                [model setValuesForKeysWithDictionary:dic];
-                //            model.title = dic[@"title"];
-                //            model.picCover = dic[@"picCover"];
-                [self.array addObject:model];
-            }
-            [self setupCycleView];
-            NSLog(@"----------self .array = %@",self.array);
-    }];
-     [ task resume];
-*/
 }
 #pragma mark - 轮播图
 - (void)setupCycleView{
@@ -158,8 +199,12 @@
     [self.navigationController pushViewController:[NSClassFromString(@"DemoVCWithXib") new] animated:YES];
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    return 120;
+    DataModel *model = self.tableArray[indexPath.row];
+    NSInteger type = model.type;
+    if (type == 4) {
+        return ScreenHeight/3;
+    }
+    return 80;
     
 }
 

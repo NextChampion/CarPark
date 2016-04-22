@@ -64,6 +64,12 @@
 		C2B6D6201CC7BE9900FF7F2B /* TalkCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B6D61F1CC7BE9900FF7F2B /* TalkCarViewController.m */; };
 		C2D557301CC85FBC00B2737C /* ImportTableVIewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D5572E1CC85FBC00B2737C /* ImportTableVIewCell.m */; };
 		C2D557311CC85FBC00B2737C /* ImportTableVIewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2D5572F1CC85FBC00B2737C /* ImportTableVIewCell.xib */; };
+		C2D557341CC8C3D100B2737C /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D557331CC8C3D100B2737C /* DataModel.m */; };
+		C2D557371CC8CC4700B2737C /* TypeOneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D557361CC8CC4700B2737C /* TypeOneCell.m */; };
+		C2D5573C1CC8CDB100B2737C /* TypeTwoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D5573B1CC8CDB100B2737C /* TypeTwoCell.m */; };
+		C2D557411CC8D88C00B2737C /* TypeThreeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D557401CC8D88C00B2737C /* TypeThreeCell.m */; };
+		C2D557441CC8D89800B2737C /* TypeFourCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D557431CC8D89800B2737C /* TypeFourCell.m */; };
+		C2D557461CC8EB7F00B2737C /* commenticon.png in Resources */ = {isa = PBXBuildFile; fileRef = C2D557451CC8EB7F00B2737C /* commenticon.png */; };
 		C2DE9A161CC1CE3400263791 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C2DE99E01CC1CE3300263791 /* .gitignore */; };
 		C2DE9A171CC1CE3400263791 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C2DE99E21CC1CE3300263791 /* .gitignore */; };
 		C2DE9A181CC1CE3400263791 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C2DE99E41CC1CE3300263791 /* .gitignore */; };
@@ -208,6 +214,17 @@
 		C2D5572D1CC85FBC00B2737C /* ImportTableVIewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImportTableVIewCell.h; sourceTree = "<group>"; };
 		C2D5572E1CC85FBC00B2737C /* ImportTableVIewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImportTableVIewCell.m; sourceTree = "<group>"; };
 		C2D5572F1CC85FBC00B2737C /* ImportTableVIewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImportTableVIewCell.xib; sourceTree = "<group>"; };
+		C2D557321CC8C3D100B2737C /* DataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
+		C2D557331CC8C3D100B2737C /* DataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
+		C2D557351CC8CC4700B2737C /* TypeOneCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypeOneCell.h; sourceTree = "<group>"; };
+		C2D557361CC8CC4700B2737C /* TypeOneCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypeOneCell.m; sourceTree = "<group>"; };
+		C2D5573A1CC8CDB100B2737C /* TypeTwoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypeTwoCell.h; sourceTree = "<group>"; };
+		C2D5573B1CC8CDB100B2737C /* TypeTwoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypeTwoCell.m; sourceTree = "<group>"; };
+		C2D5573F1CC8D88C00B2737C /* TypeThreeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypeThreeCell.h; sourceTree = "<group>"; };
+		C2D557401CC8D88C00B2737C /* TypeThreeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypeThreeCell.m; sourceTree = "<group>"; };
+		C2D557421CC8D89800B2737C /* TypeFourCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypeFourCell.h; sourceTree = "<group>"; };
+		C2D557431CC8D89800B2737C /* TypeFourCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypeFourCell.m; sourceTree = "<group>"; };
+		C2D557451CC8EB7F00B2737C /* commenticon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = commenticon.png; sourceTree = "<group>"; };
 		C2DE99E01CC1CE3300263791 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		C2DE99E21CC1CE3300263791 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		C2DE99E41CC1CE3300263791 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -410,6 +427,7 @@
 		C2269EEE1CBE78AC00A63BD4 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				C2D557451CC8EB7F00B2737C /* commenticon.png */,
 				C2DE9A361CC1D32700263791 /* NCAnimationImage */,
 				C2269EEF1CBE78C100A63BD4 /* nav_menu_icon@2x.png */,
 			);
@@ -446,6 +464,8 @@
 			children = (
 				C2269EFD1CBE7C8900A63BD4 /* BaseModel.h */,
 				C2269EFE1CBE7C8900A63BD4 /* BaseModel.m */,
+				C2D557321CC8C3D100B2737C /* DataModel.h */,
+				C2D557331CC8C3D100B2737C /* DataModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -459,6 +479,14 @@
 				C2269F031CBE7CC000A63BD4 /* BaseCollectionViewCell.h */,
 				C2269F041CBE7CC000A63BD4 /* BaseCollectionViewCell.m */,
 				C2DE9A721CC1DC1100263791 /* BaseCollectionViewCell.xib */,
+				C2D557351CC8CC4700B2737C /* TypeOneCell.h */,
+				C2D557361CC8CC4700B2737C /* TypeOneCell.m */,
+				C2D5573A1CC8CDB100B2737C /* TypeTwoCell.h */,
+				C2D5573B1CC8CDB100B2737C /* TypeTwoCell.m */,
+				C2D5573F1CC8D88C00B2737C /* TypeThreeCell.h */,
+				C2D557401CC8D88C00B2737C /* TypeThreeCell.m */,
+				C2D557421CC8D89800B2737C /* TypeFourCell.h */,
+				C2D557431CC8D89800B2737C /* TypeFourCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -979,6 +1007,7 @@
 				C242E5891CC7BBAE0097A119 /* icon_profile.png in Resources */,
 				C2269EF01CBE78C100A63BD4 /* nav_menu_icon@2x.png in Resources */,
 				C242E5111CC713A70097A119 /* PictureOneCell.xib in Resources */,
+				C2D557461CC8EB7F00B2737C /* commenticon.png in Resources */,
 				C242E52F1CC7376D0097A119 /* bg_addbutton_normal@2x.png in Resources */,
 				C2DE9A201CC1CE3400263791 /* .gitignore in Resources */,
 				C2DE9A521CC1D32700263791 /* icon-star@2x.png in Resources */,
@@ -1056,6 +1085,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C242E5801CC77BB70097A119 /* CollectionViewController.m in Sources */,
+				C2D557341CC8C3D100B2737C /* DataModel.m in Sources */,
 				C242E5861CC77BDF0097A119 /* RegisterViewController.m in Sources */,
 				C2B6D5CF1CC738EA00FF7F2B /* Foundation+Log.m in Sources */,
 				C2269ED21CBE613200A63BD4 /* ViewController.m in Sources */,
@@ -1065,7 +1095,9 @@
 				C2AD2C501CC4EF82004D5889 /* RecommandTableCell.m in Sources */,
 				C2048E8A1CC4901A00292A39 /* ImportNewsViewController.m in Sources */,
 				C2B6D6181CC7B99E00FF7F2B /* ImportDetailsViewController.m in Sources */,
+				C2D557441CC8D89800B2737C /* TypeFourCell.m in Sources */,
 				C2269EFC1CBE7C7400A63BD4 /* BaseViewController.m in Sources */,
+				C2D557411CC8D88C00B2737C /* TypeThreeCell.m in Sources */,
 				C2DE9A821CC1E6FD00263791 /* NewCarsViewController.m in Sources */,
 				C242E51C1CC715380097A119 /* TextCell.m in Sources */,
 				C2AD2C4D1CC4EF66004D5889 /* RecommandModel.m in Sources */,
@@ -1077,8 +1109,10 @@
 				C2269EEA1CBE76C700A63BD4 /* DrawerViewController.m in Sources */,
 				C242E5161CC715100097A119 /* TextViewController.m in Sources */,
 				C2D557301CC85FBC00B2737C /* ImportTableVIewCell.m in Sources */,
+				C2D557371CC8CC4700B2737C /* TypeOneCell.m in Sources */,
 				C242E5061CC713690097A119 /* PictureViewController.m in Sources */,
 				C2269EFF1CBE7C8900A63BD4 /* BaseModel.m in Sources */,
+				C2D5573C1CC8CDB100B2737C /* TypeTwoCell.m in Sources */,
 				C2DE9A351CC1D2E300263791 /* NCAnimationViewItem.m in Sources */,
 				C242E5031CC710300097A119 /* GuideViewController.m in Sources */,
 				C242E5831CC77BD10097A119 /* LoginViewController.m in Sources */,

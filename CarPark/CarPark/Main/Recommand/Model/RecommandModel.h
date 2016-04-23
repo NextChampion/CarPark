@@ -9,9 +9,5 @@
 #import "BaseModel.h"
 
 @interface RecommandModel : BaseModel
-@property(strong,nonatomic)NSString *title;
-@property(strong,nonatomic)NSString *picCover;
-@property(strong,nonatomic)NSString *src;
-@property(strong,nonatomic)NSNumber *commentCount;
-@property(strong,nonatomic)NSNumber *type;
+
 @end

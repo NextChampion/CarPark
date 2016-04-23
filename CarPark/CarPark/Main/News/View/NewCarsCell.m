@@ -8,7 +8,6 @@
 
 #import "NewCarsCell.h"
 #import "NewCarsModel.h"
-#import "UIImageView+WebCache.h"
 
 @implementation NewCarsCell
 
@@ -16,9 +15,6 @@
 - (void)setDataWithModel:(NewCarsModel *)model{
     self.titleLabel.text = model.title;
     self.commentLabel.text = [NSString stringWithFormat:@"%@",model.commentCount];
-    UIImage *placeImg = [UIImage imageNamed:@"downloads.png"];
-    [self.carImageView sd_setImageWithURL:[NSURL URLWithString:model.picCover] placeholderImage:placeImg];
-    NSLog(@"%@",model.picCover);
 }
 
 

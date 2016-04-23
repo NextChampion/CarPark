@@ -7,6 +7,7 @@
 //
 
 #import "BaseCollectionViewCell.h"
+
 @interface NewCarsCell : BaseCollectionViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *commentLabel;

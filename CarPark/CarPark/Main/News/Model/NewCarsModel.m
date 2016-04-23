@@ -7,9 +7,8 @@
 //
 
 #import "NewCarsModel.h"
+
 @implementation NewCarsModel
-
-
 
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key{
     

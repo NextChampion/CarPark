@@ -20,7 +20,7 @@
 - (UIView *)content{
     if (!_content) {
         _content = [[UIImageView alloc] initWithFrame:CGRectMake(12, 0, ScreenWidth, 80)];
-        _content.backgroundColor = [UIColor greenColor];
+        _content.backgroundColor = BackGroudColor;
         [self.contentView addSubview:_content];
         __weak typeof(self) weakSelf = self;
         [_content mas_makeConstraints:^(MASConstraintMaker *make) {

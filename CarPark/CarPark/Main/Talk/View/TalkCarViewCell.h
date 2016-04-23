@@ -9,6 +9,17 @@
 #import <UIKit/UIKit.h>
 #import "BaseCollectionViewCell.h"
 
-@interface TalkCarView : BaseCollectionViewCell
+@interface TalkCarViewCell : BaseCollectionViewCell
+
+@property (weak, nonatomic) IBOutlet UILabel *title;
+
+@property (weak, nonatomic) IBOutlet UIImageView *picCover;
+
+@property (weak, nonatomic) IBOutlet UILabel *mediaName;
+
+@property (weak, nonatomic) IBOutlet UILabel *commentCount;
+
+
+
 
 @end

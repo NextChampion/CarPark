@@ -18,7 +18,7 @@
 #import "PictureViewController.h"
 #import "TextViewController.h"
 #import "TalkCarViewController.h"
-
+#import "ImportDetailsViewController.h"
 
 #import "BaseViewController.h"
 
@@ -83,7 +83,7 @@
     CGFloat headerViewH = 100;
     CGRect headerFrame =  CGRectMake(headerViewX, headerViewY, headerViewW, headerViewH);
     self.headerView.frame = headerFrame;
-    self.headerView.backgroundColor = BackGroudColor;
+    self.headerView.backgroundColor = [UIColor grayColor];
     [self.view addSubview:self.headerView];
     
     // 2 中部的tableView
@@ -101,7 +101,7 @@
     CGFloat footerViewH = 80;
     CGRect footerFrame = CGRectMake(footerViewX, footerViewY, footerViewW, footerViewH);
     self.footerView.frame = footerFrame;
-    self.footerView.backgroundColor = BackGroudColor;
+    self.footerView.backgroundColor = [UIColor grayColor];
     [self.view addSubview:self.footerView];
 }
 

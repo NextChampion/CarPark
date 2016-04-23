@@ -38,9 +38,6 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-//    [[UINavigationBar appearance] setBackgroundColor:BackGroudColor];
-    [[UINavigationBar appearance] setTintColor:BackGroudColor];
-    
     return YES;
 }
 

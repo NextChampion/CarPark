@@ -32,7 +32,7 @@
     
     // 返回上一页按钮
     UIButton *back = [UIButton buttonWithType:UIButtonTypeSystem];
-    [back setTitleColor:BackGroudColor forState:UIControlStateNormal];
+    [back setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
     [back setTitle:@"返回" forState:UIControlStateNormal];
     [back addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:back];
@@ -113,23 +113,20 @@
     
     // logo
     UIImageView *logo = [[UIImageView alloc] init];
-//    logo.backgroundColor = BackGroudColor;
-    [logo sd_setImageWithURL:nil placeholderImage:[UIImage imageNamed:@"logo_word.png"]];
-    [logo setContentMode:UIViewContentModeScaleToFill];
+    logo.backgroundColor = [UIColor orangeColor];
     [self.view addSubview:logo];
     [logo mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(weakSelf.view.mas_centerX);
-        make.bottom.equalTo(line.mas_top).offset(-40);
+        make.bottom.equalTo(line.mas_top);
         make.width.equalTo(@(ScreenWidth / 2));
-        make.height.equalTo(@(ScreenHeight / 10));
+        make.height.equalTo(@(ScreenHeight / 5));
     }];
     
     
     // 登录按钮
     UIButton *loginButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [loginButton setTitle:@"登       陆" forState:UIControlStateNormal];
-    loginButton.backgroundColor = BackGroudColor;
-    [loginButton setTintColor:[UIColor whiteColor]];
+    [loginButton setTitle:@"登陆" forState:UIControlStateNormal];
+    loginButton.backgroundColor = [UIColor orangeColor];
     [loginButton addTarget:self action:@selector(loginAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:loginButton];
     [loginButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -142,7 +139,7 @@
     // 注册新用户按钮
     UIButton *button = [[UIButton alloc] init];
     [button setTitle:@"注册新用户" forState:UIControlStateNormal];
-    [button setTitleColor:BackGroudColor forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
     [button addTarget:self action:@selector(registerAction) forControlEvents:UIControlEventTouchUpInside];
     button.titleLabel.font = [UIFont systemFontOfSize:13];
     [self.view addSubview:button];

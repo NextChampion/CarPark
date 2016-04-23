@@ -17,12 +17,20 @@
 #define ScreenHeight [UIScreen mainScreen].bounds.size.height
 #define ScreenWidth  [UIScreen mainScreen].bounds.size.width
 
-#define BackGroudColor [UIColor colorWithRed:0/255.0 green:90/255.0 blue:150/255.0 alpha:0.8]
+//轮播图
+#define ImportNews @"http://api.ycapp.yiche.com/appnews/toutiaov64/?page=1&length=20&platform=2"
+//推荐
+#define Recommand @"http://extapi.ycapp.yiche.com/appnews/getrecommendnewslist?platform=2&deviceid=02CC5407498773A69077783C692C52CF&cacheTime=0&dvtype=1&nettype=1&ua=bitauto.application%20509%20rv%3A7.0%20%28iPhone%3B%20iPhone%20OS%207.0.3%3B%20zh_CN%29&osvs=7.0.3"
+//说车
+#define TalkCar @"http://api.ycapp.yiche.com/media/getnewslist?pageindex=1&pagesize=20"
+
+//加载 刷新
+#import "MJRefresh.h"
+#import "MBProgressHUD.h"
+#import "UIImageView+WebCache.h"
 #import "masonry.h"
 #import "AFNetworking.h"
 #import "SDCycleScrollView.h"
-#import "UIImageView+WebCache.h"
-#import "MJRefresh.h"
 
-#define ImportNews @"http://api.ycapp.yiche.com/appnews/toutiaov64/?page=1&length=20&platform=2"
+
 

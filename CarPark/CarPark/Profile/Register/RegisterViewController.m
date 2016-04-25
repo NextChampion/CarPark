@@ -30,7 +30,7 @@
     
     // 返回上一页按钮
     UIButton *back = [UIButton buttonWithType:UIButtonTypeSystem];
-    [back setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+    [back setTitleColor:BackGroudColor forState:UIControlStateNormal];
     [back setTitle:@"返回" forState:UIControlStateNormal];
     [back addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:back];
@@ -43,7 +43,7 @@
     // 用户名
     self.usernameTextField = [[UITextField alloc] init];
     self.usernameTextField.placeholder = @"请输入手机号";
-//    self.usernameTextField.borderStyle = UITextBorderStyleLine;
+    //    self.usernameTextField.borderStyle = UITextBorderStyleLine;
     self.usernameTextField.secureTextEntry = YES;
     self.usernameTextField.leftView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 20, self.usernameTextField.bounds.size.height)];
     self.usernameTextField.leftView.backgroundColor = [UIColor clearColor];
@@ -72,7 +72,7 @@
     // 密码
     self.passwordTextField = [[UITextField alloc] init];
     self.passwordTextField.placeholder = @"设置登录密码";
-//    self.passwordTextField.borderStyle = UITextBorderStyleLine;
+    //    self.passwordTextField.borderStyle = UITextBorderStyleLine;
     self.passwordTextField.clearButtonMode = UITextFieldViewModeAlways;
     self.passwordTextField.secureTextEntry = YES;
     self.passwordTextField.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 20, self.passwordTextField.bounds.size.height)];
@@ -101,7 +101,7 @@
     // 确认密码
     self.passwordTextField2 = [[UITextField alloc] init];
     self.passwordTextField2.placeholder = @"请再次输入密码";
-//    self.passwordTextField2.borderStyle = UITextBorderStyleLine;
+    //    self.passwordTextField2.borderStyle = UITextBorderStyleLine;
     self.passwordTextField2.clearButtonMode = UITextFieldViewModeAlways;
     self.passwordTextField2.secureTextEntry = YES;
     self.passwordTextField2.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 20, self.passwordTextField.bounds.size.height)];
@@ -140,20 +140,23 @@
     
     // logo
     UIImageView *logo = [[UIImageView alloc] init];
-    logo.backgroundColor = [UIColor orangeColor];
+    //    logo.backgroundColor = BackGroudColor;
+    [logo sd_setImageWithURL:nil placeholderImage:[UIImage imageNamed:@"logo_word.png"]];
+    [logo setContentMode:UIViewContentModeScaleToFill];
     [self.view addSubview:logo];
     [logo mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(weakSelf.view.mas_centerX);
-        make.bottom.equalTo(line.mas_top);
+        make.bottom.equalTo(line.mas_top).offset(-35);
         make.width.equalTo(@(ScreenWidth / 2));
-        make.height.equalTo(@(ScreenHeight / 5));
+        make.height.equalTo(@(ScreenHeight / 10));
     }];
     
     
     // 登录按钮
     UIButton *registerButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [registerButton setTitle:@"提交" forState:UIControlStateNormal];
-    registerButton.backgroundColor = [UIColor orangeColor];
+    [registerButton setTitle:@"提        交" forState:UIControlStateNormal];
+    [registerButton setTintColor:[UIColor whiteColor]];
+    registerButton.backgroundColor = BackGroudColor;
     [registerButton addTarget:self action:@selector(registerButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:registerButton];
     [registerButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -187,13 +190,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

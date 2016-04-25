@@ -17,6 +17,7 @@
 #define ScreenHeight [UIScreen mainScreen].bounds.size.height
 #define ScreenWidth  [UIScreen mainScreen].bounds.size.width
 
+#define BackGroudColor [UIColor colorWithRed:0/255.0 green:90/255.0 blue:150/255.0 alpha:0.8]
 //轮播图
 #define ImportNews @"http://api.ycapp.yiche.com/appnews/toutiaov64/?page=1&length=20&platform=2"
 //推荐

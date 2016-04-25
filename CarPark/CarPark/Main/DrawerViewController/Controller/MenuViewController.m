@@ -18,11 +18,7 @@
 #import "PictureViewController.h"
 #import "TextViewController.h"
 #import "TalkCarViewController.h"
-
 #import "VideoViewController.h"
-
-
-#import "ImportDetailsViewController.h"
 
 
 #import "BaseViewController.h"
@@ -88,7 +84,7 @@
     CGFloat headerViewH = 100;
     CGRect headerFrame =  CGRectMake(headerViewX, headerViewY, headerViewW, headerViewH);
     self.headerView.frame = headerFrame;
-    self.headerView.backgroundColor = [UIColor grayColor];
+    self.headerView.backgroundColor = BackGroudColor;
     [self.view addSubview:self.headerView];
     
     // 2 中部的tableView
@@ -106,7 +102,7 @@
     CGFloat footerViewH = 80;
     CGRect footerFrame = CGRectMake(footerViewX, footerViewY, footerViewW, footerViewH);
     self.footerView.frame = footerFrame;
-    self.footerView.backgroundColor = [UIColor grayColor];
+    self.footerView.backgroundColor = BackGroudColor;
     [self.view addSubview:self.footerView];
 }
 
@@ -138,7 +134,7 @@
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:viewController];
         [menuController setRootViewController:navController animated:YES];
     }else if (indexPath.row == 1){
-      TalkCarViewController  *controller = [[TalkCarViewController alloc] init];
+        TalkCarViewController  *controller = [[TalkCarViewController alloc] init];
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
         [menuController setRootViewController:navController animated:YES];
     }else if (indexPath.row == 2){
@@ -166,7 +162,7 @@
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
         [menuController setRootViewController:navController animated:YES];
     }
-
+    
 }
 
 
@@ -176,13 +172,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

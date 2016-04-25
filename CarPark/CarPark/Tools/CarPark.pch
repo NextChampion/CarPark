@@ -23,6 +23,11 @@
 #define Recommand @"http://extapi.ycapp.yiche.com/appnews/getrecommendnewslist?platform=2&deviceid=02CC5407498773A69077783C692C52CF&cacheTime=0&dvtype=1&nettype=1&ua=bitauto.application%20509%20rv%3A7.0%20%28iPhone%3B%20iPhone%20OS%207.0.3%3B%20zh_CN%29&osvs=7.0.3"
 //说车
 #define TalkCar @"http://api.ycapp.yiche.com/media/getnewslist?pageindex=1&pagesize=20"
+//说车轮播图(二手车)
+#define TalkCarScroll @"http://apps.api.che168.com/phone/v41/article/getarticlelist.ashx?_appid=2scapp.ios&_sign=5c3225106daba6c09b154aac665c3a36&appversion=5.2.0&channelid=App%20Store&charactersnum=40&classid=0&pageindex=1&pagesize=2&signal=0&udid=eAWFd87QAdAijiGbo%2B6F%2BNyOyILpdSEdrXDGCWPoVpirdYiPK%2BOH/GVjTRM1cRN4t%2BAyWF9JgUA71Wantj1odll8xGEoEywf"
+
+//说车内容二级界面
+#define TalkCarDetail @"http://api.ycapp.yiche.com/media/GetStructMedia?newsId=30840&ts=20160423091054&plat=2&theme=0&version=7.0"
 
 //加载 刷新
 #import "MJRefresh.h"
@@ -31,6 +36,5 @@
 #import "masonry.h"
 #import "AFNetworking.h"
 #import "SDCycleScrollView.h"
-
 
 

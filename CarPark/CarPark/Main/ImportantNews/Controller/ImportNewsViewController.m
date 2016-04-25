@@ -166,7 +166,6 @@
 }
 #pragma mark - 轮播图
 - (void)setupCycleView{
-
     NSMutableArray *ImageArray = [[NSMutableArray alloc]init];
     NSMutableArray *titleArray = [[NSMutableArray alloc]init]; 
     for (int i = 0; i < 3; i++) {

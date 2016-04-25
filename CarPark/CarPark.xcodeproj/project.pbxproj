@@ -19,6 +19,13 @@
 		C21DF7751CC9063400564F5E /* demo－4.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C21DF76F1CC9063400564F5E /* demo－4.tiff */; };
 		C21DF7761CC9063400564F5E /* demo－5.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C21DF7701CC9063400564F5E /* demo－5.tiff */; };
 		C21DF7771CC9063400564F5E /* demo－6.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C21DF7711CC9063400564F5E /* demo－6.tiff */; };
+		C22334F81CCB8CFA00C16277 /* TalkCarOneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C22334F71CCB8CFA00C16277 /* TalkCarOneCell.m */; settings = {ASSET_TAGS = (); }; };
+		C22334FB1CCB8D7900C16277 /* TalkCarTwoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C22334FA1CCB8D7900C16277 /* TalkCarTwoCell.m */; settings = {ASSET_TAGS = (); }; };
+		C22334FD1CCB8D8D00C16277 /* TalkCarOneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C22334FC1CCB8D8D00C16277 /* TalkCarOneCell.xib */; settings = {ASSET_TAGS = (); }; };
+		C22334FF1CCB8D9800C16277 /* TalkCarTwoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C22334FE1CCB8D9800C16277 /* TalkCarTwoCell.xib */; settings = {ASSET_TAGS = (); }; };
+		C22335021CCB94E400C16277 /* TalkCarDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C22335011CCB94E400C16277 /* TalkCarDetailModel.m */; settings = {ASSET_TAGS = (); }; };
+		C22335051CCB982800C16277 /* TalkCarThreeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C22335041CCB982800C16277 /* TalkCarThreeCell.m */; settings = {ASSET_TAGS = (); }; };
+		C22335071CCB983400C16277 /* TalkCarThreeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C22335061CCB983400C16277 /* TalkCarThreeCell.xib */; settings = {ASSET_TAGS = (); }; };
 		C2269ECC1CBE613200A63BD4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C2269ECB1CBE613200A63BD4 /* main.m */; };
 		C2269ECF1CBE613200A63BD4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2269ECE1CBE613200A63BD4 /* AppDelegate.m */; };
 		C2269ED21CBE613200A63BD4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2269ED11CBE613200A63BD4 /* ViewController.m */; };
@@ -57,6 +64,9 @@
 		C242E5861CC77BDF0097A119 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C242E5851CC77BDF0097A119 /* RegisterViewController.m */; };
 		C242E5891CC7BBAE0097A119 /* icon_profile.png in Resources */ = {isa = PBXBuildFile; fileRef = C242E5871CC7BBAE0097A119 /* icon_profile.png */; };
 		C242E58A1CC7BBAE0097A119 /* icon_profile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C242E5881CC7BBAE0097A119 /* icon_profile@2x.png */; };
+		C280F4771CCC9A540030F4A5 /* TalkCarScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C280F4761CCC9A540030F4A5 /* TalkCarScrollViewController.m */; settings = {ASSET_TAGS = (); }; };
+		C280F4791CCCD4850030F4A5 /* comment.png in Resources */ = {isa = PBXBuildFile; fileRef = C280F4781CCCD4850030F4A5 /* comment.png */; settings = {ASSET_TAGS = (); }; };
+		C280F47B1CCCD5B40030F4A5 /* 网易.png in Resources */ = {isa = PBXBuildFile; fileRef = C280F47A1CCCD5B40030F4A5 /* 网易.png */; settings = {ASSET_TAGS = (); }; };
 		C28EE9681CCA31E000C709B6 /* TalkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C28EE9671CCA31E000C709B6 /* TalkModel.m */; settings = {ASSET_TAGS = (); }; };
 		C28EE96C1CCA33C500C709B6 /* ImportDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C28EE96A1CCA33C500C709B6 /* ImportDetailsViewController.m */; settings = {ASSET_TAGS = (); }; };
 		C28EE9701CCA6C5A00C709B6 /* TalkCarDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C28EE96F1CCA6C5A00C709B6 /* TalkCarDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -147,6 +157,17 @@
 		C21DF76F1CC9063400564F5E /* demo－4.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "demo－4.tiff"; sourceTree = "<group>"; };
 		C21DF7701CC9063400564F5E /* demo－5.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "demo－5.tiff"; sourceTree = "<group>"; };
 		C21DF7711CC9063400564F5E /* demo－6.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "demo－6.tiff"; sourceTree = "<group>"; };
+		C22334F61CCB8CFA00C16277 /* TalkCarOneCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkCarOneCell.h; sourceTree = "<group>"; };
+		C22334F71CCB8CFA00C16277 /* TalkCarOneCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkCarOneCell.m; sourceTree = "<group>"; };
+		C22334F91CCB8D7900C16277 /* TalkCarTwoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkCarTwoCell.h; sourceTree = "<group>"; };
+		C22334FA1CCB8D7900C16277 /* TalkCarTwoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkCarTwoCell.m; sourceTree = "<group>"; };
+		C22334FC1CCB8D8D00C16277 /* TalkCarOneCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TalkCarOneCell.xib; sourceTree = "<group>"; };
+		C22334FE1CCB8D9800C16277 /* TalkCarTwoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TalkCarTwoCell.xib; sourceTree = "<group>"; };
+		C22335001CCB94E400C16277 /* TalkCarDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkCarDetailModel.h; sourceTree = "<group>"; };
+		C22335011CCB94E400C16277 /* TalkCarDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkCarDetailModel.m; sourceTree = "<group>"; };
+		C22335031CCB982800C16277 /* TalkCarThreeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TalkCarThreeCell.h; path = ../../Text/TalkCarThreeCell.h; sourceTree = "<group>"; };
+		C22335041CCB982800C16277 /* TalkCarThreeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TalkCarThreeCell.m; path = ../../Text/TalkCarThreeCell.m; sourceTree = "<group>"; };
+		C22335061CCB983400C16277 /* TalkCarThreeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TalkCarThreeCell.xib; path = ../../Text/TalkCarThreeCell.xib; sourceTree = "<group>"; };
 		C2269EC71CBE613200A63BD4 /* CarPark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarPark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2269ECB1CBE613200A63BD4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C2269ECD1CBE613200A63BD4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
@@ -209,6 +230,10 @@
 		C242E5851CC77BDF0097A119 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		C242E5871CC7BBAE0097A119 /* icon_profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_profile.png; sourceTree = "<group>"; };
 		C242E5881CC7BBAE0097A119 /* icon_profile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_profile@2x.png"; sourceTree = "<group>"; };
+		C280F4751CCC9A540030F4A5 /* TalkCarScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TalkCarScrollViewController.h; path = ../../ImportantNews/Controller/TalkCarScrollViewController.h; sourceTree = "<group>"; };
+		C280F4761CCC9A540030F4A5 /* TalkCarScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TalkCarScrollViewController.m; path = ../../ImportantNews/Controller/TalkCarScrollViewController.m; sourceTree = "<group>"; };
+		C280F4781CCCD4850030F4A5 /* comment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comment.png; sourceTree = "<group>"; };
+		C280F47A1CCCD5B40030F4A5 /* 网易.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "网易.png"; sourceTree = "<group>"; };
 		C28EE9661CCA31E000C709B6 /* TalkModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkModel.h; sourceTree = "<group>"; };
 		C28EE9671CCA31E000C709B6 /* TalkModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkModel.m; sourceTree = "<group>"; };
 		C28EE9691CCA33C500C709B6 /* ImportDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImportDetailsViewController.h; sourceTree = "<group>"; };
@@ -268,8 +293,8 @@
 		C2DE99FC1CC1CE3400263791 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		C2DE99FE1CC1CE3400263791 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		C2DE9A001CC1CE3400263791 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		C2DE9A031CC1CE3400263791 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		C2DE9A051CC1CE3400263791 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		C2DE9A031CC1CE3400263791 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = ../Controller/.gitignore; sourceTree = "<group>"; };
+		C2DE9A051CC1CE3400263791 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = ../Model/.gitignore; sourceTree = "<group>"; };
 		C2DE9A071CC1CE3400263791 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		C2DE9A0A1CC1CE3400263791 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		C2DE9A0C1CC1CE3400263791 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -625,11 +650,11 @@
 		C2DE99E61CC1CE3300263791 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				C28EE9691CCA33C500C709B6 /* ImportDetailsViewController.h */,
-				C28EE96A1CCA33C500C709B6 /* ImportDetailsViewController.m */,
-				C2DE99E71CC1CE3300263791 /* .gitignore */,
 				C2048E881CC4901A00292A39 /* ImportNewsViewController.h */,
 				C2048E891CC4901A00292A39 /* ImportNewsViewController.m */,
+				C2DE99E71CC1CE3300263791 /* .gitignore */,
+				C28EE9691CCA33C500C709B6 /* ImportDetailsViewController.h */,
+				C28EE96A1CCA33C500C709B6 /* ImportDetailsViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -801,9 +826,13 @@
 		C2DE9A021CC1CE3400263791 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				C2DE9A031CC1CE3400263791 /* .gitignore */,
+				C280F4781CCCD4850030F4A5 /* comment.png */,
+				C280F47A1CCCD5B40030F4A5 /* 网易.png */,
 				C2A366AB1CC65B3400657923 /* TalkCarViewController.h */,
 				C2B6D61F1CC7BE9900FF7F2B /* TalkCarViewController.m */,
+				C280F4751CCC9A540030F4A5 /* TalkCarScrollViewController.h */,
+				C280F4761CCC9A540030F4A5 /* TalkCarScrollViewController.m */,
+				C2DE9A051CC1CE3400263791 /* .gitignore */,
 				C28EE96E1CCA6C5A00C709B6 /* TalkCarDetailViewController.h */,
 				C28EE96F1CCA6C5A00C709B6 /* TalkCarDetailViewController.m */,
 			);
@@ -813,9 +842,11 @@
 		C2DE9A041CC1CE3400263791 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C2DE9A051CC1CE3400263791 /* .gitignore */,
+				C2DE9A031CC1CE3400263791 /* .gitignore */,
 				C28EE9661CCA31E000C709B6 /* TalkModel.h */,
 				C28EE9671CCA31E000C709B6 /* TalkModel.m */,
+				C22335001CCB94E400C16277 /* TalkCarDetailModel.h */,
+				C22335011CCB94E400C16277 /* TalkCarDetailModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -827,6 +858,15 @@
 				C2B6D5C91CC7280E00FF7F2B /* TalkCarViewCell.h */,
 				C2B6D5CA1CC7280E00FF7F2B /* TalkCarViewCell.m */,
 				C2B6D5CC1CC7281900FF7F2B /* TalkCarViewCell.xib */,
+				C22334F61CCB8CFA00C16277 /* TalkCarOneCell.h */,
+				C22334F71CCB8CFA00C16277 /* TalkCarOneCell.m */,
+				C22334FC1CCB8D8D00C16277 /* TalkCarOneCell.xib */,
+				C22334F91CCB8D7900C16277 /* TalkCarTwoCell.h */,
+				C22334FA1CCB8D7900C16277 /* TalkCarTwoCell.m */,
+				C22334FE1CCB8D9800C16277 /* TalkCarTwoCell.xib */,
+				C22335031CCB982800C16277 /* TalkCarThreeCell.h */,
+				C22335041CCB982800C16277 /* TalkCarThreeCell.m */,
+				C22335061CCB983400C16277 /* TalkCarThreeCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1068,14 +1108,18 @@
 				C2DE9A171CC1CE3400263791 /* .gitignore in Resources */,
 				C21DF7771CC9063400564F5E /* demo－6.tiff in Resources */,
 				C2DE9A1A1CC1CE3400263791 /* .gitignore in Resources */,
+				C22335071CCB983400C16277 /* TalkCarThreeCell.xib in Resources */,
 				C2DB14601CC86A8E0052BCB7 /* ImportDetailsCell.xib in Resources */,
+				C280F4791CCCD4850030F4A5 /* comment.png in Resources */,
 				C2DE9A4D1CC1D32700263791 /* icon-plus-highlighted.png in Resources */,
 				C2DE9A491CC1D32700263791 /* bg-menuitem-highlighted.png in Resources */,
+				C280F47B1CCCD5B40030F4A5 /* 网易.png in Resources */,
 				C2B6D6111CC77AB600FF7F2B /* 1.jpg in Resources */,
 				C2DE9A461CC1D32700263791 /* bg-addbutton-highlighted@2x.png in Resources */,
 				C2DE9A4E1CC1D32700263791 /* icon-plus-highlighted@2x.png in Resources */,
 				C2DE9A1E1CC1CE3400263791 /* .gitignore in Resources */,
 				C2AD2C441CC4E780004D5889 /* NewCarsCell.xib in Resources */,
+				C22334FD1CCB8D8D00C16277 /* TalkCarOneCell.xib in Resources */,
 				C242E5261CC72EBA0097A119 /* icon_plus_highlighted.png in Resources */,
 				C2DE9A231CC1CE3400263791 /* .gitignore in Resources */,
 				C242E5271CC72EBA0097A119 /* icon_plus_normal.png in Resources */,
@@ -1083,6 +1127,7 @@
 				C2DE9A2B1CC1CE3400263791 /* .gitignore in Resources */,
 				C242E52C1CC7376D0097A119 /* bg_addbutton_highlighted.png in Resources */,
 				C2269ED51CBE613200A63BD4 /* Main.storyboard in Resources */,
+				C22334FF1CCB8D9800C16277 /* TalkCarTwoCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1131,7 +1176,9 @@
 				30DFEEAB1CC8A8E100BCBF88 /* ToolData.m in Sources */,
 				C2AD2C4D1CC4EF66004D5889 /* RecommandModel.m in Sources */,
 				C2269F081CBE7CDB00A63BD4 /* BaseCollectionViewController.m in Sources */,
+				C280F4771CCC9A540030F4A5 /* TalkCarScrollViewController.m in Sources */,
 				C2AD2C471CC4EF26004D5889 /* BaseTableViewController.m in Sources */,
+				C22335021CCB94E400C16277 /* TalkCarDetailModel.m in Sources */,
 				C2DE9A341CC1D2E300263791 /* NCAnimationView.m in Sources */,
 				C2B6D5CB1CC7280E00FF7F2B /* TalkCarViewCell.m in Sources */,
 				C2B6D61C1CC7BAA800FF7F2B /* ImportDetailModel.m in Sources */,
@@ -1149,11 +1196,14 @@
 				C2269F021CBE7CA400A63BD4 /* BaseTableViewCell.m in Sources */,
 				C28EE9701CCA6C5A00C709B6 /* TalkCarDetailViewController.m in Sources */,
 				C2DE9A7C1CC1E01300263791 /* NewCarsCell.m in Sources */,
+				C22334FB1CCB8D7900C16277 /* TalkCarTwoCell.m in Sources */,
 				C2269ECF1CBE613200A63BD4 /* AppDelegate.m in Sources */,
 				C2DB145E1CC86A6A0052BCB7 /* ImportDetailsCell.m in Sources */,
 				C242E5211CC716F70097A119 /* GuideCell.m in Sources */,
 				C242E5191CC7151F0097A119 /* TextModel.m in Sources */,
+				C22335051CCB982800C16277 /* TalkCarThreeCell.m in Sources */,
 				C2269ECC1CBE613200A63BD4 /* main.m in Sources */,
+				C22334F81CCB8CFA00C16277 /* TalkCarOneCell.m in Sources */,
 				C2048E8D1CC4903B00292A39 /* ImportModel.m in Sources */,
 				C242E50C1CC7138E0097A119 /* PictureOneCell.m in Sources */,
 				30DFEEAE1CC8A96200BCBF88 /* NewsDataHandle.m in Sources */,

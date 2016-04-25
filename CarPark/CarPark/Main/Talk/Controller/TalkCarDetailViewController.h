@@ -10,4 +10,7 @@
 
 @interface TalkCarDetailViewController : BaseViewController
 
+@property(strong,nonatomic)NSString *newsId;
+@property(strong,nonatomic)NSString *lastModify;
+
 @end

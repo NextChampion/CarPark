@@ -11,9 +11,7 @@
 #import "NewCarsModel.h"
 
 @interface NewsDataHandle ()
-
 @property(nonatomic,assign)NSInteger index;
-
 @end
 
 @implementation NewsDataHandle
@@ -58,7 +56,7 @@
             NewCarsModel *model = [NewCarsModel new];
             [model setValuesForKeysWithDictionary:d];
             [self.newsArray addObject:model];
-            //    NSLog(@"%@",model);
+            NSLog(@"%@",model);
         }
         reloadDataBlock();
     }];

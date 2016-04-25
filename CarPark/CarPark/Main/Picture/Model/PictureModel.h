@@ -10,6 +10,7 @@
 
 @interface PictureModel : BaseModel
 
+#warning header
 @property (nonatomic, assign) NSInteger commentCount;
 @property (nonatomic, strong) NSString *dataVersion;
 @property (nonatomic, strong) NSString *filePath;
@@ -22,5 +23,11 @@
 @property (nonatomic, strong) NSString *src;
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, assign) NSInteger type;
+#warning 未知
+@property (assign, nonatomic) NSNumber *commentCount;
+@property (strong, nonatomic) NSString *src;
+@property (strong, nonatomic) NSString *title;
+@property (strong, nonatomic) NSNumber *type;
+#warning 未知 footer
 
 @end

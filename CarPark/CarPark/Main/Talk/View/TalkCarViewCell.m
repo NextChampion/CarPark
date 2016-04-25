@@ -8,6 +8,6 @@
 
 #import "TalkCarViewCell.h"
 
-@implementation TalkCarView
+@implementation TalkCarViewCell
 
 @end

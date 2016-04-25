@@ -16,11 +16,6 @@
 
 @implementation ImportTableVIewCell
 
-- (void)viewDidLoad {
-    
-    
-}
-
 
 
 @end

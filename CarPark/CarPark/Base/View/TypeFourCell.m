@@ -9,16 +9,11 @@
 #import "TypeFourCell.h"
 #import "DataModel.h"
 
-@interface TypeFourCell ()
-@end
-
-
 @implementation TypeFourCell
 
 - (UILabel *)srcLabel{
     if (!_srcLabel) {
         _srcLabel = [[UILabel alloc] init];
-        [_srcLabel setTextColor:[UIColor lightGrayColor]];
         _srcLabel.font = [UIFont systemFontOfSize:12];
         [self.contentView addSubview:_srcLabel];
         __weak typeof(self) weakSelf = self;
@@ -33,64 +28,69 @@
 
 - (UILabel *)playCountLabel{
     if (!_playCountLabel) {
-        _playCountLabel = [[UILabel alloc] init];
         _playCountLabel.font = [UIFont systemFontOfSize:12];
-        [_playCountLabel setTextColor:[UIColor lightGrayColor]];
+        _playCountLabel = [[UILabel alloc] init];
         [self.contentView addSubview:_playCountLabel];
         __weak typeof(self) weakSelf = self;
         [_playCountLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.equalTo(weakSelf.contentView.mas_right).offset(-8);
             make.bottom.equalTo(weakSelf.contentView.mas_bottom).offset(-8);
-            make.height.equalTo(@13);
+            make.width.equalTo(@60);
+            make.height.equalTo(@15);
         }];
-        
-        UIImageView *playView = [[UIImageView alloc] init];
-        [self.contentView addSubview:playView];
-        [playView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.right.equalTo(weakSelf.playCountLabel.mas_left);
-            make.bottom.equalTo(weakSelf.contentView.mas_bottom).offset(-8);
-            make.width.equalTo(@13);
-            make.height.equalTo(@13);
-        }];
-        [playView sd_setImageWithURL:nil placeholderImage:[UIImage imageNamed:@"icon_play_Label_left.png"]];
     }
     return _playCountLabel;
 }
 
-
+- (UIImageView *)playView{
+    if (!_playView) {
+        _playView = [[UIImageView alloc] init];
+        [self.contentView addSubview:_playView];
+        __weak typeof(self) weakSelf = self;
+        [_playView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(weakSelf.playCountLabel.mas_left);
+            make.bottom.equalTo(weakSelf.contentView.mas_bottom).offset(-8);
+            make.width.equalTo(@15);
+            make.height.equalTo(@15);
+        }];
+    }
+    return _playView;
+}
 
 - (UILabel *)commentLabel{
     if (!_commentLabel) {
         _commentLabel = [[UILabel alloc] init];
-        _commentLabel.font = [UIFont systemFontOfSize:12];
-        [_commentLabel setTextColor:[UIColor lightGrayColor]];
         [_commentLabel sizeToFit]; // 宽度自适应
         [self.contentView addSubview:_commentLabel];
         __weak typeof(self) weakSelf = self;
         [_commentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.right.equalTo(weakSelf.playCountLabel.mas_left).offset(-23);
+            make.right.equalTo(weakSelf.playView.mas_left);
             make.bottom.equalTo(weakSelf.contentView.mas_bottom).offset(-8);
+            make.width.equalTo(@60);
             make.height.equalTo(@15);
-        }];
-        
-        UIImageView *commentIcon = [[UIImageView alloc] init];
-        [commentIcon sd_setImageWithURL:nil placeholderImage:[UIImage imageNamed:@"commenticon.png"]];
-        [self.contentView addSubview:commentIcon];
-        [commentIcon mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.right.equalTo(weakSelf.commentLabel.mas_left).offset(-2);
-            make.bottom.equalTo(weakSelf.contentView.mas_bottom).offset(-8);
-            make.width.equalTo(@13);
-            make.height.equalTo(@13);
         }];
     }
     return _commentLabel;
 }
 
+- (UIImageView *)commentImage{
+    if (!_commentImage) {
+        _commentImage = [[UIImageView alloc] init];
+        [self.contentView addSubview:_commentImage];
+        __weak typeof(self) weakSelf = self;
+        [_commentImage mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(weakSelf.commentLabel.mas_left);
+            make.bottom.equalTo(weakSelf.contentView.mas_bottom).offset(-8);
+            make.width.equalTo(@15);
+            make.height.equalTo(@15);
+        }];
+    }
+    return _commentImage;
+}
 
 - (UIImageView *)picCoverImage{
     if (!_picCoverImage) {
         _picCoverImage = [[UIImageView alloc] init];
-        
         [self.contentView addSubview:_picCoverImage];
         __weak typeof(self) weakSelf = self;
         [_picCoverImage mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -99,60 +99,48 @@
             make.top.equalTo(weakSelf.contentView.mas_top).offset(8);
             make.bottom.equalTo(weakSelf.commentLabel.mas_top).offset(-8);
         }];
-        
-        UIView *blackView = [[UIView alloc] init];
-        blackView.backgroundColor = [UIColor blackColor];
-        blackView.alpha = 0.3;
-        [_picCoverImage addSubview:blackView];
-        [blackView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(weakSelf.contentView.mas_left);
-            make.right.equalTo(weakSelf.contentView.mas_right);
-            make.top.equalTo(weakSelf.contentView.mas_top).offset(8);
-            make.bottom.equalTo(weakSelf.commentLabel.mas_top).offset(-8);
-        }];
-        
-        UIImageView *buttonView = [[UIImageView alloc] init];
-        [self.picCoverImage addSubview:buttonView];
-        [buttonView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.center.mas_equalTo(weakSelf.picCoverImage.center);
-            make.width.equalTo(@60);
-            make.height.equalTo(@60);
-        }];
-        [buttonView sd_setImageWithURL:nil placeholderImage:[UIImage imageNamed:@"icon_play.png"]];
     }
     return _picCoverImage;
 }
 
-
-
-
 - (UILabel *)durationLabel{
     if (!_durationLabel) {
         _durationLabel = [[UILabel alloc] init];
-        _durationLabel.font = [UIFont systemFontOfSize:12];
-        [_durationLabel setTextColor:[UIColor whiteColor]];
         [self.contentView addSubview:_durationLabel];
         __weak typeof(self) weakSelf = self;
         [_durationLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.right.equalTo(weakSelf.picCoverImage.mas_right).offset(-8);
-            make.bottom.equalTo(weakSelf.picCoverImage.mas_bottom).offset(-5);
-            make.height.equalTo(@13);
+            make.right.equalTo(weakSelf.picCoverImage.mas_right);
+            make.bottom.equalTo(weakSelf.picCoverImage.mas_bottom);
+            make.width.equalTo(@60);
+            make.height.equalTo(@15);
         }];
     }
     return _durationLabel;
 }
 
+- (UIImageView *)playButtonView{
+    if (!_playButtonView) {
+        _playButtonView = [[UIImageView alloc] init];
+        [self.picCoverImage addSubview:_playButtonView];
+        __weak typeof(self) weakSelf = self;
+        [_playButtonView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.center.mas_equalTo(weakSelf.picCoverImage.center);
+            make.width.equalTo(@40);
+            make.height.equalTo(@40);
+        }];
+    }
+    return _playButtonView;
+}
 
 - (UILabel *)titleLabel{
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc] init];
-        [_titleLabel setTextColor:[UIColor whiteColor]];
         [self.picCoverImage addSubview:_titleLabel];
         __weak typeof(self) weakSelf = self;
         [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(weakSelf.picCoverImage.mas_left).offset(8);
+            make.left.equalTo(weakSelf.picCoverImage.mas_left);
             make.right.equalTo(weakSelf.picCoverImage.mas_right);
-            make.top.equalTo(weakSelf.picCoverImage.mas_top).offset(8);
+            make.top.equalTo(weakSelf.picCoverImage.mas_top);
             make.height.equalTo(@21);
         }];
     }
@@ -165,7 +153,7 @@
     [self.picCoverImage sd_setImageWithURL:[NSURL URLWithString:model.picCover]];
     self.durationLabel.text = model.duration;
     self.srcLabel.text = model.nickName;
-    self.playCountLabel.text = [NSString stringWithFormat:@"%.2f万",(float)model.totalvisit/10000];
+    self.playCountLabel.text = [NSString stringWithFormat:@"%ld万",model.totalvisit/10000];
 }
 
 @end

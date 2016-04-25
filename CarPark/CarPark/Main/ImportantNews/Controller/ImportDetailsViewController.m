@@ -51,7 +51,7 @@
         NSArray *array = dataDic[@"data"][@"content"];
         ImportantDetailheaderModel *headerModel = [[ImportantDetailheaderModel alloc] init];
         [headerModel setValuesForKeysWithDictionary:dataDic[@"data"]];
-        ImportantDetailHeaderView *view = [[ImportantDetailHeaderView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 90)];
+        ImportantDetailHeaderView *view = [[ImportantDetailHeaderView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 100)];
         [view setDataWithModel:headerModel];
         
         NSLog(@"responseObject = %@",array);

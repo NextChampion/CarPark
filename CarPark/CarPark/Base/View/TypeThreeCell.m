@@ -92,7 +92,6 @@
         [self.contentView addSubview:_srcLabel];
         __weak typeof (self) weakSelf = self;
         [_srcLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.width.equalTo(@(60));
             make.height.equalTo(@(15));
             make.bottom.equalTo(weakSelf.contentView.mas_bottom).offset(-8);
             make.left.equalTo(weakSelf.contentView.mas_left).offset(8);

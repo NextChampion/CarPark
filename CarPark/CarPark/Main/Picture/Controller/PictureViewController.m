@@ -7,31 +7,57 @@
 //
 
 #import "PictureViewController.h"
-#import "PictureOneCell.h"
-#import "PictureThreeCell.h"
+#import "PictureDisplayViewController.h"
+
+#import "PictureModel.h"
+#import "TypeTwoCell.h"
+#import "TypeThreeCell.h"
+
 
 @interface PictureViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) NSMutableArray *dataArray;
+@property (nonatomic, strong) NSMutableArray *tableArray;
 
 @end
 
 @implementation PictureViewController
 
-- (NSMutableArray *)dataArray{
-    if (!_dataArray) {
-        _dataArray = [[NSMutableArray alloc] init];
+- (NSMutableArray *)tableArray{
+    if (!_tableArray) {
+        _tableArray = [[NSMutableArray alloc] init];
     }
-    return _dataArray;
+    return _tableArray;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+//    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     // Do any additional setup after loading the view.
-    [self setupView];
-    [self.tableView registerNib:[UINib nibWithNibName:@"PictureOneCell" bundle:nil] forCellReuseIdentifier:@"oneCell"];
+    [self handleData];
 }
+
+- (void)handleData{
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    [manager GET:@"http://api.ycapp.yiche.com/AppNews/GetAppNewsAlbumList?page=1&length=20&platform=2" parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+        NSLog(@"%@",downloadProgress);
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"%@",responseObject);
+        NSDictionary *dataDic = responseObject;
+        NSArray *array = dataDic[@"data"];
+        for (NSDictionary *dic in array) {
+            PictureModel *model = [[PictureModel alloc] init];
+            [model setValuesForKeysWithDictionary:dic];
+            [self.tableArray addObject:model];
+        }
+        NSLog(@"%@",self.tableArray);
+        [self setupView];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"error = %@",error);
+    }];
+}
+
 
 -(void)setupView{
     CGFloat tableViewX = 0;
@@ -41,6 +67,8 @@
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(tableViewX, tableViewY, tableViewW, tableViewH) style:UITableViewStylePlain];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    [self.tableView registerClass:[TypeThreeCell class] forCellReuseIdentifier:@"picture3Cell"];
+    [self.tableView registerClass:[TypeTwoCell class] forCellReuseIdentifier:@"picture2Cell"];
     [self.view addSubview:self.tableView];
     
 }
@@ -51,7 +79,24 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    PictureOneCell *cell = [tableView dequeueReusableCellWithIdentifier:@"oneCell" forIndexPath:indexPath];
+    PictureModel *model = self.tableArray[indexPath.row];
+    
+    NSArray *array = [model.picCover componentsSeparatedByString:@";"];
+    if (array.count == 3) {
+        TypeThreeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"picture3Cell" forIndexPath:indexPath];
+        cell.titleLabel.text = model.title;
+        cell.srcLabel.text = model.src;
+        cell.commentLabel.text = [NSString stringWithFormat:@"%ld",model.commentCount];
+        [cell.picCoverImageLeft sd_setImageWithURL:[NSURL URLWithString:array[0]]];
+        [cell.picCoverImageMid sd_setImageWithURL:[NSURL URLWithString:array[1]]];
+        [cell.picCoverImageRight sd_setImageWithURL:[NSURL URLWithString:array[2]]];
+        return cell;
+    }
+    TypeTwoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"picture2Cell" forIndexPath:indexPath];
+    cell.titleLabel.text = model.title;
+    cell.srcLabel.text = model.src;
+    cell.commentLabel.text = [NSString stringWithFormat:@"%ld",model.commentCount];
+    [cell.picCoverImage sd_setImageWithURL:[NSURL URLWithString:model.picCover]];
     return cell;
 }
 
@@ -59,6 +104,14 @@
     return 150;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    PictureModel *model = self.tableArray[indexPath.row];
+    PictureDisplayViewController *pictureDisplayVC = [[PictureDisplayViewController alloc] init];
+    pictureDisplayVC.newsId = model.newsId;
+    pictureDisplayVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:pictureDisplayVC animated:YES completion:nil];
+//    [self.navigationController pushViewController:pictureDisplayVC animated:YES];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

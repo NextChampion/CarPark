@@ -40,6 +40,14 @@
 		C2269F051CBE7CC000A63BD4 /* BaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2269F041CBE7CC000A63BD4 /* BaseCollectionViewCell.m */; };
 		C2269F081CBE7CDB00A63BD4 /* BaseCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2269F071CBE7CDB00A63BD4 /* BaseCollectionViewController.m */; };
 		C2269F0B1CBE806F00A63BD4 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2269F0A1CBE806F00A63BD4 /* MenuViewController.m */; };
+		C22B17061CCB1BAC0051FC23 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C22B17051CCB1BAC0051FC23 /* VideoViewController.m */; };
+		C22B17091CCB1BBF0051FC23 /* VideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C22B17081CCB1BBF0051FC23 /* VideoModel.m */; };
+		C22B170C1CCB25170051FC23 /* VideoPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C22B170B1CCB25170051FC23 /* VideoPlayViewController.m */; };
+		C22B171C1CCB62C60051FC23 /* AutoView.m in Sources */ = {isa = PBXBuildFile; fileRef = C22B17191CCB62C60051FC23 /* AutoView.m */; };
+		C22B171D1CCB62C60051FC23 /* NSString+height.m in Sources */ = {isa = PBXBuildFile; fileRef = C22B171B1CCB62C60051FC23 /* NSString+height.m */; };
+		C22B17201CCB62F70051FC23 /* PictureDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C22B171F1CCB62F70051FC23 /* PictureDisplayViewController.m */; };
+		C22B17261CCB690B0051FC23 /* PictureDisplayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C22B17251CCB690B0051FC23 /* PictureDisplayModel.m */; };
+		C22B17291CCB785D0051FC23 /* backBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = C22B17281CCB785D0051FC23 /* backBtn.png */; };
 		C242E5031CC710300097A119 /* GuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C242E5021CC710300097A119 /* GuideViewController.m */; };
 		C242E5061CC713690097A119 /* PictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C242E5051CC713690097A119 /* PictureViewController.m */; };
 		C242E5091CC713780097A119 /* PictureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C242E5081CC713780097A119 /* PictureModel.m */; };
@@ -183,6 +191,21 @@
 		C2269F071CBE7CDB00A63BD4 /* BaseCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCollectionViewController.m; sourceTree = "<group>"; };
 		C2269F091CBE806F00A63BD4 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		C2269F0A1CBE806F00A63BD4 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		C22B17041CCB1BAC0051FC23 /* VideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
+		C22B17051CCB1BAC0051FC23 /* VideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
+		C22B17071CCB1BBF0051FC23 /* VideoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoModel.h; sourceTree = "<group>"; };
+		C22B17081CCB1BBF0051FC23 /* VideoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoModel.m; sourceTree = "<group>"; };
+		C22B170A1CCB25170051FC23 /* VideoPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlayViewController.h; sourceTree = "<group>"; };
+		C22B170B1CCB25170051FC23 /* VideoPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoPlayViewController.m; sourceTree = "<group>"; };
+		C22B17181CCB62C60051FC23 /* AutoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoView.h; sourceTree = "<group>"; };
+		C22B17191CCB62C60051FC23 /* AutoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoView.m; sourceTree = "<group>"; };
+		C22B171A1CCB62C60051FC23 /* NSString+height.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+height.h"; sourceTree = "<group>"; };
+		C22B171B1CCB62C60051FC23 /* NSString+height.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+height.m"; sourceTree = "<group>"; };
+		C22B171E1CCB62F70051FC23 /* PictureDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureDisplayViewController.h; sourceTree = "<group>"; };
+		C22B171F1CCB62F70051FC23 /* PictureDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureDisplayViewController.m; sourceTree = "<group>"; };
+		C22B17241CCB690B0051FC23 /* PictureDisplayModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureDisplayModel.h; sourceTree = "<group>"; };
+		C22B17251CCB690B0051FC23 /* PictureDisplayModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureDisplayModel.m; sourceTree = "<group>"; };
+		C22B17281CCB785D0051FC23 /* backBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backBtn.png; sourceTree = "<group>"; };
 		C242E5011CC710300097A119 /* GuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuideViewController.h; sourceTree = "<group>"; };
 		C242E5021CC710300097A119 /* GuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuideViewController.m; sourceTree = "<group>"; };
 		C242E5041CC713690097A119 /* PictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureViewController.h; sourceTree = "<group>"; };
@@ -455,6 +478,7 @@
 		C2269EEE1CBE78AC00A63BD4 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				C22B17271CCB785D0051FC23 /* Picture */,
 				C20EB4221CCA749F00707193 /* logo_word.png */,
 				C20EB41E1CCA6F1100707193 /* logo.png */,
 				C20EB4061CCA127100707193 /* backGroudImage.png */,
@@ -524,6 +548,25 @@
 				C2D557431CC8D89800B2737C /* TypeFourCell.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		C22B17171CCB62C60051FC23 /* CycleView */ = {
+			isa = PBXGroup;
+			children = (
+				C22B17181CCB62C60051FC23 /* AutoView.h */,
+				C22B17191CCB62C60051FC23 /* AutoView.m */,
+				C22B171A1CCB62C60051FC23 /* NSString+height.h */,
+				C22B171B1CCB62C60051FC23 /* NSString+height.m */,
+			);
+			path = CycleView;
+			sourceTree = "<group>";
+		};
+		C22B17271CCB785D0051FC23 /* Picture */ = {
+			isa = PBXGroup;
+			children = (
+				C22B17281CCB785D0051FC23 /* backBtn.png */,
+			);
+			path = Picture;
 			sourceTree = "<group>";
 		};
 		C242E56E1CC77B1A0097A119 /* Profile */ = {
@@ -715,6 +758,8 @@
 				C2DE99F51CC1CE3300263791 /* .gitignore */,
 				C242E5041CC713690097A119 /* PictureViewController.h */,
 				C242E5051CC713690097A119 /* PictureViewController.m */,
+				C22B171E1CCB62F70051FC23 /* PictureDisplayViewController.h */,
+				C22B171F1CCB62F70051FC23 /* PictureDisplayViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -725,6 +770,8 @@
 				C2DE99F71CC1CE3400263791 /* .gitignore */,
 				C242E5071CC713780097A119 /* PictureModel.h */,
 				C242E5081CC713780097A119 /* PictureModel.m */,
+				C22B17241CCB690B0051FC23 /* PictureDisplayModel.h */,
+				C22B17251CCB690B0051FC23 /* PictureDisplayModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -733,6 +780,7 @@
 			isa = PBXGroup;
 			children = (
 				C2DE99F91CC1CE3400263791 /* .gitignore */,
+				C22B17171CCB62C60051FC23 /* CycleView */,
 				C242E50A1CC7138E0097A119 /* PictureOneCell.h */,
 				C242E50B1CC7138E0097A119 /* PictureOneCell.m */,
 				C242E5101CC713A70097A119 /* PictureOneCell.xib */,
@@ -879,6 +927,10 @@
 			isa = PBXGroup;
 			children = (
 				C2DE9A111CC1CE3400263791 /* .gitignore */,
+				C22B17041CCB1BAC0051FC23 /* VideoViewController.h */,
+				C22B17051CCB1BAC0051FC23 /* VideoViewController.m */,
+				C22B170A1CCB25170051FC23 /* VideoPlayViewController.h */,
+				C22B170B1CCB25170051FC23 /* VideoPlayViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -887,6 +939,8 @@
 			isa = PBXGroup;
 			children = (
 				C2DE9A131CC1CE3400263791 /* .gitignore */,
+				C22B17071CCB1BBF0051FC23 /* VideoModel.h */,
+				C22B17081CCB1BBF0051FC23 /* VideoModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -957,6 +1011,7 @@
 				C2269EC31CBE613200A63BD4 /* Sources */,
 				C2269EC41CBE613200A63BD4 /* Frameworks */,
 				C2269EC51CBE613200A63BD4 /* Resources */,
+				156B713CB2441F83550321B3 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1067,6 +1122,7 @@
 				C2DE9A1E1CC1CE3400263791 /* .gitignore in Resources */,
 				C2AD2C441CC4E780004D5889 /* NewCarsCell.xib in Resources */,
 				C242E5261CC72EBA0097A119 /* icon_plus_highlighted.png in Resources */,
+				C22B17291CCB785D0051FC23 /* backBtn.png in Resources */,
 				C2DE9A231CC1CE3400263791 /* .gitignore in Resources */,
 				C242E5271CC72EBA0097A119 /* icon_plus_normal.png in Resources */,
 				C2DE9A2B1CC1CE3400263791 /* .gitignore in Resources */,
@@ -1077,6 +1133,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		156B713CB2441F83550321B3 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C2269EC31CBE613200A63BD4 /* Sources */ = {
@@ -1096,7 +1170,10 @@
 				C2B6D6181CC7B99E00FF7F2B /* ImportDetailsViewController.m in Sources */,
 				C2D557441CC8D89800B2737C /* TypeFourCell.m in Sources */,
 				C2269EFC1CBE7C7400A63BD4 /* BaseViewController.m in Sources */,
+				C22B171C1CCB62C60051FC23 /* AutoView.m in Sources */,
+				C22B171D1CCB62C60051FC23 /* NSString+height.m in Sources */,
 				C2D557411CC8D88C00B2737C /* TypeThreeCell.m in Sources */,
+				C22B17061CCB1BAC0051FC23 /* VideoViewController.m in Sources */,
 				C2DE9A821CC1E6FD00263791 /* NewCarsViewController.m in Sources */,
 				C242E51C1CC715380097A119 /* TextCell.m in Sources */,
 				30DFEEAB1CC8A8E100BCBF88 /* ToolData.m in Sources */,
@@ -1105,13 +1182,16 @@
 				C2AD2C471CC4EF26004D5889 /* BaseTableViewController.m in Sources */,
 				C20EB41A1CCA5F4F00707193 /* ImportantDetailHeaderView.m in Sources */,
 				C20EB4141CCA4B6500707193 /* ImportantDetailTypeOneCell.m in Sources */,
+				C22B17261CCB690B0051FC23 /* PictureDisplayModel.m in Sources */,
 				C2DE9A341CC1D2E300263791 /* NCAnimationView.m in Sources */,
+				C22B17201CCB62F70051FC23 /* PictureDisplayViewController.m in Sources */,
 				C2B6D5CB1CC7280E00FF7F2B /* TalkCarViewCell.m in Sources */,
 				C2B6D61C1CC7BAA800FF7F2B /* ImportDetailModel.m in Sources */,
 				C2269EEA1CBE76C700A63BD4 /* DrawerViewController.m in Sources */,
 				C242E5161CC715100097A119 /* TextViewController.m in Sources */,
 				C2D557301CC85FBC00B2737C /* ImportTableVIewCell.m in Sources */,
 				C2D557371CC8CC4700B2737C /* TypeOneCell.m in Sources */,
+				C22B170C1CCB25170051FC23 /* VideoPlayViewController.m in Sources */,
 				C242E5061CC713690097A119 /* PictureViewController.m in Sources */,
 				C2269EFF1CBE7C8900A63BD4 /* BaseModel.m in Sources */,
 				C2D5573C1CC8CDB100B2737C /* TypeTwoCell.m in Sources */,
@@ -1121,6 +1201,7 @@
 				C242E5831CC77BD10097A119 /* LoginViewController.m in Sources */,
 				C242E5091CC713780097A119 /* PictureModel.m in Sources */,
 				C2269F021CBE7CA400A63BD4 /* BaseTableViewCell.m in Sources */,
+				C22B17091CCB1BBF0051FC23 /* VideoModel.m in Sources */,
 				C20EB4171CCA4B7500707193 /* ImportantDetailTypeTwoCell.m in Sources */,
 				C2DE9A7C1CC1E01300263791 /* NewCarsCell.m in Sources */,
 				C2269ECF1CBE613200A63BD4 /* AppDelegate.m in Sources */,

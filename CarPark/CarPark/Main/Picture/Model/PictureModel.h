@@ -10,4 +10,17 @@
 
 @interface PictureModel : BaseModel
 
+@property (nonatomic, assign) NSInteger commentCount;
+@property (nonatomic, strong) NSString *dataVersion;
+@property (nonatomic, strong) NSString *filePath;
+@property (nonatomic, assign) NSInteger imageCount;
+@property (nonatomic, strong) NSString *itemType;
+@property (nonatomic, strong) NSString *lastModify;
+@property (nonatomic, assign) NSInteger newsId;
+@property (nonatomic, strong) NSString *picCover;
+@property (nonatomic, strong) NSString *publishTime;
+@property (nonatomic, strong) NSString *src;
+@property (nonatomic, strong) NSString *title;
+@property (nonatomic, assign) NSInteger type;
+
 @end

@@ -18,6 +18,7 @@
 #import "PictureViewController.h"
 #import "TextViewController.h"
 #import "TalkCarViewController.h"
+#import "VideoViewController.h"
 
 
 #import "BaseViewController.h"
@@ -141,7 +142,7 @@
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
         [menuController setRootViewController:navController animated:YES];
     }else if (indexPath.row == 3){
-        BaseViewController *controller = [[BaseViewController alloc] init];
+        VideoViewController *controller = [[VideoViewController alloc] init];
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
         [menuController setRootViewController:navController animated:YES];
     }else if (indexPath.row == 4){

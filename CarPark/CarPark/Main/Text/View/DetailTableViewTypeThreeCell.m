@@ -1,14 +1,14 @@
 //
-//  GuideCell.m
+//  DetailTableViewTypeThreeCell.m
 //  CarPark
 //
-//  Created by lanou3g on 16/4/20.
+//  Created by lanou3g on 16/4/27.
 //  Copyright © 2016年 com.lcarpark.zfw. All rights reserved.
 //
 
-#import "GuideCell.h"
+#import "DetailTableViewTypeThreeCell.h"
 
-@implementation GuideCell
+@implementation DetailTableViewTypeThreeCell
 
 /*
 // Only override drawRect: if you perform custom drawing.

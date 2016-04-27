@@ -1,14 +1,14 @@
 //
-//  RecommandTableCell.m
+//  DetailTableViewTypeOneCell.m
 //  CarPark
 //
-//  Created by lanou3g on 16/4/18.
+//  Created by lanou3g on 16/4/27.
 //  Copyright © 2016年 com.lcarpark.zfw. All rights reserved.
 //
 
-#import "RecommandTableCell.h"
+#import "DetailTableViewTypeOneCell.h"
 
-@implementation RecommandTableCell
+@implementation DetailTableViewTypeOneCell
 
 /*
 // Only override drawRect: if you perform custom drawing.

@@ -1,14 +1,14 @@
 //
-//  TextCell.m
+//  DetailTableViewTypeTwoCell.m
 //  CarPark
 //
-//  Created by lanou3g on 16/4/20.
+//  Created by lanou3g on 16/4/27.
 //  Copyright © 2016年 com.lcarpark.zfw. All rights reserved.
 //
 
-#import "TextCell.h"
+#import "DetailTableViewTypeTwoCell.h"
 
-@implementation TextCell
+@implementation DetailTableViewTypeTwoCell
 
 /*
 // Only override drawRect: if you perform custom drawing.

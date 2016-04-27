@@ -144,6 +144,7 @@
 		C2E6F74E1CD0FD36004D27E1 /* DetailTableViewTypeTwoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E6F7211CD0FD36004D27E1 /* DetailTableViewTypeTwoCell.m */; };
 		C2E6F7531CD0FD89004D27E1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E6F7501CD0FD89004D27E1 /* AppDelegate.m */; };
 		C2E6F7541CD0FD89004D27E1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E6F7521CD0FD89004D27E1 /* ViewController.m */; };
+		C2E6F7561CD111D5004D27E1 /* startBackgroud@4x_640*1136.PNG in Resources */ = {isa = PBXBuildFile; fileRef = C2E6F7551CD111D5004D27E1 /* startBackgroud@4x_640*1136.PNG */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -342,6 +343,7 @@
 		C2E6F7501CD0FD89004D27E1 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C2E6F7511CD0FD89004D27E1 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		C2E6F7521CD0FD89004D27E1 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C2E6F7551CD111D5004D27E1 /* startBackgroud@4x_640*1136.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "startBackgroud@4x_640*1136.PNG"; sourceTree = "<group>"; };
 		D22859644F039E2E1964D154 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -404,6 +406,7 @@
 				C2269EF11CBE796400A63BD4 /* Tools */,
 				C2269EEC1CBE78AC00A63BD4 /* Base */,
 				C2269EED1CBE78AC00A63BD4 /* Document */,
+				C2E6F7551CD111D5004D27E1 /* startBackgroud@4x_640*1136.PNG */,
 				C2269ED31CBE613200A63BD4 /* Main.storyboard */,
 				C2269ED61CBE613200A63BD4 /* Assets.xcassets */,
 				C2269ED81CBE613200A63BD4 /* LaunchScreen.storyboard */,
@@ -1031,6 +1034,7 @@
 				C2676D941CD04F6800430133 /* close@2x.png in Resources */,
 				C2E6F7321CD0FD36004D27E1 /* .gitignore in Resources */,
 				C25F46FF1CD0E43200D040B2 /* icon_play_Label_left.png in Resources */,
+				C2E6F7561CD111D5004D27E1 /* startBackgroud@4x_640*1136.PNG in Resources */,
 				C25F47201CD0E43200D040B2 /* icon_plus_highlighted.png in Resources */,
 				C2676D951CD04F6800430133 /* found_s@2x.png in Resources */,
 				C25F470F1CD0E43200D040B2 /* bg-addbutton.png in Resources */,
@@ -1292,6 +1296,7 @@
 			baseConfigurationReference = 97CF78AAFE90DC8CFE4CCA72 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/CarPark/Tools/CarPark.pch";
@@ -1309,6 +1314,7 @@
 			baseConfigurationReference = D22859644F039E2E1964D154 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/CarPark/Tools/CarPark.pch";

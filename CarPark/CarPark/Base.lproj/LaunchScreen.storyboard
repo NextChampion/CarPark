@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,44 +17,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="汽车公园" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9yq-Fi-C6Z">
-                                <rect key="frame" x="10" y="127" width="358" height="134"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="51"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <size key="shadowOffset" width="0.0" height="0.0"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="作者:张存夏   范开   吴朝圣" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hb7-8B-WTq">
-                                <rect key="frame" x="74" y="473" width="251" height="45"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="rWk-fJ-rrc"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="startBackgroud@4x_640*1136.PNG" translatesAutoresizingMaskIntoConstraints="NO" id="WpF-re-Ctt">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="Hb7-8B-WTq" secondAttribute="bottom" constant="149" id="712-F3-qW8"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="Hb7-8B-WTq" secondAttribute="bottom" constant="74" id="S8r-P2-l5z"/>
-                            <constraint firstItem="Hb7-8B-WTq" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="58" id="rie-JW-6ig"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Hb7-8B-WTq" secondAttribute="trailing" constant="34" id="yup-y7-PMx"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="WpF-re-Ctt" secondAttribute="bottom" id="9KQ-Rf-bdM"/>
+                            <constraint firstItem="WpF-re-Ctt" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Hvh-wX-kMK"/>
+                            <constraint firstItem="WpF-re-Ctt" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="Z1F-vg-903"/>
+                            <constraint firstAttribute="trailing" secondItem="WpF-re-Ctt" secondAttribute="trailing" id="oKZ-1D-o65"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="S8r-P2-l5z"/>
-                            </mask>
-                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52.5" y="374.5"/>
+            <point key="canvasLocation" x="469.5" y="369.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="startBackgroud@4x_640*1136.PNG" width="640" height="1136"/>
+    </resources>
 </document>

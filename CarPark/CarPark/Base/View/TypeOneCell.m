@@ -27,7 +27,7 @@
             make.top.equalTo(weakSelf.contentView.mas_top).offset(8);
             make.left.equalTo(weakSelf.contentView.mas_left).offset(8);
             make.bottom.equalTo(weakSelf.contentView.mas_bottom).offset(-8);
-            make.width.equalTo(@(weakSelf.contentView.bounds.size.width/3));
+            make.width.equalTo(@(ScreenWidth/3.5));
         }];
     }
     return _picCoverImage;

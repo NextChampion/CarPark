@@ -8,7 +8,6 @@
 
 #import "ImportNewsViewController.h"
 #import "SDCycleScrollView.h"
-#import "ImportTableVIewCell.h"
 #import "ImportModel.h"
 #import "AFNetworking.h"
 
@@ -21,8 +20,6 @@
 #import "TypeFiveCell.h"
 #import "MediaCell.h"
 
-
-#import "NewsDataHandle.h"
 #import "ImportDetailsViewController.h"
 
 #import "WMPlayer.h"

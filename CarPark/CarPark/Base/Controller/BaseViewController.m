@@ -115,7 +115,8 @@
     }
     if (index == 1) {
         CollectionViewController *collectionVC = [[CollectionViewController alloc] init];
-        [self.navigationController presentViewController:collectionVC animated:YES completion:nil];
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:collectionVC];
+        [self.navigationController presentViewController:nav animated:YES completion:nil];
     }
 }
 /*

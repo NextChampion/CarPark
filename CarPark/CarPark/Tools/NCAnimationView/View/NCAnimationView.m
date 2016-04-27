@@ -9,9 +9,9 @@
 #import "NCAnimationView.h"
 #import <QuartzCore/QuartzCore.h>
 
-#define NearRadios 55.0f // 动画执行过程中,弹动效果收缩的最小半径
-#define EndRadios 65.0f   // 动画结束以后 最终展开的效果
-#define FarRadios 75.0f // 动画执行时候,弹动效果的最远半径
+#define NearRadios 65.0f // 动画执行过程中,弹动效果收缩的最小半径
+#define EndRadios 75.0f   // 动画结束以后 最终展开的效果
+#define FarRadios 85.0f // 动画执行时候,弹动效果的最远半径
 #define StartPoint CGPointMake([UIScreen mainScreen].bounds.size.width - 50,[UIScreen mainScreen].bounds.size.height - 50) // 视图位置屏幕中的位置
 #define TimeOffSet 0.01f // 动画执行时间
 

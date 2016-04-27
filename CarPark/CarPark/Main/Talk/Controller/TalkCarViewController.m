@@ -7,12 +7,6 @@
 //
 
 #import "TalkCarViewController.h"
-//#import "TalkCarViewCell.h"
-//#import "TypeOneCell.h"
-//#import "TalkModel.h"
-//#import "TalkCarDetailViewController.h"
-//#import "TalkCarScrollViewController.h"
-
 #import "TypeOneCell.h"
 #import "DataModel.h"
 #import "TextDetailViewController.h"

@@ -9,7 +9,6 @@
 #import "VideoViewController.h"
 #import "TypeFourCell.h"
 #import "VideoModel.h"
-//#import "DataModel.h"
 #import "VideoPlayViewController.h"
 
 @interface VideoViewController ()<UITableViewDataSource,UITableViewDelegate>{

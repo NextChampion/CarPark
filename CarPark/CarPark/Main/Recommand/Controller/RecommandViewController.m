@@ -36,7 +36,6 @@ static NSString *const RecommandId = @"cell";
     [super viewDidLoad];
     count = 0;
     [self setupView];
-//    [self requestData];
     }
 
 -(void)viewWillAppear:(BOOL)animated{

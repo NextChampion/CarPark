@@ -9,7 +9,6 @@
 #import "MenuViewController.h"
 #import "AppDelegate.h"
 #import "DrawerViewController.h"
-#import "MenuTableViewController.h"
 
 #import "NewCarsViewController.h"
 #import "RecommandViewController.h"
@@ -104,11 +103,6 @@
     logoImage.contentMode = UIViewContentModeScaleAspectFit;
     logoImage.image = [UIImage imageNamed:@"logo_word.png"];
     __weak typeof(self) weakSelf = self;
-//    [logoImage mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.centerX.mas_equalTo(weakSelf.footerView.mas_centerX);
-//        make.centerY.mas_equalTo(weakSelf.footerView.mas_centerX).offset(10);
-//        make.size.mas_equalTo(CGSizeMake(kMenuDisplayedWidth, headerViewH));
-//    }];
     
     // 2 底部的view
     CGFloat footerViewX = 0;
@@ -132,8 +126,6 @@
     [self.view addSubview:self.tableView];
     
     // 个人中心按钮
-//    UIButton *mineButton = [UIButton buttonWithType:UIButtonTypeCustom];
-//    mineButton.frame = CGRectMake(5, 5, 130, 60);
     UIButton *mineButton = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 130, 60)];
     mineButton.backgroundColor = [UIColor clearColor];
     mineButton.showsTouchWhenHighlighted = YES;
@@ -177,7 +169,6 @@
     lineBelowMineButton.backgroundColor = [UIColor whiteColor];
     [self.footerView addSubview:lineBelowMineButton];
     [lineBelowMineButton mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.centerX.mas_equalTo(weakSelf.footerView.mas_left);
         make.left.equalTo(weakSelf.footerView.mas_left);
         make.right.equalTo(weakSelf.footerView.mas_right);
         make.bottom.mas_equalTo(weakSelf.footerView.mas_centerY).offset(20);

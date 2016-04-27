@@ -149,12 +149,8 @@
     self.srcLabel.text = model.src;
     self.commentLabel.text = [NSString stringWithFormat:@"%ld",model.commentCount];
     NSArray *pics = [model.picCover componentsSeparatedByString:@";"];
-    NSLog(@"%ld",pics.count);
     [self.picCoverImageLeft sd_setImageWithURL:[NSURL URLWithString:pics[0]]];
-    NSLog(@"%@",pics[0]);
     [self.picCoverImageMid sd_setImageWithURL:[NSURL URLWithString:pics[1]]];
-    NSLog(@"%@",pics[1]);
     [self.picCoverImageRight sd_setImageWithURL:[NSURL URLWithString:pics[2]]];
-    NSLog(@"%@",pics[2]);
 }
 @end

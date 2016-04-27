@@ -67,7 +67,6 @@ static NSString *const RecommandId = @"cell";
     }
     [footer setImages:arrayImg duration:2 forState:(MJRefreshStateRefreshing)];
     self.tableView.mj_footer = footer;
-
 }
 
 -(void)requestData{

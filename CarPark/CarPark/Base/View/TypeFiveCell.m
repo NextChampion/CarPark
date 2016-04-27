@@ -1,22 +1,15 @@
 //
-//  TypeOneVell.m
+//  TypeFiveCell.m
 //  CarPark
 //
-//  Created by lanou3g on 16/4/21.
+//  Created by lanou3g on 16/4/26.
 //  Copyright © 2016年 com.lcarpark.zfw. All rights reserved.
 //
 
-#import "TypeOneCell.h"
+#import "TypeFiveCell.h"
 #import "DataModel.h"
-#import "BaseModel.h"
 
-//@property (strong, nonatomic) UIImageView *picCoverImage;
-//@property (strong, nonatomic) UILabel *titleLabel;
-//@property (strong, nonatomic) UILabel *srcLabel;
-//@property (strong, nonatomic) UILabel *commentLabel;
-//@property (strong, nonatomic) UIImageView *commentImage;
-
-@implementation TypeOneCell
+@implementation TypeFiveCell
 
 - (UIImageView *)picCoverImage{
     if (!_picCoverImage) {
@@ -105,11 +98,13 @@
 
 - (void)setDataWithModel:(DataModel *)model{
     self.titleLabel.text = model.title;
-    self.commentLabel.text = [NSString stringWithFormat:@"%ld",model.commentCount];
+    self.commentLabel.text = @"专题";
+    [_commentLabel sizeToFit];
     self.srcLabel.text = model.src;
     [self.picCoverImage sd_setImageWithURL:[NSURL URLWithString:model.picCover] placeholderImage:nil];
-//    self.commentImage.image  = [UIImage imageNamed:@"commenticon.png"];
-    [self.commentImage sd_setImageWithURL:nil placeholderImage:[UIImage imageNamed:@"commenticon.png"]];
+    self.commentImage.image  = [UIImage imageNamed:@"topic.png"];
+//    [self.commentImage sd_setImageWithURL:nil placeholderImage:[UIImage imageNamed:@"commenticon.png"]];
 }
+
 
 @end

@@ -11,11 +11,13 @@
 #import "VideoModel.h"
 #import "VideoPlayViewController.h"
 
-@interface VideoViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface VideoViewController ()<UITableViewDataSource,UITableViewDelegate>{
+    int count;
+}
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *tableArray;
-
+@property (nonatomic, assign) NSInteger start;// MJ刷新  索引值
 @end
 
 @implementation VideoViewController
@@ -30,14 +32,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self setupView];
     [self handelData];
     // Do any additional setup after loading the view.
 }
 
 - (void)handelData{
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager GET:@"http://api.ycapp.yiche.com/video/getappvideolist?pageindex=1&pagesize=20&plat=2" parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    count++;
+    NSString *str = [NSString stringWithFormat:@"http://api.ycapp.yiche.com/video/getappvideolist?pageindex=%d&pagesize=20&plat=2",count];
+    [manager GET:str parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         NSLog(@"%@",downloadProgress);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"%@",responseObject);
@@ -49,7 +53,8 @@
             [self.tableArray addObject:model];
         }
         NSLog(@"%ld",self.tableArray.count);
-        [self setupView];
+        [self.tableView reloadData];
+        [self endRefresh];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"error = %@",error);
     }];
@@ -57,16 +62,34 @@
 
 - (void)setupView{
     CGFloat tableViewX = 0;
-    CGFloat tableViewY = 64;
+    CGFloat tableViewY = 0;
     CGFloat tableViewW = ScreenWidth;
-    CGFloat tableViewH = ScreenHeight - 64;
+    CGFloat tableViewH = ScreenHeight;
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(tableViewX, tableViewY, tableViewW, tableViewH) style:UITableViewStylePlain];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView registerClass:[TypeFourCell class] forCellReuseIdentifier:@"videoCell"];
     [self.view addSubview:self.tableView];
+    // 添加上拉刷新
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        _start = 0;
+        count = 0;
+        [self.tableArray removeAllObjects];
+        [self handelData];
+    }];
+    
+    // 添加下拉加载
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        _start += 5;
+        [self handelData];
+    }];
 }
 
+// 结束刷新
+- (void)endRefresh{
+    [self.tableView.mj_header endRefreshing];
+    [self.tableView.mj_footer endRefreshing];
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.tableArray.count;

@@ -19,10 +19,14 @@
 #import "TypeTwoCell.h"
 #import "TypeThreeCell.h"
 #import "TypeFourCell.h"
+#import "TypeFiveCell.h"
+
+#import "MediaCell.h" // 视频cell
 
 #import "NewsDataHandle.h"
-
 #import "ImportDetailsViewController.h"
+
+#import <MediaPlayer/MediaPlayer.h>
 
 
 @interface ImportNewsViewController ()<SDCycleScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>{
@@ -35,6 +39,13 @@
 @property (nonatomic, strong) NSMutableArray *tableArray;
 
 @property (nonatomic, assign) NSInteger start;// MJ 刷新数据的索引
+
+/** 视频播放控制器*/
+@property (nonatomic,strong) MPMoviePlayerController *moviePlayer; // 播放器
+/** 加载动画*/
+@property(nonatomic,strong) UIActivityIndicatorView *loadingAni; // 小菊花
+@property(nonatomic,strong)NSNotificationCenter *notificationCenter;// 通知中心
+@property(nonatomic,strong)UIImageView *backmovieplayer; // 预览图
 
 
 @end
@@ -66,12 +77,6 @@
     
 }
 
-//- (void)viewWillAppear:(BOOL)animated{
-//    [super viewWillAppear: animated];
-//    // 马上进入刷新状态
-//    [self.ImportTableView.mj_header beginRefreshing];
-//
-//}
 
 
 // 轮播图加载数据
@@ -149,6 +154,9 @@
         }
         return ScreenHeight/3.5;
     }
+    if (type == 2) {
+        return ScreenHeight/3;
+    }
     return 80;
 }
 
@@ -166,6 +174,7 @@
     [self.ImportTableView registerClass:[TypeThreeCell class] forCellReuseIdentifier:@"cell3"];
     [self.ImportTableView registerClass:[TypeTwoCell class] forCellReuseIdentifier:@"cell2"];
     [self.ImportTableView registerClass:[TypeOneCell class] forCellReuseIdentifier:@"cell1"];
+    [self.ImportTableView registerClass:[TypeFiveCell class] forCellReuseIdentifier:@"cell5"];
     
     self.ImportTableView.tableHeaderView = headerView;
     self.ImportTableView.delegate = self;
@@ -184,16 +193,14 @@
         _start += 5;
         [self requestData];
     }];
+    
 }
 
 // table请求数据
 - (void)requestData{
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     count++;
-    NSString *str = @"http://api.ycapp.yiche.com/appnews/toutiaov64/?page=1&length=20&platform=2";
     NSString *str1 = [NSString stringWithFormat:@"http://api.ycapp.yiche.com/appnews/toutiaov64/?page=%d&length=20&platform=2",count];
-    NSLog(@">>>>>>>>%@",str);
-    NSLog(@">>>>>>>>%@",str1);
     [manager GET:str1 parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
@@ -230,8 +237,42 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     DataModel *model = self.tableArray[indexPath.row];
     NSInteger type = model.type;
-    if (type == 1 || type == 22 || type == 5) {
+    // 此处因为接口问题,前期cell 创建有问题,实际类型名与type的值不匹配
+    // type== 1 返回typeOn
+    // type == 2 返回typeFour
+    // type == 4 返回typeFour
+    // type == 5 返回typeFive
+    if (type == 1 || type == 22) {
         TypeOneCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell1" forIndexPath:indexPath];
+        [cell setDataWithModel:model];
+        return cell;
+    }
+    if (type == 2) {
+//        TypeFourCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell4" forIndexPath:indexPath];
+//        [cell setDataWithModel:model];
+//        cell.btn.tag = indexPath.row;
+//        [cell.btn addTarget:self action:@selector(doput:) forControlEvents:UIControlEventTouchUpInside];
+//        return cell;
+        
+        MediaCell *cell=[tableView dequeueReusableCellWithIdentifier:@"cell"forIndexPath:indexPath];
+        // NSURL *imageUrl=[NSURL URLWithString:[[self.allDataArray objectAtIndex:indexPath.row] backImage]];
+        // [cell.btnimage sd_setImageWithURL:imageUrl];
+        [cell.btnimage setImage:[UIImage imageNamed:@"1"]];
+        cell.btn.tag=indexPath.row;
+        [cell.btn addTarget:self action:@selector(doput:) forControlEvents:UIControlEventTouchUpInside];
+        cell.Labeltitle.text=@"视频标题";
+        cell.playcountLabel.text=@"播放次数：4123";
+        if (cell.btnimage==nil)
+        {
+            [cell.myImageView removeFromSuperview];
+        }
+        cell.playtimeLabel.text=[NSString stringWithFormat:@"%02d:%02d",7,34];
+        
+        
+        return cell;
+    }
+    if (type == 5) {
+        TypeFiveCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell5" forIndexPath:indexPath];
         [cell setDataWithModel:model];
         return cell;
     }
@@ -246,6 +287,7 @@
         [cell setDataWithModel:model];
         return cell;
     }
+    
     TypeThreeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell2" forIndexPath:indexPath];
     [cell setDataWithModel:model];
     return cell;
@@ -254,10 +296,15 @@
 // tableView点击事件
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     DataModel *model = self.tableArray[indexPath.row];
+    if (model.type == 2) { // 如果是视频cell
+//        播放视频
+
+    }else{
     ImportDetailsViewController *importantDetailVC = [[ImportDetailsViewController alloc] init];
     importantDetailVC.newsId = model.newsId;
     importantDetailVC.lastModify = model.lastModify;
     [self.navigationController pushViewController:importantDetailVC animated:YES];
+    }
 }
 
 /*
@@ -267,6 +314,187 @@
  NSLog(@">>>>>> 滚动到第%ld张图", (long)index);
  }
  */
+
+
+#pragma mark - 控制播放器视频的相关方法
+// 视图出现的时候
+-(void)viewWillAppear:(BOOL)animated
+{
+    // 判断player的状态
+    
+    if (self.moviePlayer.playbackState==MPMoviePlaybackStatePlaying||self.moviePlayer.playbackState==MPMoviePlaybackStatePaused) {
+        [self.moviePlayer play];
+    }
+    else
+    {
+        //        如果没有状态 就调用布局table的方法
+        [self show];
+    }
+    
+    
+}
+-(void)viewWillDisappear:(BOOL)animated
+{
+    //    if ([self.moviePlayer isFullscreen])
+    //    {
+    //        [self.moviePlayer play];
+    //    }
+    //    else
+    //    {
+    //        [self.moviePlayer pause];
+    //        self.moviePlayer=nil;
+    //    }
+}
+
+- (BOOL)shouldAutorotate
+{
+    return YES;
+}
+/**
+ *  支持横竖屏显示
+ */
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskAll;
+}
+-(void)show
+{
+    [self setupTableView];
+    [self.ImportTableView registerClass:[MediaCell class] forCellReuseIdentifier:@"cell"];
+    self.loadingAni=[[UIActivityIndicatorView alloc]init];
+    self.loadingAni.activityIndicatorViewStyle=UIActivityIndicatorViewStyleWhiteLarge;
+    
+}
+
+
+
+// 停止展示的时候 将播放器置为空
+-(void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // 判断player的状态 是正在播放 还是暂停
+    if (self.moviePlayer.playbackState==MPMoviePlaybackStatePlaying||self.moviePlayer.playbackState==MPMoviePlaybackStatePaused)
+    {
+        // 移除两个视图
+        [self.backmovieplayer removeFromSuperview];
+        [self.moviePlayer.view removeFromSuperview];
+        self.moviePlayer=nil;
+        
+    }
+    
+    
+}
+
+// button按钮
+-(void)doput:(UIButton *)btn
+{
+    // 如果播放器是正在播放或者暂停播放
+    if (self.moviePlayer.playbackState==MPMoviePlaybackStatePlaying||self.moviePlayer.playbackState==MPMoviePlaybackStatePaused)
+    {
+        // 移除背景图  移除播放视图
+        [self.backmovieplayer removeFromSuperview];
+        [self.moviePlayer.view removeFromSuperview];
+    }
+    // 播放链接
+    NSString *urlStr= @"http://flv2.bn.netease.com/videolib3/1511/19/RiCBl0272/SD/RiCBl0272-mobile.mp4";//[[self.allDataArray objectAtIndex:btn.tag] mp4_url];
+    NSString* UrlStr=[urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSURL *url=[NSURL URLWithString:UrlStr];
+    if (!_moviePlayer) { // 如果播放器非空
+        // 创建播放器 设置播放连接url  自适应屏宽和屏高
+        _moviePlayer=[[MPMoviePlayerController alloc]initWithContentURL:url];
+        _moviePlayer.view.autoresizingMask=UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+    }
+    // 如果播放器正准备播放
+    if ([self.moviePlayer isPreparedToPlay]) {
+        [_moviePlayer setContentURL:url];
+        //        预览图移除
+        [self.backmovieplayer removeFromSuperview];
+    }
+    
+    self.moviePlayer.view.frame=CGRectMake(10,(btn.tag)*280+20,self.view.frame.size.width-20, 210);
+    self.loadingAni.frame=CGRectMake(self.moviePlayer.view.bounds.size.width/2-18.5,self.moviePlayer.view.bounds.size.height/2-18.5, 37, 37);
+    [self.ImportTableView addSubview:self.moviePlayer.view];
+    self.backmovieplayer=[[UIImageView alloc]initWithFrame:CGRectMake(0,0,self.view.frame.size.width-20, 210)];
+    // 设置预览图
+    self.backmovieplayer.image=[UIImage imageNamed:@"night_sidebar_cellhighlighted_bg@2x"];
+    // 将预览图添加到播放器上面
+    [self.moviePlayer.view addSubview:self.backmovieplayer];
+    // 预览图上添加小菊花
+    [self.backmovieplayer addSubview:self.loadingAni];
+    // 添加通知
+    [self addNotification];
+    // 小菊花执行动画
+    [self.loadingAni startAnimating];
+    // table重载数据
+    [self.ImportTableView reloadData];
+    
+}
+
+
+
+// 添加通知
+-(void)addNotification{
+    // 获取通知中心
+    self.notificationCenter=[NSNotificationCenter defaultCenter];
+    
+    // 通知中心添加观察者
+    [self.notificationCenter addObserver:self selector:@selector(mediaPlayerPlaybackStateChange:) name:MPMoviePlayerPlaybackStateDidChangeNotification object:self.moviePlayer];
+    // 如果播放器响应了该方法
+    if ([self.moviePlayer respondsToSelector:@selector(loadState)])
+    {
+        // 播放器准备播放
+        [self.moviePlayer prepareToPlay];
+    }
+    else
+    {
+        // 播放器播放
+        [self.moviePlayer play];
+    }
+    // 通知中心添加观察者  观察播放结束
+    [self.notificationCenter addObserver:self selector:@selector(mediaPlayerPlayFinished:) name:MPMoviePlayerPlaybackDidFinishNotification object:self.moviePlayer];
+}
+/**
+ *  播放状态改变，注意播放完成时的状态是暂停
+ *
+ *  @param notification 通知对象
+ */
+// 播放状态改变 采用通知通知其他对象
+-(void)mediaPlayerPlaybackStateChange:(NSNotification *)notification{
+    // 小菊花停止
+    [self.loadingAni stopAnimating];
+    // 预览图移除
+    [self.backmovieplayer removeFromSuperview];
+    // 如果播放器的加载状态位置
+    if ([self.moviePlayer loadState]!=MPMovieLoadStateUnknown)
+    {
+        //        判断状态
+        switch (self.moviePlayer.playbackState) {
+            case MPMoviePlaybackStatePlaying:
+                
+                //  NSLog(@"正在播放...");
+                break;
+            case MPMoviePlaybackStatePaused:
+                // NSLog(@"暂停播放.");
+                break;
+            case MPMoviePlaybackStateStopped:
+                // NSLog(@"停止播放.");
+                break;
+            default:
+                // NSLog(@"播放状态:%li",self.moviePlayer.playbackState);
+                break;
+        }
+    }
+}
+
+/**
+ *  播放完成
+ *
+ *  @param notification 通知对象
+ */
+// 播放完成 通知其他对象
+-(void)mediaPlayerPlayFinished:(NSNotification *)notification
+{
+    //NSLog(@"播放完成.%li",self.moviePlayer.playbackState);
+}
 
 
 - (void)didReceiveMemoryWarning {

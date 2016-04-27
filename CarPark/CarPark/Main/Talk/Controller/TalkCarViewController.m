@@ -56,11 +56,7 @@ static NSString *const collectionID = @"header";
    
 }
 
--(void)viewWillAppear:(BOOL)animated{
-    
-    
-    
-}
+
 
 #pragma mark - 创建collectionView
 -(void)setUpCollection{

@@ -72,6 +72,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     if ([self isKindOfClass:[LoginViewController class]] || [self isKindOfClass:[RegisterViewController class]] || [self isKindOfClass:[CollectionViewController class]]) {
         if (self.menu) {
             //            [self.menu removeFromSuperview];
@@ -93,8 +94,9 @@
 }
 // 控制器消失的时候 移除悬浮按钮
 - (void)viewWillDisappear:(BOOL)animated{
-    if (self.menu) {
-        [self.menu removeFromSuperview];
+    [super viewWillDisappear:animated];
+        if (self.menu) {
+            [self.menu removeFromSuperview];
     }
 }
 
@@ -110,6 +112,10 @@
     if (index == 0) {
         LoginViewController *login = [[LoginViewController alloc] init];
         [self.navigationController presentViewController:login animated:YES completion:nil];
+    }
+    if (index == 1) {
+        CollectionViewController *collectionVC = [[CollectionViewController alloc] init];
+        [self.navigationController presentViewController:collectionVC animated:YES completion:nil];
     }
 }
 /*

@@ -27,8 +27,11 @@
     UILabel *_rightImageLabel;
 }
 
-@property (nonatomic ,retain) UILabel *imageLabel; // 图片页数
-@property (nonatomic ,retain) UILabel *titleLabel; //标题
+//@property (nonatomic ,retain) UILabel *imageLabel; // 图片页数
+//@property (nonatomic ,retain) UILabel *titleLabel; //标题
+
+@property (nonatomic ,retain) UITextView *imageLabel; // 图片页数
+@property (nonatomic ,retain) UITextView *titleLabel; //标题
 
 @property (nonatomic, retain, readonly) UIImageView *leftImageView;
 @property (nonatomic, retain, readonly) UIImageView *centerImageView;
@@ -79,7 +82,7 @@
         [self addSubview:_imageScrollView];
         
         self.imageLabel = [self labelForFrame:CGRectMake(kAutoViewWidth - 50 , kAutoViewHeight - 130, 50, 21) font:12];
-        self.titleLabel = [self labelForFrame:CGRectMake(8, kAutoViewHeight - 130, kAutoViewWidth - 60, 21) font:12];
+        self.titleLabel = [self labelForFrame:CGRectMake(8, kAutoViewHeight - 130, kAutoViewWidth - 60, 50) font:12];
        
     }
     return self;
@@ -272,20 +275,41 @@
     }
 }
 
-#pragma mark --  设置相册浏览模式下 标题和页数Label
-- (UILabel *)labelForFrame:(CGRect)frame font:(CGFloat)font
+//#pragma mark --  设置相册浏览模式下 标题和页数Label
+//- (UILabel *)labelForFrame:(CGRect)frame font:(CGFloat)font
+//{
+//    UILabel *label = [[UILabel alloc] initWithFrame:frame];
+//    label.backgroundColor = [UIColor clearColor];
+//    
+////    [self addSubview:label];
+//    
+//    label.font = [UIFont systemFontOfSize:font];
+//    label.numberOfLines = 0;
+//    label.textColor = [UIColor whiteColor];
+//    
+//    return label;
+//}
+
+#pragma mark --  设置相册浏览模式下 标题(UITextView)和页数Label
+- (UITextView *)labelForFrame:(CGRect)frame font:(CGFloat)font
 {
-    UILabel *label = [[UILabel alloc] initWithFrame:frame];
+    CGRect frame1 = frame;
+    frame1.size.height = frame.size.height + 50;
+    frame = frame1;
+    UITextView *label = [[UITextView alloc] initWithFrame:frame];
+    label.editable = NO;
+    label.autoresizingMask = YES;
     label.backgroundColor = [UIColor clearColor];
     
     [self addSubview:label];
     
     label.font = [UIFont systemFontOfSize:font];
-    label.numberOfLines = 0;
+//    label.numberOfLines = 0;
     label.textColor = [UIColor whiteColor];
     
     return label;
 }
+
 
 #pragma mark --  图片页数 控制
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView

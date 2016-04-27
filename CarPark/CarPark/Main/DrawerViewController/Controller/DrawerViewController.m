@@ -13,7 +13,7 @@
 
 
 #define kMenuFullWidth [UIScreen mainScreen].bounds.size.width  //菜单的宽度  屏幕宽度
-#define kMenuDisplayedWidth ([UIScreen mainScreen].bounds.size.width - 80) // 200.0f  // 菜单显示的宽度
+// #define kMenuDisplayedWidth ([UIScreen mainScreen].bounds.size.width - 80) // 200.0f  // 菜单显示的宽度
 
 
 @interface DrawerViewController (){

@@ -14,11 +14,14 @@
 #import "TypeThreeCell.h"
 
 
-@interface PictureViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface PictureViewController ()<UITableViewDataSource,UITableViewDelegate>{
+    int count;
+}
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *tableArray;
 
+@property (nonatomic, assign) NSInteger start;// MJ 刷新数据的索引
 @end
 
 @implementation PictureViewController
@@ -31,16 +34,18 @@
 }
 
 - (void)viewDidLoad {
+    count = 0;
     [super viewDidLoad];
-    
-//    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
-    // Do any additional setup after loading the view.
+    [self setupView];
     [self handleData];
+    
 }
 
 - (void)handleData{
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager GET:@"http://api.ycapp.yiche.com/AppNews/GetAppNewsAlbumList?page=1&length=20&platform=2" parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    count++;
+    NSString *str = [NSString stringWithFormat:@"http://api.ycapp.yiche.com/AppNews/GetAppNewsAlbumList?page=%d&length=20&platform=2",count];
+    [manager GET:str parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         NSLog(@"%@",downloadProgress);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"%@",responseObject);
@@ -52,7 +57,8 @@
             [self.tableArray addObject:model];
         }
         NSLog(@"%@",self.tableArray);
-        [self setupView];
+        [self.tableView reloadData];
+        [self endRefresh];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"error = %@",error);
     }];
@@ -60,6 +66,7 @@
 
 
 -(void)setupView{
+    
     CGFloat tableViewX = 0;
     CGFloat tableViewY = 0;
     CGFloat tableViewW = ScreenWidth;
@@ -71,11 +78,29 @@
     [self.tableView registerClass:[TypeTwoCell class] forCellReuseIdentifier:@"picture2Cell"];
     [self.view addSubview:self.tableView];
     
+    // 添加上拉刷新
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        _start = 0;
+        count = 0;
+        [self.tableArray removeAllObjects];
+        [self handleData];
+    }];
+    
+    // 添加下拉加载
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        _start += 5;
+        [self handleData];
+    }];
 }
 
+// 停止刷新
+-(void)endRefresh{
+    [self.tableView.mj_header endRefreshing];
+    [self.tableView.mj_footer endRefreshing];
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 20;
+    return self.tableArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -101,7 +126,13 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 150;
+    PictureModel *model = self.tableArray[indexPath.row];
+    
+    NSArray *array = [model.picCover componentsSeparatedByString:@";"];
+    if (array.count == 3) {
+        return 150;
+    }
+    return ScreenHeight/3;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

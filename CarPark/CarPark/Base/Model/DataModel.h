@@ -30,6 +30,7 @@
 @property (nonatomic, strong) NSString *userId;
 @property (nonatomic, strong) NSString *videoId;
 @property (nonatomic, assign) NSInteger viewCount;
+@property (nonatomic, strong) NSString *mp4Link;
 
 
 @end

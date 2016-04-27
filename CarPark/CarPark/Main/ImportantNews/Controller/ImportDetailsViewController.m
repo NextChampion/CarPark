@@ -14,6 +14,7 @@
 #import "ImportantDetailHeaderView.h"
 
 
+
 @interface ImportDetailsViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic, strong) NSMutableArray *tableArray;
@@ -141,6 +142,9 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+
 
 /*
  #pragma mark - Navigation

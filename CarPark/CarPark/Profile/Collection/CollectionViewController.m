@@ -8,7 +8,10 @@
 
 #import "CollectionViewController.h"
 
-@interface CollectionViewController ()
+@interface CollectionViewController ()<UITableViewDataSource,UITableViewDelegate>
+
+@property (nonatomic, strong) NSMutableArray *tableArray;
+@property (nonatomic, strong) UITableView *tableView;
 
 @end
 
@@ -19,12 +22,21 @@
     // Do any additional setup after loading the view.
 }
 
-
 - (void)setupView{
-    
+    self.tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"collectionCell"];
+    [self.view addSubview:self.tableView];
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 10;
+}
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"collectionCell"];
+    cell.textLabel.text = self.tableArray[indexPath.row];
+    return cell;
+}
 
 
 - (void)didReceiveMemoryWarning {

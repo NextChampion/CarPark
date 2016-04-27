@@ -21,5 +21,5 @@
 @property (nonatomic, assign) NSInteger totalvisit;
 @property (nonatomic, assign) NSInteger type;
 @property (nonatomic, strong) NSString *videoid;
-
+@property (nonatomic, strong) NSDictionary *user;
 @end

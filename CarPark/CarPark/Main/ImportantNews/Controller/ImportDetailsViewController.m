@@ -41,7 +41,6 @@
 
 - (void)handleData{
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    NSString * str =  @"http://api.ycapp.yiche.com/appnews/GetStructNews?newsId=31801&ts=20160422164303&plat=2&theme=0&version=7.0";
     NSString *str1 = [NSString stringWithFormat:@"http://api.ycapp.yiche.com/appnews/GetStructNews?newsId=%@&ts=%@&plat=2&theme=0&version=7.0",self.newsId,self.lastModify];
     NSLog(@"%@",str1);
     [manager GET:str1 parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {

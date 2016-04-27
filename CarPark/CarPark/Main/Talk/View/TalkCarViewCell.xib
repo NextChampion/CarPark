@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -16,7 +17,6 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c6D-U9-M6U">
                         <rect key="frame" x="17" y="175" width="347" height="30"/>
-                        <animations/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="WNu-W1-9Hn"/>
@@ -28,7 +28,6 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gej-l0-RIO">
                         <rect key="frame" x="43" y="210" width="140" height="21"/>
-                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="140" id="Hq0-sn-iXq"/>
                             <constraint firstAttribute="height" constant="21" id="sDn-iF-isz"/>
@@ -39,7 +38,6 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k8H-ru-kdF">
                         <rect key="frame" x="268" y="210" width="58" height="20"/>
-                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="6Ns-Xf-Zf7"/>
                             <constraint firstAttribute="width" constant="58" id="tJO-rk-QLH"/>
@@ -50,7 +48,6 @@
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="comment.png" translatesAutoresizingMaskIntoConstraints="NO" id="NIE-vg-dvm">
                         <rect key="frame" x="291" y="211" width="23" height="20"/>
-                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="23" id="aFV-Eo-dV8"/>
                             <constraint firstAttribute="height" constant="20" id="c2W-zm-QOR"/>
@@ -58,7 +55,6 @@
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="网易.png" translatesAutoresizingMaskIntoConstraints="NO" id="fld-g3-ZYr">
                         <rect key="frame" x="19" y="213" width="20" height="15"/>
-                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="15" id="bCB-1H-TUo"/>
                             <constraint firstAttribute="width" constant="20" id="kit-v1-7af"/>
@@ -66,7 +62,6 @@
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fmc-7D-fXq">
                         <rect key="frame" x="8" y="8" width="353" height="160"/>
-                        <animations/>
                         <color key="backgroundColor" red="0.1830721058" green="0.1731684855" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="353" id="OYG-YK-byS"/>
@@ -74,10 +69,8 @@
                         </constraints>
                     </imageView>
                 </subviews>
-                <animations/>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
-            <animations/>
             <constraints>
                 <constraint firstItem="NIE-vg-dvm" firstAttribute="top" secondItem="c6D-U9-M6U" secondAttribute="bottom" constant="6" id="5AJ-6g-u31"/>
                 <constraint firstItem="gej-l0-RIO" firstAttribute="leading" secondItem="4SN-R1-wBn" secondAttribute="leading" constant="43" id="7pc-r9-ebP"/>

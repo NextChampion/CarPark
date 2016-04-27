@@ -7,14 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class DataModel;
 @interface MediaCell : UITableViewCell
-@property(nonatomic,strong)UIButton *btn;
-@property(nonatomic,strong)UIImageView *myImageView;
-@property(nonatomic,strong)UILabel *Labeltitle;
-@property(nonatomic,strong)UIImageView *btnimage;
-@property(nonatomic,strong)UILabel *playcountLabel;
-@property(nonatomic,strong)UIImageView *playcountImage;
-@property(nonatomic,strong)UILabel *playtimeLabel;
-@property(nonatomic,strong)UIImageView *playtimeImage;
+@property (strong, nonatomic) UIImageView *picCoverImage; // 大图
+@property (nonatomic, strong) UIButton *playButton; // 中间的大播放按钮
+@property (strong, nonatomic) UILabel *titleLabel; // 标题
+@property (strong, nonatomic) UILabel *srcLabel; // 来源
+@property (strong, nonatomic) UILabel *commentLabel; // 点评数量
+@property (strong, nonatomic) UIImageView *commentImage; // 点评图片
+@property (nonatomic, strong) UIImageView *playView; // 播放的小视图
+@property (nonatomic, strong) UILabel *playCountLabel; // 播放次数
+@property (nonatomic, strong) UILabel *durationLabel; // 视频持续时间
+
+//@property (nonatomic, strong) UIButton *btn;// 控制播放
+
+- (void)setDataWithModel:(DataModel *)model;
 @end

@@ -7,12 +7,13 @@
 //
 
 #import "RecommandViewController.h"
-#import "RecommandTableCell.h"
-#import "RecommandModel.h"
-#import "UIImageView+WebCache.h"
-#import "MJRefresh.h"
+#import "TypeOneCell.h"
+#import "TextDetailViewController.h"
+#import "DataModel.h"
 
-@interface RecommandViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface RecommandViewController ()<UITableViewDelegate,UITableViewDataSource>{
+    int count;
+}
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *dataArray;
 /** 数据页数,表示下次请求第几页的数据*/
@@ -33,7 +34,7 @@ static NSString *const RecommandId = @"cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
+    count = 0;
     [self setupView];
 //    [self requestData];
     }
@@ -54,7 +55,8 @@ static NSString *const RecommandId = @"cell";
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(tableViewX, tableViewY, tableViewW, tableViewH) style:UITableViewStylePlain];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    [self.tableView registerNib:[UINib nibWithNibName:@"RecommandTableCell" bundle:nil] forCellReuseIdentifier:RecommandId];
+//    [self.tableView registerNib:[UINib nibWithNibName:@"RecommandTableCell" bundle:nil] forCellReuseIdentifier:RecommandId];
+    [self.tableView registerClass:[TypeOneCell class] forCellReuseIdentifier:RecommandId];
    [self.view addSubview:self.tableView];
     
 //添加上拉刷新的header
@@ -71,18 +73,17 @@ static NSString *const RecommandId = @"cell";
 
 -(void)requestData{
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager GET:Recommand parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    count++;
+    NSString *str = [NSString stringWithFormat:@"http://api.ycapp.yiche.com/news/GetNewsList?categoryid=3&serialid=&pageindex=%d&pagesize=20&appver=7.0",count];
+    [manager GET:str parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [self endRefresh];
         if (1 == self.page) {//说明在重新请求数据
         self.dataArray = nil;
 }
         NSArray *ReqArray = [[responseObject objectForKey:@"data"]objectForKey:@"list"];
         for (NSDictionary *dic in ReqArray) {
-            RecommandModel *model = [[RecommandModel alloc]init];
-            model.title = dic[@"title"];
-            model.picCover = dic[@"picCover"];
-            model.src = dic[@"src"];
-            model.commentCount = dic[@"commentCount"];
+            DataModel *model = [[DataModel alloc]init];
+            [model setValuesForKeysWithDictionary:dic];
             [self.dataArray addObject:model];
         }
         [self updataView];
@@ -99,7 +100,6 @@ static NSString *const RecommandId = @"cell";
 
 #pragma mark - 更新视图
 -(void)updataView{
-    
     [self.tableView reloadData];
 }
 
@@ -115,21 +115,26 @@ static NSString *const RecommandId = @"cell";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    RecommandTableCell *cell = [tableView dequeueReusableCellWithIdentifier:RecommandId forIndexPath:indexPath];
-    RecommandModel *model = self.dataArray[indexPath.row];
-    cell.scrLabel.text = model.src;
-    cell.commentLabel.text = [NSString stringWithFormat:@"%@",model.commentCount];
-    cell.titleLabel.text = model.title;
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    [cell.iconImage sd_setImageWithURL:[NSURL URLWithString:model.picCover]];
+    TypeOneCell *cell = [tableView dequeueReusableCellWithIdentifier:RecommandId forIndexPath:indexPath];
+    DataModel *model = self.dataArray[indexPath.row];
+    [cell setDataWithModel:model];
 
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 160;
+    return 80;
 }
 
+// tableView点击事件
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    DataModel *model = self.dataArray[indexPath.row];
+    TextDetailViewController *DetailVC = [[TextDetailViewController alloc] init];
+    NSString *requestStr = [NSString stringWithFormat:@"http://api.ycapp.yiche.com/news/GetStructYCNews?newsId=%@&ts=%@&plat=2&theme=0&version=7.0",model.newsId,model.lastModify];
+    DetailVC.requestStr = requestStr;
+    [self.navigationController pushViewController:DetailVC animated:YES];
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

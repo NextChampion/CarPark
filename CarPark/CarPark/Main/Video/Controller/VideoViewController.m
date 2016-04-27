@@ -9,6 +9,7 @@
 #import "VideoViewController.h"
 #import "TypeFourCell.h"
 #import "VideoModel.h"
+//#import "DataModel.h"
 #import "VideoPlayViewController.h"
 
 @interface VideoViewController ()<UITableViewDataSource,UITableViewDelegate>{
@@ -98,12 +99,23 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     TypeFourCell *cell = [tableView dequeueReusableCellWithIdentifier:@"videoCell" forIndexPath:indexPath];
     VideoModel *model = self.tableArray[indexPath.row];
-    cell.titleLabel.text = model.title;
-    cell.srcLabel.text = model.sourcename;
-    cell.durationLabel.text = model.duration;
-    cell.commentLabel.text = [NSString stringWithFormat:@"%ld",model.commentcount];
-    cell.playCountLabel.text = [NSString stringWithFormat:@"%.2f万",(float)model.totalvisit/10000];
-    [cell.picCoverImage sd_setImageWithURL:[NSURL URLWithString:model.coverimg]];
+    if (model.type == 2) {
+        
+        cell.titleLabel.text = model.title;
+        cell.commentLabel.text = [NSString stringWithFormat:@"%ld",model.commentcount];
+        [cell.picCoverImage sd_setImageWithURL:[NSURL URLWithString:model.coverimg]];
+        cell.durationLabel.text = model.duration;
+        cell.srcLabel.text = model.sourcename;
+        cell.playCountLabel.text = [NSString stringWithFormat:@"%.2f万",(float)model.totalvisit/10000];
+    }else{
+        NSDictionary *dic = model.user;
+        cell.titleLabel.text = [dic objectForKey:@"nickName"];
+        cell.commentLabel.text = [NSString stringWithFormat:@"%ld",model.commentcount];
+        [cell.picCoverImage sd_setImageWithURL:[NSURL URLWithString:model.coverimg]];
+        cell.durationLabel.text = model.duration;
+        cell.srcLabel.text = model.sourcename;
+        cell.playCountLabel.text = [NSString stringWithFormat:@"%.2f万",(float)model.totalvisit/10000];
+    }
     return cell;
 }
 

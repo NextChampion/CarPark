@@ -8,6 +8,12 @@
 
 #import "BaseTableViewCell.h"
 
+@class DetailModel;
+
 @interface DetailTableViewTypeOneCell : BaseTableViewCell
+
+@property (nonatomic, strong) UILabel *content;
+
+- (void)setDataWithModel:(DetailModel *)model;
 
 @end

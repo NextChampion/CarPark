@@ -107,7 +107,8 @@
     self.titleLabel.text = model.title;
     self.commentLabel.text = [NSString stringWithFormat:@"%ld",model.commentCount];
     self.srcLabel.text = model.src;
-    [self.picCoverImage sd_setImageWithURL:[NSURL URLWithString:model.picCover] placeholderImage:nil];
+    [self.picCoverImage sd_setImageWithURL:[NSURL URLWithString:model.picCover] placeholderImage:[UIImage imageNamed:@"placeholder_image.png"]];
+//    [self.picCoverImage sd_setImageWithURL:nil placeholderImage:[UIImage imageNamed:@"placeholder_word.png"]];
 //    self.commentImage.image  = [UIImage imageNamed:@"commenticon.png"];
     [self.commentImage sd_setImageWithURL:nil placeholderImage:[UIImage imageNamed:@"commenticon.png"]];
 }

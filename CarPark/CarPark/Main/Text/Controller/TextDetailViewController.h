@@ -8,6 +8,6 @@
 
 #import "BaseViewController.h"
 
-@interface DetailViewController : BaseViewController
+@interface TextDetailViewController : BaseViewController
 @property (nonatomic, strong) NSString *requestStr;
 @end

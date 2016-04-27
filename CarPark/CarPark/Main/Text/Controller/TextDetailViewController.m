@@ -6,26 +6,35 @@
 //  Copyright © 2016年 com.lcarpark.zfw. All rights reserved.
 //
 
-#import "DetailViewController.h"
+#import "TextDetailViewController.h"
 #import "DetailTableViewTypeOneCell.h"
 #import "DetailTableViewTypeTwoCell.h"
 #import "DetailTableViewTypeThreeCell.h"
 #import "DetailModel.h"
+#import "DetailHeaderModel.h"
 
-@interface DetailViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface TextDetailViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic, strong) NSMutableArray *tableArray;
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) NSMutableArray *headerArray;
 
 @end
 
-@implementation DetailViewController
+@implementation TextDetailViewController
 
 - (NSMutableArray *)tableArray{
     if (!_tableArray) {
         _tableArray = [[NSMutableArray alloc] init];
     }
     return _tableArray;
+}
+
+- (NSMutableArray *)headerArray{
+    if (!_headerArray) {
+        _headerArray = [[NSMutableArray alloc] init];
+    }
+    return _headerArray;
 }
 
 - (void)viewDidLoad {
@@ -38,21 +47,18 @@
 
 - (void)handleData{
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-//    NSString * str =  @"http://api.ycapp.yiche.com/appnews/GetStructNews?newsId=31801&ts=20160422164303&plat=2&theme=0&version=7.0";
-//    NSString *str1 = [NSString stringWithFormat:@"http://api.ycapp.yiche.com/appnews/GetStructNews?newsId=%@&ts=%@&plat=2&theme=0&version=7.0",self.newsId,self.lastModify];
-//    NSLog(@"%@",str1);
     [manager GET:self.requestStr parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         NSLog(@"downloadProgress = %@",downloadProgress);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         NSDictionary *dataDic = responseObject;
         NSArray *array = dataDic[@"data"][@"content"];
-//        ImportantDetailheaderModel *headerModel = [[ImportantDetailheaderModel alloc] init];
-//        [headerModel setValuesForKeysWithDictionary:dataDic[@"data"]];
-//        ImportantDetailHeaderView *view = [[ImportantDetailHeaderView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 100)];
-//        [view setDataWithModel:headerModel];
-        
-//        NSLog(@"responseObject = %@",array);
+        DetailHeaderModel *headerModel = [[DetailHeaderModel alloc] init];
+        NSDictionary *headerDic = [[NSDictionary alloc] init];
+        headerDic = [dataDic objectForKey:@"data"];
+        [headerModel setValuesForKeysWithDictionary:headerDic];
+        [self.headerArray addObject:headerModel];
+        NSLog(@"%@",[dataDic objectForKey:@"data"]);
         for (NSDictionary *dic in array) {
             DetailModel *model = [[DetailModel alloc] init];
             [model setValuesForKeysWithDictionary:dic];
@@ -93,38 +99,60 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     DetailModel *model = self.tableArray[indexPath.row];
     NSInteger type = model.type;
-    if (type == 1) {
-        DetailTableViewTypeOneCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"oneCell"];
-        [cell setDataWithModel:model];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        return cell;
-    }else if(type == 2){
+    if (indexPath.row == 0) {
+        DetailHeaderModel *headerModel = self.headerArray[indexPath.row];
+        DetailTableViewTypeThreeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"threeCell"];
+        cell.titleLabel.text = headerModel.title;
+//        [cell.titleLabel sizeToFit];
+        cell.srcLabel.text = headerModel.src;
+        [cell.srcLabel sizeToFit];
+        cell.publishTimeLabel.text = headerModel.publishTime;
+        [cell.publishTimeLabel sizeToFit];
         
-        DetailTableViewTypeTwoCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"twoCell"];
-        [cell setDataWithModel:model];
+        [cell.publishTimeLabel mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(cell.srcLabel.mas_right).offset(10);
+            make.bottom.equalTo(cell.srcLabel.mas_bottom);
+        }];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }else{
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-        return cell;
+        if (type == 1) {
+            DetailTableViewTypeOneCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"oneCell"];
+            [cell setDataWithModel:model];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            return cell;
+        }else if(type == 2){
+            
+            DetailTableViewTypeTwoCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"twoCell"];
+            [cell setDataWithModel:model];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            return cell;
+        }else{
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+            return cell;
+        }
     }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     DetailModel *model = self.tableArray[indexPath.row];
-    if (model.type == 1) {
-        
-        NSInteger height = [self stringHeight:model.content] + 25;
-        NSLog(@"%ld",height);
-        return height;
-        
-    }else if (model.type == 2) {
-        
-        NSArray *array = model.style;
-        NSInteger width = [array[0][@"width"] integerValue];
-        NSInteger height = [array[0][@"height"] integerValue];
-        NSInteger H = height*ScreenWidth/width;
-        return H;
+    if (indexPath.row == 0) {
+        return 100;
+    }else{
+        if (model.type == 1) {
+            
+            NSInteger height = [self stringHeight:model.content] + 25;
+            NSLog(@"%ld",height);
+            return height;
+            
+        }else if (model.type == 2) {
+            
+            NSArray *array = model.style;
+            NSInteger width = [array[0][@"width"] integerValue];
+            NSInteger height = [array[0][@"height"] integerValue];
+            NSInteger H = height*ScreenWidth/width;
+            return H;
+        }
     }
     return 0;
 }

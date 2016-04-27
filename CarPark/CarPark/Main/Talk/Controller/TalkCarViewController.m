@@ -7,106 +7,98 @@
 //
 
 #import "TalkCarViewController.h"
-#import "TalkCarViewCell.h"
-#import "TalkModel.h"
-#import "TalkCarDetailViewController.h"
-#import "TalkCarScrollViewController.h"
+//#import "TalkCarViewCell.h"
+//#import "TypeOneCell.h"
+//#import "TalkModel.h"
+//#import "TalkCarDetailViewController.h"
+//#import "TalkCarScrollViewController.h"
 
-@interface TalkCarViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,SDCycleScrollViewDelegate>
+#import "TypeOneCell.h"
+#import "DataModel.h"
+#import "TextDetailViewController.h"
 
-@property (nonatomic, strong) UICollectionView *collectionView;
-@property (nonatomic, strong) NSMutableArray *array;
-@property (nonatomic, strong)NSMutableArray *ScrolArray;
-/** 就是那个headerView*/
-@property (nonatomic, strong) UICollectionViewFlowLayout *CollectionLayout;
-@property (nonatomic, assign) NSInteger page;
-/** 第三方轮播图*/
-@property (nonatomic, strong) SDCycleScrollView *scrollView;
 
-@property (nonatomic,strong)UICollectionReusableView *reusableView ;
+@interface TalkCarViewController ()<UITableViewDataSource,UITableViewDelegate>{
+    int count;
+}
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) NSMutableArray *dataArray;
+/** 数据页数,表示下次请求第几页的数据*/
+@property (nonatomic, assign)NSInteger page;
+
 
 @end
 
 @implementation TalkCarViewController
+static NSString *const RecommandId = @"cell";
 
-static NSString *const collectionID = @"header";
-
--(NSMutableArray *)array{
-    if (!_array) {
-        _array = [[NSMutableArray alloc]init];
+- (NSMutableArray *)dataArray{
+    if (!_dataArray) {
+        _dataArray = [[NSMutableArray alloc] init];
     }
-    return _array;
+    return _dataArray;
 }
-
--(NSMutableArray *)ScrolArray{
-    if (!_ScrolArray ) {
-        _ScrolArray = [[NSMutableArray alloc]init];
-    }
-    return _ScrolArray;
-    
-}
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"说   车";
-    [self RequestData];
-    [self setUpCollection];
-    [self creatScrollView];
-   
+    
+    [self setupView];
+    //    [self requestData];
 }
 
-
-
-#pragma mark - 创建collectionView
--(void)setUpCollection{
-    
-    self.CollectionLayout = [[UICollectionViewFlowLayout alloc]init];
-    //headerView大小
-    self.CollectionLayout.headerReferenceSize = CGSizeMake(ScreenWidth, 180);
-    self.CollectionLayout.itemSize = CGSizeMake(ScreenWidth, 230);
-    
-    CGFloat collectionViewX = 0;
-    CGFloat collectionViewY = 0;
-    CGFloat collectionViewW = ScreenWidth;
-    CGFloat collectionViewH = ScreenHeight;
-    self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(collectionViewX, collectionViewY, collectionViewW, collectionViewH) collectionViewLayout:self.CollectionLayout];
-    self.collectionView.delegate = self;
-    self.collectionView.dataSource = self;
-    self.collectionView.backgroundColor = [UIColor whiteColor];
-    self.collectionView.minimumZoomScale = 3;
-    [self.collectionView registerNib:[UINib nibWithNibName:@"TalkCarViewCell" bundle:nil] forCellWithReuseIdentifier:@"cell"];
-    [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:collectionID];
-    [self addRefResh];
-    [self.view addSubview:self.collectionView];
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    //马上进入刷新状态
+    [self.tableView.mj_header beginRefreshing];
     
 }
-#pragma mark - 添加上拉刷新,下拉加载
--(void)addRefResh{
-    self.collectionView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(RequestData)];
-    MJRefreshAutoFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(RequestData)];
-    self.collectionView.mj_footer = footer;
+
+- (void)setupView{
+    count = 0;
+    CGFloat tableViewX = 0;
+    CGFloat tableViewY = 0;
+    CGFloat tableViewW = ScreenWidth;
+    CGFloat tableViewH = ScreenHeight;
+    
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(tableViewX, tableViewY, tableViewW, tableViewH) style:UITableViewStylePlain];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    //    [self.tableView registerNib:[UINib nibWithNibName:@"RecommandTableCell" bundle:nil] forCellReuseIdentifier:RecommandId];
+    [self.tableView registerClass:[TypeOneCell class] forCellReuseIdentifier:RecommandId];
+    [self.view addSubview:self.tableView];
+    
+    //添加上拉刷新的header
+    MJRefreshAutoGifFooter *footer = [MJRefreshAutoGifFooter footerWithRefreshingTarget:self refreshingAction:@selector(requestData)];
+    //添加下拉加载的footer动画
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(requestData)];
+    NSMutableArray *arrayImg = [NSMutableArray array];
+    for (int i = 1; i < 7; i++) {
+        [arrayImg addObject:[UIImage imageNamed:[NSString stringWithFormat:@"demo－%d.tiff",i]]];
+    }
+    [footer setImages:arrayImg duration:2 forState:(MJRefreshStateRefreshing)];
+    self.tableView.mj_footer = footer;
 }
-#pragma mark - 数据请求
--(void)RequestData{
+
+-(void)requestData{
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager GET:TalkCar parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        [self endResh];
+    count++;
+    NSString *str = [NSString stringWithFormat:@"http://api.ycapp.yiche.com/media/getnewslist?pageindex=%d&pagesize=20",count];
+    [manager GET:str parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [self endRefresh];
+        if (1 == self.page) {//说明在重新请求数据
+            self.dataArray = nil;
+        }
         NSArray *ReqArray = [[responseObject objectForKey:@"data"]objectForKey:@"list"];
         for (NSDictionary *dic in ReqArray) {
-            TalkModel *model = [[TalkModel alloc]init];
-            model.title = dic[@"title"];
-            model.picCover = dic[@"picCover"];
-            model.commentCount = dic[@"commentCount"];
-            model.mediaName = dic[@"mediaName"];
-            model.newsId = dic[@"newsId"];
-            model.lastModify = dic[@"lastModify"];
-            [self.array addObject:model];
-            [self updataView];
+            DataModel *model = [[DataModel alloc]init];
+            [model setValuesForKeysWithDictionary:dic];
+            [self.dataArray addObject:model];
         }
+        [self updataView];
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.collectionView animated:YES];
+        [self endRefresh];
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.tableView animated:YES];
         hud.mode = MBProgressHUDModeText;
         hud.labelText = @"您的网络不给力";
         [hud hide:YES afterDelay:2];
@@ -116,104 +108,46 @@ static NSString *const collectionID = @"header";
 
 #pragma mark - 更新视图
 -(void)updataView{
-    [self.collectionView reloadData];
+    [self.tableView reloadData];
 }
 
 #pragma mark - 停止更新视图
--(void)endResh{
-    [self.collectionView.mj_header endRefreshing];
-    [self.collectionView.mj_footer endRefreshing];
-}
-#pragma mark - collectionViewDelegate
--(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return self.array.count;
+-(void)endRefresh{
+    [self.tableView.mj_header endRefreshing];
+    [self.tableView.mj_footer endRefreshing];
+    
 }
 
--(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    TalkCarViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-    TalkModel *model = self.array[indexPath.row];
-    [cell.picCover sd_setImageWithURL:[NSURL URLWithString:model.picCover]];
-    cell.title.text = model.title;
-    cell.commentCount.text = [NSString stringWithFormat:@"%@",model.commentCount];
-    cell.mediaName.text  = model.mediaName ;
-    cell.selected = YES;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.dataArray.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    TypeOneCell *cell = [tableView dequeueReusableCellWithIdentifier:RecommandId forIndexPath:indexPath];
+    DataModel *model = self.dataArray[indexPath.row];
+    [cell setDataWithModel:model];
+    cell.srcLabel.text = model.publishTime;
     return cell;
-    
 }
 
--(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 80;
+}
 
-    self.reusableView = nil;
-
-    if (kind == UICollectionElementKindSectionHeader) {
-        UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:collectionID forIndexPath:indexPath];
-        _reusableView = headerView;
+// tableView点击事件
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    DataModel *model = self.dataArray[indexPath.row];
+    if (model.type == 2) { // 如果是视频cell
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        //  播放视频
+        // 什么都不做
+    }else{
+        TextDetailViewController *DetailVC = [[TextDetailViewController alloc] init];
+        NSString *requestStr = [NSString stringWithFormat:@"http://api.ycapp.yiche.com/media/GetStructMedia?newsId=%@&ts=%@&plat=2&theme=0&version=7.0",model.newsId,model.lastModify];
+        DetailVC.requestStr = requestStr;
+        [self.navigationController pushViewController:DetailVC animated:YES];
     }
-    _reusableView.backgroundColor = [UIColor redColor];
-    return _reusableView;
 }
-
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    TalkModel *model = self.array[indexPath.row];
-    TalkCarDetailViewController *VC = [[TalkCarDetailViewController alloc]init];
-    VC.newsId = model.newsId;
-    VC.lastModify = model.lastModify;
-    [self.navigationController pushViewController:VC animated:YES];
-}
-#pragma mark - 创建轮播图
--(void)creatScrollView{
-    
-    self.scrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 180) delegate:self placeholderImage:nil];
-    self.scrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentCenter;
-    self.scrollView.currentPageDotColor = [UIColor redColor];
-    self.scrollView.autoScrollTimeInterval = 3;
-    self.scrollView.backgroundColor = [UIColor blueColor];
-    [self.collectionView addSubview:self.scrollView];
-    
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager GET:TalkCarScroll parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSDictionary *dic = responseObject ;
-        NSArray *array  = dic[@"result"][@"articlelist"];
-        for (NSDictionary *dic1 in array) {
-            TalkModel *model = [[TalkModel alloc]init];
-            model.articletitle = dic1[@"articletitle"];
-            model.imgurl = dic1[@"imgurl"];
-            model.articleid = dic1[@"articleid"];
-            [self.ScrolArray addObject:model];
-            NSMutableArray *urlImageArray= [NSMutableArray array];
-            for (int i = 0; i < self.ScrolArray.count; i++) {
-                NSLog(@"%lu",(unsigned long)self.ScrolArray.count);
-                TalkModel *model = self.ScrolArray[i];
-                [urlImageArray addObject:model.imgurl];
-
-            }
-            NSArray *imageUrlStr = urlImageArray;
-        
-            self.scrollView.imageURLStringsGroup = imageUrlStr;
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                self.scrollView.imageURLStringsGroup = imageUrlStr;
-            });
-        }
-        [self updataView];
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"数据请求失败++++ %@",error);
-        
-    }];
-    
-    }
-
--(void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index{
-    NSLog(@"indeax = %ld",(long)index);
-    TalkModel *model = self.ScrolArray[index];
-    TalkCarScrollViewController *talkVC = [[TalkCarScrollViewController alloc]init];
-    talkVC.articleid = model.articleid;
-    NSLog(@"model = %@",model.articleid);
-    [self.navigationController pushViewController:talkVC animated:YES];
-   
-}
-
-
 
 
 - (void)didReceiveMemoryWarning {

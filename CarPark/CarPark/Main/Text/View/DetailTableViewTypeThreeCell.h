@@ -9,5 +9,8 @@
 #import "BaseTableViewCell.h"
 
 @interface DetailTableViewTypeThreeCell : BaseTableViewCell
+@property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UILabel *srcLabel;
+@property (nonatomic, strong) UILabel *publishTimeLabel;
 
 @end

@@ -8,6 +8,12 @@
 
 #import "BaseTableViewCell.h"
 
+@class DetailModel;
+
 @interface DetailTableViewTypeTwoCell : BaseTableViewCell
 
+@property (nonatomic, strong) UIImageView *content;
+@property (nonatomic, strong) NSArray *style;
+
+- (void)setDataWithModel:(DetailModel *)model;
 @end

@@ -90,7 +90,7 @@
 - (UIImageView *)picCoverImage{
     if (!_picCoverImage) {
         _picCoverImage = [[UIImageView alloc] init];
-        
+//        _picCoverImage.userInteractionEnabled = YES;
         [self.contentView addSubview:_picCoverImage];
         __weak typeof(self) weakSelf = self;
         [_picCoverImage mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -123,7 +123,19 @@
     return _picCoverImage;
 }
 
-
+//- (UIButton *)playButton{
+//    if (!_playButton) {
+//        _playButton = [[UIButton alloc] init];
+//        [self.contentView addSubview:_playButton];
+//        __weak typeof(self) weakSelf = self;
+//        [_playButton mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.center.mas_equalTo(weakSelf.picCoverImage.center);
+//            make.width.equalTo(@60);
+//            make.height.equalTo(@60);
+//        }];
+//    }
+//    return _playButton;
+//}
 
 
 - (UILabel *)durationLabel{
@@ -131,7 +143,7 @@
         _durationLabel = [[UILabel alloc] init];
         _durationLabel.font = [UIFont systemFontOfSize:12];
         [_durationLabel setTextColor:[UIColor whiteColor]];
-        [self.contentView addSubview:_durationLabel];
+        [self.picCoverImage addSubview:_durationLabel];
         __weak typeof(self) weakSelf = self;
         [_durationLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.equalTo(weakSelf.picCoverImage.mas_right).offset(-8);
@@ -161,6 +173,8 @@
 
 - (void)setDataWithModel:(DataModel *)model{
     self.titleLabel.text = model.title;
+//    [self.playButton.imageView sd_setImageWithURL:nil placeholderImage:[UIImage imageNamed:@"icon_play.png"]];
+//    [self.playButton setBackgroundImage:[UIImage imageNamed:@"icon_play.png"] forState:UIControlStateNormal];
     self.commentLabel.text = [NSString stringWithFormat:@"%ld",model.commentCount];
     [self.picCoverImage sd_setImageWithURL:[NSURL URLWithString:model.picCover]];
     self.durationLabel.text = model.duration;

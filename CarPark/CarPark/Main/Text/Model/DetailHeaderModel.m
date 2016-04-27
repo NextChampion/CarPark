@@ -9,5 +9,7 @@
 #import "DetailHeaderModel.h"
 
 @implementation DetailHeaderModel
-
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key{
+    
+}
 @end

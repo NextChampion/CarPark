@@ -9,5 +9,5 @@
 #import "BaseViewController.h"
 
 @interface CollectionViewController : BaseViewController
-
+@property (nonatomic, assign) BOOL isPresent;
 @end

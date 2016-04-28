@@ -20,6 +20,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    if (self.isPresent) { //如果是present的 就加一个button
+        UIBarButtonItem *back = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:(UIBarButtonItemStyleDone) target:self action:@selector(backAction)];
+        self.navigationItem.leftBarButtonItem = back;
+    }
+}
+
+- (void)backAction{
+    if ([self respondsToSelector:@selector(dismissViewControllerAnimated:completion:)]) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 - (void)setupView{

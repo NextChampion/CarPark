@@ -21,9 +21,12 @@
 #import "MediaCell.h"
 
 #import "ImportDetailsViewController.h"
+#import "PictureDisplayViewController.h"
 
 #import "WMPlayer.h"
 #import <AVFoundation/AVFoundation.h>
+
+#import "VideoPlayViewController.h"
 
 
 @interface ImportNewsViewController ()<SDCycleScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>{
@@ -32,6 +35,7 @@
     WMPlayer *wmPlayer;
     NSIndexPath *currentIndexPath;
     BOOL isSmallScreen;
+    UIView *playVideoBackgroudView;
 }
 
 @property(strong,nonatomic)UITableView *ImportTableView;
@@ -73,7 +77,7 @@
     [super viewDidLoad];
     //注册播放完成通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(videoDidFinished:) name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
-    //注册播放完成通知
+    //注册全屏完成通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fullScreenBtnClick:) name:@"fullScreenBtnClickNotice" object:nil];
     //关闭通知
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -164,7 +168,10 @@
         if (array.count == 3) {
             return ScreenHeight/5;
         }
-        return ScreenHeight/3.5;
+        return ScreenHeight/3.2;
+    }
+    if (type == 22) {
+        return 0;
     }
     if (type == 2) {
         return ScreenHeight/3;
@@ -189,10 +196,12 @@
     [self.ImportTableView registerClass:[TypeOneCell class] forCellReuseIdentifier:@"cell1"];
     [self.ImportTableView registerClass:[TypeFiveCell class] forCellReuseIdentifier:@"cell5"];
     [self.ImportTableView registerClass:[MediaCell class] forCellReuseIdentifier:@"mediaCell"];
+    [self.ImportTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"tableCell"];
     
     self.ImportTableView.tableHeaderView = headerView;
     self.ImportTableView.delegate = self;
     self.ImportTableView.dataSource = self;
+    self.ImportTableView.showsVerticalScrollIndicator = NO;
     [self.view addSubview:self.ImportTableView];
     // 添加上拉刷新
     self.ImportTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
@@ -255,9 +264,13 @@
     // type == 2 返回typeFour
     // type == 4 返回typeFour
     // type == 5 返回typeFive
-    if (type == 1 || type == 22) {
+    if (type == 1 ) {
         TypeOneCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell1" forIndexPath:indexPath];
         [cell setDataWithModel:model];
+        return cell;
+    }
+    if (type == 22) {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"tableCell" forIndexPath:indexPath];
         return cell;
     }
     if (type == 2) {
@@ -266,32 +279,31 @@
         cell.playButton.tag = indexPath.row;
         [cell.playButton addTarget:self action:@selector(startPlayVideo:) forControlEvents:UIControlEventTouchUpInside];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        if (wmPlayer&&wmPlayer.superview) {
-            if (indexPath==currentIndexPath) {
-                [cell.playButton.superview sendSubviewToBack:cell.playButton];
+        if (wmPlayer&&wmPlayer.superview) { // 如果播放器存在 并且播放器的父试图存在
+            if (indexPath==currentIndexPath) { // 如果当前的索引等于当前cell的索引
+                [cell.playButton.superview sendSubviewToBack:cell.playButton]; // cell.contentView 将button置于底层
             }else{
-                [cell.playButton.superview bringSubviewToFront:cell.playButton];
+                [cell.playButton.superview bringSubviewToFront:cell.playButton]; // 如果播放器不存在 将button置顶
             }
             NSArray *indexpaths = [tableView indexPathsForVisibleRows];
             if (![indexpaths containsObject:currentIndexPath]) {//复用
                 
-                if ([[UIApplication sharedApplication].keyWindow.subviews containsObject:wmPlayer]) {
-                    wmPlayer.hidden = NO;
+                if ([[UIApplication sharedApplication].keyWindow.subviews containsObject:wmPlayer]) { // 如果window包含播放器
+                    wmPlayer.hidden = NO; // 显示播放器
                     
                 }else{
                     
-                    wmPlayer.hidden = YES;
-                    [cell.playButton.superview bringSubviewToFront:cell.playButton];
+                    wmPlayer.hidden = YES; // 隐藏播放器
+                    [cell.playButton.superview bringSubviewToFront:cell.playButton]; // 将button置顶
                 }
             }else{
-                if ([cell.picCoverImage.subviews containsObject:wmPlayer]) {
-                    [cell.picCoverImage addSubview:wmPlayer];
+                if ([cell.picCoverImage.subviews containsObject:wmPlayer]) { // 如果预览图的子视图包含播放器
+                    [cell.picCoverImage addSubview:wmPlayer]; // 将播放器添加到预览图上面
                     
                     [wmPlayer.player play];
                     wmPlayer.playOrPauseBtn.selected = NO;
                     wmPlayer.hidden = NO;
                 }
-                
             }
         }
         return cell;
@@ -313,7 +325,7 @@
         return cell;
     }
     
-    TypeThreeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell2" forIndexPath:indexPath];
+    TypeTwoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell2" forIndexPath:indexPath];
     [cell setDataWithModel:model];
     return cell;
 }
@@ -321,16 +333,72 @@
 // tableView点击事件
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     DataModel *model = self.tableArray[indexPath.row];
-    if (model.type == 2) { // 如果是视频cell
-        [tableView deselectRowAtIndexPath:indexPath animated:YES];
-        //  播放视频
-        // 什么都不做
-    }else{
-    ImportDetailsViewController *importantDetailVC = [[ImportDetailsViewController alloc] init];
-    importantDetailVC.newsId = model.newsId;
-    importantDetailVC.lastModify = model.lastModify;
-    [self.navigationController pushViewController:importantDetailVC animated:YES];
+    
+    switch (model.type) {
+        case 2:{
+            [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        }
+            break;
+        case 3:{
+            PictureDisplayViewController *pictureDetailVC = [[PictureDisplayViewController alloc] init];
+            NSString *requestStr = [NSString stringWithFormat:@"http://api.ycapp.yiche.com/appnews/GetNewsAlbum?newsid=%@",model.newsId];
+            //        pictureDetailVC.isImportantPush = YES;
+            pictureDetailVC.requestStr = requestStr;
+            pictureDetailVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+            [self presentViewController:pictureDetailVC animated:YES completion:nil];
+        }
+            break;
+        case 4:{
+            VideoPlayViewController *videoPlayVC = [[VideoPlayViewController alloc] init];
+            NSString *filePath = model.filePath;
+            NSString *string = [filePath substringFromIndex:(filePath.length - 9)];//截取范围类的字符串
+            NSLog(@"截取的值为：%@",string);
+            NSString *requestStr = [NSString stringWithFormat:@"http://h5.ycapp.yiche.com/newvideo/%@.html?plat=2&appver=7.0&ts=",string];
+            videoPlayVC.requestStr = requestStr;
+            NSLog(@"%@",requestStr);
+            [self.navigationController pushViewController:videoPlayVC animated:YES];
+        }
+            break;
+        case 22:
+            break;
+        default:{
+            ImportDetailsViewController *importantDetailVC = [[ImportDetailsViewController alloc] init];
+            NSString *str1 = [NSString stringWithFormat:@"http://api.ycapp.yiche.com/appnews/GetStructNews?newsId=%@&ts=%@&plat=2&theme=0&version=7.0",model.newsId,model.lastModify];
+            importantDetailVC.requestStr = str1;
+            [self.navigationController pushViewController:importantDetailVC animated:YES];
+        }
+            break;
     }
+    
+    
+    
+//    if (model.type == 2) { // 如果是视频cell
+//        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+//        // 什么都不做
+//    }if (model.type == 22) {
+//        // 什么都不做
+//    }if (model.type == 3) {
+//        PictureDisplayViewController *pictureDetailVC = [[PictureDisplayViewController alloc] init];
+//        NSString *requestStr = [NSString stringWithFormat:@"http://api.ycapp.yiche.com/appnews/GetNewsAlbum?newsid=%@",model.newsId];
+////        pictureDetailVC.isImportantPush = YES;
+//        pictureDetailVC.requestStr = requestStr;
+//        pictureDetailVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+//        [self presentViewController:pictureDetailVC animated:YES completion:nil];
+//    }if (model.type == 4) {
+//        VideoPlayViewController *videoPlayVC = [[VideoPlayViewController alloc] init];
+//        NSString *filePath = model.filePath;
+//        NSString *string = [filePath substringFromIndex:(filePath.length - 9)];//截取范围类的字符串
+//        NSLog(@"截取的值为：%@",string);
+//        NSString *requestStr = [NSString stringWithFormat:@"http://h5.ycapp.yiche.com/newvideo/%@.html?plat=2&appver=7.0&ts=",string];
+//        videoPlayVC.requestStr = requestStr;
+//        NSLog(@"%@",requestStr);
+//        [self.navigationController pushViewController:videoPlayVC animated:YES];
+//    }else{
+//    ImportDetailsViewController *importantDetailVC = [[ImportDetailsViewController alloc] init];
+//    NSString *str1 = [NSString stringWithFormat:@"http://api.ycapp.yiche.com/appnews/GetStructNews?newsId=%@&ts=%@&plat=2&theme=0&version=7.0",model.newsId,model.lastModify];
+//        importantDetailVC.requestStr = str1;
+//    [self.navigationController pushViewController:importantDetailVC animated:YES];
+//    }
 }
 
 /*
@@ -344,27 +412,32 @@
 
 #pragma mark - 控制播放器视频的相关方法
 
-
+// 视频开始播放的方法
 - (void)startPlayVideo:(UIButton *)sender{
-    currentIndexPath = [NSIndexPath indexPathForRow:sender.tag inSection:0];
-    MediaCell *cell = (MediaCell *)sender.superview.superview;
-    DataModel *model = [self.tableArray objectAtIndex:sender.tag];
+    currentIndexPath = [NSIndexPath indexPathForRow:sender.tag inSection:0];// 获取cell的索引值保存下来
+    MediaCell *cell = (MediaCell *)sender.superview.superview; // 创建视频cell
+    DataModel *model = [self.tableArray objectAtIndex:sender.tag]; // 获取cell的数据model
     
-    if (wmPlayer) {
-        [wmPlayer removeFromSuperview];
-        [wmPlayer setVideoURLStr:model.mp4Link];
-        [wmPlayer.player play];
+    if (wmPlayer) { // 如果播放器存在
+        [wmPlayer removeFromSuperview]; // 将播放器移除
+        [wmPlayer setVideoURLStr:model.mp4Link]; // 设置播放链接
+        [wmPlayer.player play]; // 播放
         
-    }else{
-        wmPlayer = [[WMPlayer alloc]initWithFrame:cell.picCoverImage.bounds videoURLStr:model.mp4Link];
+    }else{ // 如果播放器不存在
+        wmPlayer = [[WMPlayer alloc]initWithFrame:cell.picCoverImage.bounds videoURLStr:model.mp4Link]; // 创建一个播放器
+        
+        
         [wmPlayer.player play];
         
     }
-    [cell.picCoverImage addSubview:wmPlayer];
-    [cell.picCoverImage bringSubviewToFront:wmPlayer];
-    [cell.playButton.superview sendSubviewToBack:cell.playButton];
-    [self.ImportTableView reloadData];
+
+    [self.currentCell.picCoverImage addSubview:wmPlayer]; // 将播放器加在当前cell的预览图上面
+    [self.currentCell.picCoverImage bringSubviewToFront:wmPlayer]; // 预览图将播放器放在顶层
+    [self.currentCell.playButton.superview sendSubviewToBack:self.currentCell.playButton]; // button的父试图(cell的contentView) 将button置于最底层
+    [self.currentCell.picCoverImage.superview sendSubviewToBack:self.currentCell.picCoverImage];
+    [self.ImportTableView reloadData]; // table重载数据
 }
+
 
 -(MediaCell *)currentCell{
     if (currentIndexPath==nil) {
@@ -505,11 +578,10 @@
      
 // 视频播放完毕的通知响应发发
 -(void)videoDidFinished:(NSNotification *)notice{
- MediaCell *currentCell = [self currentCell];
- [currentCell.playButton.superview bringSubviewToFront:currentCell.playButton];
- [wmPlayer removeFromSuperview];
- [[UIApplication sharedApplication] setStatusBarHidden:NO animated:YES];
- 
+    MediaCell *currentCell = [self currentCell];  //  获取当前播放视频的cell
+    [wmPlayer removeFromSuperview]; // 移除播放器
+    [currentCell.playButton.superview bringSubviewToFront:currentCell.playButton]; // cell.contentView将button移到顶层
+    [[UIApplication sharedApplication] setStatusBarHidden:NO animated:YES];
 }
 
 // 视频全屏的相应方法
@@ -529,10 +601,10 @@
      
 // 视频关闭的响应方法
 -(void)closeTheVideo:(NSNotification *)obj{
- MediaCell *currentCell = (MediaCell *)[self.ImportTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:currentIndexPath.row inSection:0]];
- [currentCell.playButton.superview bringSubviewToFront:currentCell.playButton];
- [self releaseWMPlayer];
- [[UIApplication sharedApplication] setStatusBarHidden:NO animated:YES];
+    MediaCell *currentCell = (MediaCell *)[self.ImportTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:currentIndexPath.row inSection:0]];
+    [currentCell.playButton.superview bringSubviewToFront:currentCell.playButton];
+    [self releaseWMPlayer];
+    [[UIApplication sharedApplication] setStatusBarHidden:NO animated:YES];
  
 }
 
@@ -543,15 +615,11 @@
         if (wmPlayer==nil) {
             return;
         }
-        
         if (wmPlayer.superview) {
             CGRect rectInTableView = [self.ImportTableView rectForRowAtIndexPath:currentIndexPath];
             CGRect rectInSuperview = [self.ImportTableView convertRect:rectInTableView toView:[self.ImportTableView superview]];
-            
             NSLog(@"rectInSuperview = %@",NSStringFromCGRect(rectInSuperview));
-            
-            
-            
+
             if (rectInSuperview.origin.y<-self.currentCell.picCoverImage.frame.size.height||rectInSuperview.origin.y>self.view.frame.size.height-kNavbarHeight-kTabBarHeight) {//往上拖动
                 
                 if ([[UIApplication sharedApplication].keyWindow.subviews containsObject:wmPlayer]&&isSmallScreen) {
@@ -560,9 +628,6 @@
                     //放widow上,小屏显示
                     [self toSmallScreen];
                 }
-                
-                
-                
             }else{
                 if ([self.currentCell.picCoverImage.subviews containsObject:wmPlayer]) {
                     

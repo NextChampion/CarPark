@@ -70,6 +70,7 @@
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(tableViewX, tableViewY, tableViewW, tableViewH) style:UITableViewStylePlain];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.showsVerticalScrollIndicator = NO;
     [self.tableView registerClass:[TypeOneCell class] forCellReuseIdentifier:@"newCell"];
     [self.view addSubview:self.tableView];
     

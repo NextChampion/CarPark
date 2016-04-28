@@ -25,10 +25,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.web_URL = [NSString stringWithFormat:@"http://h5.ycapp.yiche.com/newvideo/%@.html?plat=2&appver=7.0&ts=%@",self.videoid,self.modifytime];
-//    @"http://h5.ycapp.yiche.com/newvideo/100106399.html?plat=2&appver=7.0&ts=20160422144945";
-    // Do any additional setup after loading the view.
+    
+    UIBarButtonItem *collectionItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"collect.png"] style:(UIBarButtonItemStyleDone) target:self action:@selector(collectionAction)];
+    self.navigationItem.rightBarButtonItem = collectionItem;
+    
+    self.web_URL = self.requestStr;
+    
     [self setupWebview];
+}
+
+// 收藏按钮
+-(void)collectionAction{
+    NSLog(@"点击了收藏按钮");
+//    CollectionListDB *db = [[CollectionListDB alloc] init];
+//    [db createTable];
+//    DetailHeaderModel *headerModel = self.headerArray[0];
+//    NSLog(@"%@",self.headerArray[0]);
+//    NSArray *array = [[NSArray alloc] initWithObjects:headerModel.title,headerModel.publishTime,self.requestStr, nil];
+//    //    @[headerModel.title,headerModel.publishTime,self.requestStr];
+//    NSLog(@"%@-----%@-------%@",headerModel.title,headerModel.publishTime,self.requestStr);
+//    NSLog(@"////////%@",array);
+//    [db insertCollectionRecordWithArray:array];
 }
 
 - (void)setupWebview{

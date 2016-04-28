@@ -11,4 +11,5 @@
 @interface ImportDetailsViewController : BaseViewController
 @property (nonatomic, strong) NSString *newsId;
 @property (nonatomic, strong) NSString *lastModify;
+@property (nonatomic, strong) NSString *requestStr;
 @end

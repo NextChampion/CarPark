@@ -8,6 +8,7 @@
 
 #import "DrawerViewController.h"
 #import "ImportNewsViewController.h"
+#import "NCAnimationView.h"
 
 
 
@@ -21,7 +22,7 @@
     BOOL showingLeftView; // 判断左菜单是否正在现实
 }
 
-//@property (nonatomic, strong) UIView *headerView;
+@property (nonatomic, strong) NCAnimationView *menu;
 
 @end
 
@@ -66,7 +67,15 @@
 - (void)tap:(UITapGestureRecognizer *)gesture{
     [gesture setEnabled:NO];
     [self showRootViewControllerWithAnimated:YES];
+
+    if (![[UIApplication sharedApplication].keyWindow.subviews.lastObject isKindOfClass:[NCAnimationView class]]) {
+        [[UIApplication sharedApplication].keyWindow addSubview:self.menu];
+        self.menu = nil;
+    }
 }
+
+
+
 
 - (void)setRootViewController:(UIViewController *)rootViewController{
     UIViewController *tempRootVC = _root;// 新建一个控制器接收一个原来的控制器
@@ -116,6 +125,13 @@
 // 显示左侧菜单栏的方法   对应左上角的button点击事件
 - (void)showLeft:(id)sender{
     [self showLeftViewControllerWithAnimated:YES];// 展示左侧菜单栏 有动画效果
+//    AppDelegate *appDe = [[UIApplication sharedApplication] delegate];
+//    appDe.menuIsShow = YES;
+#warning menu
+    if ([[UIApplication sharedApplication].keyWindow.subviews.lastObject isKindOfClass:[NCAnimationView class]]) {
+        self.menu = [UIApplication sharedApplication].keyWindow.subviews.lastObject;
+        [[UIApplication sharedApplication].keyWindow.subviews.lastObject removeFromSuperview];
+    }
 }
 
 // 手势的代理方法  当点击开始的时候 根据点击的位置  判断是否执行点击事件
@@ -134,6 +150,9 @@
 #pragma mark - 显示视图
 // 是否使用动画的方式显示根视图
 - (void)showRootViewControllerWithAnimated:(BOOL)animated{
+    
+    
+    
     [_tap setEnabled:NO]; // 让点击手势不能响应
     // 设置跟视图能够响应
     _root.view.userInteractionEnabled = YES;
@@ -177,26 +196,6 @@
     frame.size.width = kMenuFullWidth; // 这个框架的宽等于屏幕的宽度
     frame.size.height = ScreenHeight - 64;
 
-    
-//    self.headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 64, frame.size.width, 100)];
-//    self.headerView.backgroundColor = [UIColor redColor];
-//    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 80, 40)];
-//    [button setTitle:@"收藏列表" forState:UIControlStateNormal];
-//    [button addTarget:self action:@selector(collectionAction:) forControlEvents:UIControlEventTouchUpInside];
-//    
-//    UIButton *button1 = [[UIButton alloc] initWithFrame:CGRectMake(90, 5, 80, 40)];
-//    [button1 setTitle:@"下载列表" forState:UIControlStateNormal];
-//    [button1 addTarget:self action:@selector(downloadListAction:) forControlEvents:UIControlEventTouchUpInside];
-//    
-//    button.backgroundColor = [UIColor grayColor];
-//    button1.backgroundColor = [UIColor grayColor];
-//    self.headerView.userInteractionEnabled = YES;
-//    
-//    [self.headerView addSubview:button];
-//    [self.headerView addSubview:button1];
-//    [self.view insertSubview:self.headerView atIndex:0];
-    
-    
     frame.origin.y = 64;
     view.frame = frame; // 刚刚新建的视图的框架 等于这个框架
     [self.view insertSubview:view atIndex:0]; // 在当前的view第0层 插入一个视图

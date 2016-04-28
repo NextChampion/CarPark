@@ -35,6 +35,8 @@
 #import "masonry.h"
 #import "AFNetworking.h"
 #import "SDCycleScrollView.h"
+#import "FMDB.h"
+#import "AppDelegate.h"
 
 
 #define kDeviceVersion [[UIDevice currentDevice].systemVersion floatValue]  // 系统版本

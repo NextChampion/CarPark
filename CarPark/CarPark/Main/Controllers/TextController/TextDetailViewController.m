@@ -12,6 +12,7 @@
 #import "DetailTableViewTypeThreeCell.h"
 #import "DetailModel.h"
 #import "DetailHeaderModel.h"
+#import "CollectionListDB.h"
 
 @interface TextDetailViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -39,8 +40,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+//    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"收藏" style:(UIBarButtonItemStyleDone) target:self action:@selector(collectionAction)];
+    UIBarButtonItem *collectionItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"collect.png"] style:(UIBarButtonItemStyleDone) target:self action:@selector(collectionAction)];
+    self.navigationItem.rightBarButtonItem = collectionItem;
     // Do any additional setup after loading the view from its nib.
     [self handleData];
+    
+    
+    
     
 }
 
@@ -71,6 +79,20 @@
     
 }
 
+// 收藏按钮
+-(void)collectionAction{
+    NSLog(@"点击了收藏按钮");
+    CollectionListDB *db = [[CollectionListDB alloc] init];
+    [db createTable];
+    DetailHeaderModel *headerModel = self.headerArray[0];
+    NSLog(@"%@",self.headerArray[0]);
+    NSArray *array = [[NSArray alloc] initWithObjects:headerModel.title,headerModel.publishTime,self.requestStr, nil];
+//    @[headerModel.title,headerModel.publishTime,self.requestStr];
+    NSLog(@"%@-----%@-------%@",headerModel.title,headerModel.publishTime,self.requestStr);
+    NSLog(@"////////%@",array);
+    [db insertCollectionRecordWithArray:array];
+}
+
 - (void)setupView{
     CGFloat tableViewX = 0;
     CGFloat tableViewY = 64;
@@ -81,6 +103,7 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
+    self.tableView.showsVerticalScrollIndicator = NO;
     
     [self.tableView registerClass:[DetailTableViewTypeOneCell class] forCellReuseIdentifier:@"oneCell"];
     [self.tableView registerClass:[DetailTableViewTypeTwoCell class] forCellReuseIdentifier:@"twoCell"];

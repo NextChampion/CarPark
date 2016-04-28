@@ -37,16 +37,32 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UIBarButtonItem *collectionItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"collect.png"] style:(UIBarButtonItemStyleDone) target:self action:@selector(collectionAction)];
+    self.navigationItem.rightBarButtonItem = collectionItem;
+    
     [self handleData];
 }
 
-
+// 收藏按钮
+-(void)collectionAction{
+    NSLog(@"点击了收藏按钮");
+//    CollectionListDB *db = [[CollectionListDB alloc] init];
+//    [db createTable];
+//    DetailHeaderModel *headerModel = self.headerArray[0];
+//    NSLog(@"%@",self.headerArray[0]);
+//    NSArray *array = [[NSArray alloc] initWithObjects:headerModel.title,headerModel.publishTime,self.requestStr, nil];
+//    //    @[headerModel.title,headerModel.publishTime,self.requestStr];
+//    NSLog(@"%@-----%@-------%@",headerModel.title,headerModel.publishTime,self.requestStr);
+//    NSLog(@"////////%@",array);
+//    [db insertCollectionRecordWithArray:array];
+}
 
 - (void)handleData{
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    NSString *urlStr = [NSString stringWithFormat:@"http://api.ycapp.yiche.com/appnews/GetNewsAlbum?newsid=%ld",self.newsId];
+    
 //    @"http://api.ycapp.yiche.com/appnews/GetNewsAlbum?newsid=31923"
-    [manager GET:urlStr parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    [manager GET:self.requestStr parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         NSLog(@"%@",downloadProgress);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *dataDic = responseObject;

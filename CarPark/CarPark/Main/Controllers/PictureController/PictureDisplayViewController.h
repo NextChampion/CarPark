@@ -9,6 +9,6 @@
 #import "BaseViewController.h"
 
 @interface PictureDisplayViewController : BaseViewController
-@property (nonatomic, assign) NSInteger newsId;
-
+@property (nonatomic, assign) BOOL isImportantPush;
+@property (nonatomic, strong) NSString *requestStr;
 @end

@@ -12,6 +12,9 @@
 #import "LoginViewController.h"
 #import "RegisterViewController.h"
 #import "CollectionViewController.h"
+#import "PictureDisplayViewController.h"
+#import "MineViewController.h"
+#import "DrawerViewController.h"
 
 @interface BaseViewController ()<NCAnimationViewDelegate>
 
@@ -73,13 +76,17 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    if ([self isKindOfClass:[LoginViewController class]] || [self isKindOfClass:[RegisterViewController class]] || [self isKindOfClass:[CollectionViewController class]]) {
-        if (self.menu) {
-            //            [self.menu removeFromSuperview];
+
+        if ([self isKindOfClass:[LoginViewController class]] || [self isKindOfClass:[RegisterViewController class]] || [self isKindOfClass:[CollectionViewController class]] || [self isKindOfClass:[PictureDisplayViewController class]] || [self isKindOfClass:[MineViewController class]]) {
+            if (self.menu) {
+
+            }
+        }else{
+            
+            [self setupMenuView];
+            
         }
-    }else{
-        [self setupMenuView];
-    }
+
 }
 
 - (UIViewController *)getPresentedViewController
@@ -110,13 +117,16 @@
 - (void)animationView:(NCAnimationView *)view didSelectedIndex:(NSInteger)index{
     NSLog(@"点击了第%ld个button",index);
     if (index == 0) {
-        LoginViewController *login = [[LoginViewController alloc] init];
-        [self.navigationController presentViewController:login animated:YES completion:nil];
+        MineViewController *mineVC = [[MineViewController alloc] init];
+        mineVC.isPresent = YES;
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:mineVC];
+        [self presentViewController:nav animated:YES completion:nil];
     }
     if (index == 1) {
         CollectionViewController *collectionVC = [[CollectionViewController alloc] init];
+        collectionVC.isPresent = YES;
         UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:collectionVC];
-        [self.navigationController presentViewController:nav animated:YES completion:nil];
+        [self presentViewController:nav animated:YES completion:nil];
     }
 }
 /*

@@ -66,6 +66,7 @@
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(tableViewX, tableViewY, tableViewW, tableViewH) style:UITableViewStylePlain];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.showsVerticalScrollIndicator = NO;
     [self.tableView registerClass:[TypeFourCell class] forCellReuseIdentifier:@"videoCell"];
     [self.view addSubview:self.tableView];
     // 添加上拉刷新
@@ -123,8 +124,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     VideoModel *model = self.tableArray[indexPath.row];
     VideoPlayViewController *videoPlayVC = [[VideoPlayViewController alloc] init];
-    videoPlayVC.modifytime = model.modifytime;
-    videoPlayVC.videoid = model.videoid;
+//    videoPlayVC.modifytime = model.modifytime;
+//    videoPlayVC.videoid = model.videoid;
+     NSString *requestStr = [NSString stringWithFormat:@"http://h5.ycapp.yiche.com/newvideo/%@.html?plat=2&appver=7.0&ts=%@",model.videoid,model.modifytime];
+    videoPlayVC.requestStr = requestStr;
     [self.navigationController pushViewController:videoPlayVC animated:YES];
 }
 

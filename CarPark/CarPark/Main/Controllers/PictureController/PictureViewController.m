@@ -72,6 +72,7 @@
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(tableViewX, tableViewY, tableViewW, tableViewH) style:UITableViewStylePlain];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.showsVerticalScrollIndicator = NO;
     [self.tableView registerClass:[TypeThreeCell class] forCellReuseIdentifier:@"picture3Cell"];
     [self.tableView registerClass:[TypeTwoCell class] forCellReuseIdentifier:@"picture2Cell"];
     [self.view addSubview:self.tableView];
@@ -136,7 +137,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     PictureModel *model = self.tableArray[indexPath.row];
     PictureDisplayViewController *pictureDisplayVC = [[PictureDisplayViewController alloc] init];
-    pictureDisplayVC.newsId = model.newsId;
+    NSString *requestStr = [NSString stringWithFormat:@"http://api.ycapp.yiche.com/appnews/GetNewsAlbum?newsid=%ld",model.newsId];
+    pictureDisplayVC.requestStr = requestStr;
     pictureDisplayVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     [self presentViewController:pictureDisplayVC animated:YES completion:nil];
 //    [self.navigationController pushViewController:pictureDisplayVC animated:YES];

@@ -34,15 +34,31 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    UIBarButtonItem *collectionItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"collect.png"] style:(UIBarButtonItemStyleDone) target:self action:@selector(collectionAction)];
+    self.navigationItem.rightBarButtonItem = collectionItem;
+    
     [self handleData];
     
 }
 
+// 收藏按钮
+-(void)collectionAction{
+    NSLog(@"点击了收藏按钮");
+//    CollectionListDB *db = [[CollectionListDB alloc] init];
+//    [db createTable];
+//    DetailHeaderModel *headerModel = self.headerArray[0];
+//    NSLog(@"%@",self.headerArray[0]);
+//    NSArray *array = [[NSArray alloc] initWithObjects:headerModel.title,headerModel.publishTime,self.requestStr, nil];
+//    //    @[headerModel.title,headerModel.publishTime,self.requestStr];
+//    NSLog(@"%@-----%@-------%@",headerModel.title,headerModel.publishTime,self.requestStr);
+//    NSLog(@"////////%@",array);
+//    [db insertCollectionRecordWithArray:array];
+}
 
 - (void)handleData{
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    NSString *str1 = [NSString stringWithFormat:@"http://api.ycapp.yiche.com/appnews/GetStructNews?newsId=%@&ts=%@&plat=2&theme=0&version=7.0",self.newsId,self.lastModify];
-    [manager GET:str1 parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    
+    [manager GET:self.requestStr parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         NSLog(@"downloadProgress = %@",downloadProgress);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
@@ -75,6 +91,7 @@
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"importantDetailCell"];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.showsVerticalScrollIndicator = NO;
     self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
     
     [self.tableView registerClass:[ImportantDetailTypeOneCell class] forCellReuseIdentifier:@"oneCell"];

@@ -57,6 +57,7 @@ static NSString *const RecommandId = @"cell";
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(tableViewX, tableViewY, tableViewW, tableViewH) style:UITableViewStylePlain];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.showsVerticalScrollIndicator = NO;
     //    [self.tableView registerNib:[UINib nibWithNibName:@"RecommandTableCell" bundle:nil] forCellReuseIdentifier:RecommandId];
     [self.tableView registerClass:[TypeOneCell class] forCellReuseIdentifier:RecommandId];
     [self.view addSubview:self.tableView];

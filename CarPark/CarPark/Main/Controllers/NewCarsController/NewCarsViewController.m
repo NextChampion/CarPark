@@ -117,6 +117,8 @@
     TextDetailViewController *DetailVC = [[TextDetailViewController alloc] init];
     NSString *requestStr = [NSString stringWithFormat:@"http://api.ycapp.yiche.com/news/GetStructYCNews?newsId=%@&ts=%@&plat=2&theme=0&version=7.0",model.newsId,model.lastModify];
     DetailVC.requestStr = requestStr;
+    DetailVC.contentTitle = model.title;
+    DetailVC.type = [NSString stringWithFormat:@"%ld",model.type];
     [self.navigationController pushViewController:DetailVC animated:YES];
     
 }

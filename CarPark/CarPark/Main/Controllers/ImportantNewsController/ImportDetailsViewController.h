@@ -12,4 +12,7 @@
 @property (nonatomic, strong) NSString *newsId;
 @property (nonatomic, strong) NSString *lastModify;
 @property (nonatomic, strong) NSString *requestStr;
+@property (nonatomic, strong) NSString *contentTitle;
+//@property (nonatomic, assign) NSInteger type;
+@property (nonatomic, strong) NSString *type;
 @end

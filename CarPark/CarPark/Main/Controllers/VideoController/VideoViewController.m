@@ -128,6 +128,9 @@
 //    videoPlayVC.videoid = model.videoid;
      NSString *requestStr = [NSString stringWithFormat:@"http://h5.ycapp.yiche.com/newvideo/%@.html?plat=2&appver=7.0&ts=%@",model.videoid,model.modifytime];
     videoPlayVC.requestStr = requestStr;
+    videoPlayVC.publishTime = model.publishtime;
+    videoPlayVC.contentTitle = model.title;
+    videoPlayVC.type = [NSString stringWithFormat:@"%ld",model.type];
     [self.navigationController pushViewController:videoPlayVC animated:YES];
 }
 

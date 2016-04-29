@@ -139,6 +139,9 @@
     PictureDisplayViewController *pictureDisplayVC = [[PictureDisplayViewController alloc] init];
     NSString *requestStr = [NSString stringWithFormat:@"http://api.ycapp.yiche.com/appnews/GetNewsAlbum?newsid=%ld",model.newsId];
     pictureDisplayVC.requestStr = requestStr;
+    pictureDisplayVC.contentTitle = model.title;
+    pictureDisplayVC.publishTime = model.publishTime;
+    pictureDisplayVC.type = [NSString stringWithFormat:@"%ld",model.type];
     pictureDisplayVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     [self presentViewController:pictureDisplayVC animated:YES completion:nil];
 //    [self.navigationController pushViewController:pictureDisplayVC animated:YES];

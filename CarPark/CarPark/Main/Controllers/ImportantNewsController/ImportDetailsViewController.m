@@ -12,13 +12,17 @@
 #import "ImportDetailModel.h"
 #import "ImportantDetailheaderModel.h"
 #import "ImportantDetailHeaderView.h"
+#import "CollectionListDB.h"
 
 
-
-@interface ImportDetailsViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface ImportDetailsViewController ()<UITableViewDataSource,UITableViewDelegate>{
+    BOOL isCollected;
+}
+@property (nonatomic, strong) UIBarButtonItem *collectionItem; // 收藏按钮
 
 @property (nonatomic, strong) NSMutableArray *tableArray;
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) NSMutableArray *headerArray;
 
 @end
 
@@ -31,29 +35,53 @@
     return _tableArray;
 }
 
+- (NSMutableArray *)headerArray{
+    if (!_headerArray) {
+        _headerArray = [[NSMutableArray alloc] init];
+    }
+    return _headerArray;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    UIBarButtonItem *collectionItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"collect.png"] style:(UIBarButtonItemStyleDone) target:self action:@selector(collectionAction)];
-    self.navigationItem.rightBarButtonItem = collectionItem;
+    CollectionListDB *db = [[CollectionListDB alloc] init];
+    isCollected = [db selectRecordWithTitle:self.contentTitle];
+    if (isCollected) {  // 如果收藏过
+        self.collectionItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"collect_selected.png"] style:(UIBarButtonItemStyleDone) target:self action:@selector(collectionAction)];
+        self.navigationItem.rightBarButtonItem = self.collectionItem;
+    }else{
+        self.collectionItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"collect.png"] style:(UIBarButtonItemStyleDone) target:self action:@selector(collectionAction)];
+        self.navigationItem.rightBarButtonItem = self.collectionItem;
+    }
+
     
     [self handleData];
     
 }
 
 // 收藏按钮
--(void)collectionAction{
+- (void)collectionAction{
     NSLog(@"点击了收藏按钮");
-//    CollectionListDB *db = [[CollectionListDB alloc] init];
-//    [db createTable];
-//    DetailHeaderModel *headerModel = self.headerArray[0];
-//    NSLog(@"%@",self.headerArray[0]);
-//    NSArray *array = [[NSArray alloc] initWithObjects:headerModel.title,headerModel.publishTime,self.requestStr, nil];
-//    //    @[headerModel.title,headerModel.publishTime,self.requestStr];
-//    NSLog(@"%@-----%@-------%@",headerModel.title,headerModel.publishTime,self.requestStr);
-//    NSLog(@"////////%@",array);
-//    [db insertCollectionRecordWithArray:array];
+    CollectionListDB *db = [[CollectionListDB alloc] init];
+    if (isCollected) {
+        NSLog(@"想取消收藏");
+        // 取消收藏
+        [self.collectionItem setImage:[UIImage imageNamed:@"collect.png"]];
+        [db deleteRecordWithTitle:self.contentTitle];
+        isCollected = NO;
+    }else{
+        NSLog(@"想收藏这一页");
+        [self.collectionItem setImage:[UIImage imageNamed:@"collect_selected.png"]];
+        [db createTable];
+        ImportantDetailheaderModel *headerModel = self.headerArray[0];
+        NSLog(@"%@",self.headerArray[0]);
+        NSArray *array = [[NSArray alloc] initWithObjects:self.contentTitle,headerModel.publishTime,self.requestStr,self.type,nil];
+        [db insertCollectionRecordWithArray:array];
+        isCollected = YES;
+    }
 }
+
 
 - (void)handleData{
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
@@ -68,6 +96,7 @@
         [headerModel setValuesForKeysWithDictionary:dataDic[@"data"]];
         ImportantDetailHeaderView *view = [[ImportantDetailHeaderView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 100)];
         [view setDataWithModel:headerModel];
+        [self.headerArray addObject:headerModel];
         
         for (NSDictionary *dic in array) {
             ImportDetailModel *model = [[ImportDetailModel alloc] init];

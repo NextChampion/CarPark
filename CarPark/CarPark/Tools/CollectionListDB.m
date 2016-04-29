@@ -23,7 +23,11 @@
 
 // 建表
 - (void)createTable{
-    NSString *string = [NSString stringWithFormat:@"create table if not exists %@ (title text,publishTime text,contentURL text)",collection];
+//    if (![dataBase open]) {
+//        NSLog(@"数据库打开失败");
+//        return;
+//    }
+    NSString *string = [NSString stringWithFormat:@"create table if not exists %@ (title text,publishTime text,requestStr text,type text)",collection];
     BOOL isCreate = [dataBase executeUpdate:string];
     if (isCreate) {
         NSLog(@"数据库创建成功");
@@ -34,7 +38,11 @@
 
 // 增
 - (void)insertCollectionRecordWithArray:(NSArray *)array{
-    NSString *string = [NSString stringWithFormat:@"insert into %@ (title,publishTime,contentURL) values (?,?,?)",collection];
+    if (![dataBase open]) {
+        NSLog(@"数据库打开失败");
+        return;
+    }
+    NSString *string = [NSString stringWithFormat:@"insert into %@ (title,publishTime,requestStr,type) values (?,?,?,?)",collection];
     // 使用sqlite3_bind 进行参数的绑定
     // 缺点 可读性差
     BOOL isInsert = [dataBase executeUpdate:string withArgumentsInArray:array];// 使用数组绑定参数
@@ -60,7 +68,8 @@
         return;
     }
     //删除操作
-    BOOL isDelete = [dataBase executeUpdate:@"delete from ? where title = ?",collection, [NSString stringWithFormat:@"%@",title]];
+    NSString *deleteStr = [NSString stringWithFormat:@"delete from %@ where title = '%@';",collection, title];
+    BOOL isDelete = [dataBase executeUpdate:deleteStr];
     if (isDelete) {
         NSLog(@"删除数据成功");
     }else{
@@ -71,23 +80,49 @@
 
 // 查
 - (NSArray *)selectAllRecord{
-    
+    if (![dataBase open]) {
+        NSLog(@"数据库打开失败");
+        return nil;
+    }
     NSMutableArray *array = [[NSMutableArray alloc] init];
-    NSString *string = [NSString stringWithFormat:@"select * from %@",collection];
+    NSString *string = [NSString stringWithFormat:@"select * from %@;",collection];
+    NSLog(@"%@",string);
     FMResultSet *result = [dataBase executeQuery:string];
     while ([result next]) {
         NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
         [dic setValue:[result stringForColumn:@"title"] forKey:@"title"];
         [dic setValue:[result stringForColumn:@"publishTime"] forKey:@"publishTime"];
-        [dic setValue:[result stringForColumn:@"contentURL"] forKey:@"contentURL"];
+        [dic setValue:[result stringForColumn:@"requestStr"] forKey:@"requestStr"];
+        [dic setValue:[result stringForColumn:@"type"] forKey:@"type"];
+//        [dic setValue:[result stringForColumn:@"filePath"] forKey:@"filePath"];
         [array addObject:dic];
     }
     return array;
 }
 
+- (BOOL)selectRecordWithTitle:(NSString *)title{
+    if (![dataBase open]) {
+        NSLog(@"数据库打开失败");
+        return NO;
+    }
+    NSString *string = [NSString stringWithFormat:@"select title from %@ where title = '%@';",collection,title];
+    FMResultSet *result = [dataBase executeQuery:string];
+    NSString *resultStr = [NSString new];
+    while ([result next]) {
+        resultStr = [result stringForColumn:@"title"];
+    }
+    NSLog(@"%@",result);
+    if ([resultStr isEqualToString:title]) {
+        return  YES;
+    }
+    return NO;
+}
 // 清空
 - (void)deleteAllRecords{
-
+    if (![dataBase open]) {
+        NSLog(@"数据库打开失败");
+        return;
+    }
     NSArray *array = [self selectAllRecord];
     for (NSDictionary *dic in array) {
         [self deleteRecordWithTitle:dic[@"title"]];
@@ -96,6 +131,10 @@
 
 // 销毁表格
 - (void)dropTable{
+    if (![dataBase open]) {
+        NSLog(@"数据库打开失败");
+        return;
+    }
     BOOL isDrop = [dataBase executeUpdate:@"drop table if exists ?;",collection];
     if (isDrop) {
         NSLog(@"销毁表格成功");

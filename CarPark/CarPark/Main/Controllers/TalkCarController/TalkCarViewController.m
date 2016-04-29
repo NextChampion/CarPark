@@ -15,6 +15,7 @@
 @interface TalkCarViewController ()<UITableViewDataSource,UITableViewDelegate>{
     int count;
 }
+
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *dataArray;
 /** 数据页数,表示下次请求第几页的数据*/
@@ -140,6 +141,8 @@ static NSString *const RecommandId = @"cell";
         TextDetailViewController *DetailVC = [[TextDetailViewController alloc] init];
         NSString *requestStr = [NSString stringWithFormat:@"http://api.ycapp.yiche.com/media/GetStructMedia?newsId=%@&ts=%@&plat=2&theme=0&version=7.0",model.newsId,model.lastModify];
         DetailVC.requestStr = requestStr;
+        DetailVC.contentTitle = model.title;
+        DetailVC.type = [NSString stringWithFormat:@"%ld",model.type];
         [self.navigationController pushViewController:DetailVC animated:YES];
     }
 }

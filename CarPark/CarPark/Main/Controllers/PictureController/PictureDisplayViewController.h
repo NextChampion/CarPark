@@ -11,4 +11,8 @@
 @interface PictureDisplayViewController : BaseViewController
 @property (nonatomic, assign) BOOL isImportantPush;
 @property (nonatomic, strong) NSString *requestStr;
+@property (nonatomic, strong) NSString *contentTitle;
+@property (nonatomic, strong) NSString *publishTime;
+//@property (nonatomic, assign) NSInteger type;
+@property (nonatomic, strong) NSString *type;
 @end

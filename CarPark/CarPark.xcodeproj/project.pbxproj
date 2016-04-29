@@ -197,7 +197,6 @@
 		C25F46DB1CD0E43200D040B2 /* talk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = talk.png; sourceTree = "<group>"; };
 		C25F46DC1CD0E43200D040B2 /* text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = text.png; sourceTree = "<group>"; };
 		C25F46DD1CD0E43200D040B2 /* video.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video.png; sourceTree = "<group>"; };
-		C25F46DE1CD0E43200D040B2 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		C25F46DF1CD0E43200D040B2 /* logo_word.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_word.png; sourceTree = "<group>"; };
 		C25F46E01CD0E43200D040B2 /* nav_menu_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_menu_icon@2x.png"; sourceTree = "<group>"; };
 		C25F46E21CD0E43200D040B2 /* bg-addbutton-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-addbutton-highlighted.png"; sourceTree = "<group>"; };
@@ -595,7 +594,6 @@
 				C2E6F6B81CD0F3D2004D27E1 /* demo－6.tiff */,
 				C25F46CF1CD0E43200D040B2 /* cell */,
 				C25F46D51CD0E43200D040B2 /* Drawer */,
-				C25F46DE1CD0E43200D040B2 /* logo.png */,
 				C25F46DF1CD0E43200D040B2 /* logo_word.png */,
 				C25F46E01CD0E43200D040B2 /* nav_menu_icon@2x.png */,
 				C25F46E11CD0E43200D040B2 /* NCAnimationImage */,
@@ -1319,7 +1317,7 @@
 				INFOPLIST_FILE = CarPark/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lcarpark.zfw.CarPark;
+				PRODUCT_BUNDLE_IDENTIFIER = com.carpark.zfw.CarPark;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1337,7 +1335,7 @@
 				INFOPLIST_FILE = CarPark/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lcarpark.zfw.CarPark;
+				PRODUCT_BUNDLE_IDENTIFIER = com.carpark.zfw.CarPark;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

@@ -119,12 +119,6 @@ static NSString *const RecommandId = @"cell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     TypeOneCell *cell = [tableView dequeueReusableCellWithIdentifier:RecommandId forIndexPath:indexPath];
     DataModel *model = self.dataArray[indexPath.row];
-    //    cell.srcLabel.text = model.src;
-    //    cell.commentLabel.text = [NSString stringWithFormat:@"%ld",model.commentCount];
-    //    cell.titleLabel.text = model.title;
-    //    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    //    [cell.picCoverImage sd_setImageWithURL:[NSURL URLWithString:model.picCover]];
-    //    [cell.commentImage sd_setImageWithURL:nil placeholderImage:[UIImage imageNamed:@"commenticon.png"]];
     [cell setDataWithModel:model];
     cell.srcLabel.text = model.publishTime;
     return cell;
@@ -145,6 +139,8 @@ static NSString *const RecommandId = @"cell";
         TextDetailViewController *DetailVC = [[TextDetailViewController alloc] init];
         NSString *requestStr = [NSString stringWithFormat:@"http://api.ycapp.yiche.com/news/GetStructYCNews?newsId=%@&ts=%@&plat=2&theme=0&version=7.0",model.newsId,model.lastModify];
         DetailVC.requestStr = requestStr;
+        DetailVC.contentTitle = model.title;
+        DetailVC.type = [NSString stringWithFormat:@"%ld",model.type];
         [self.navigationController pushViewController:DetailVC animated:YES];
     }
 }

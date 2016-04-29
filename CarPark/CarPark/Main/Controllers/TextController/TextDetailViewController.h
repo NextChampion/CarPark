@@ -10,4 +10,7 @@
 
 @interface TextDetailViewController : BaseViewController
 @property (nonatomic, strong) NSString *requestStr;
+@property (nonatomic, strong) NSString *contentTitle;
+//@property (nonatomic, assign) NSInteger type;
+@property (nonatomic, strong) NSString *type;
 @end

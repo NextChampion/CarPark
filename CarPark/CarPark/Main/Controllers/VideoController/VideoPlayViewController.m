@@ -7,10 +7,14 @@
 //
 
 #import "VideoPlayViewController.h"
+#import "CollectionListDB.h"
 
-@interface VideoPlayViewController ()
+@interface VideoPlayViewController (){
+    BOOL isCollected;
+}
 
 @property (nonatomic, strong) UIWebView *webView;
+@property (nonatomic, strong) UIBarButtonItem *collectionItem; // 收藏按钮
 
 @end
 
@@ -25,9 +29,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    UIBarButtonItem *collectionItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"collect.png"] style:(UIBarButtonItemStyleDone) target:self action:@selector(collectionAction)];
-    self.navigationItem.rightBarButtonItem = collectionItem;
+    NSLog(@"%@",self.contentTitle);
+    CollectionListDB *db = [[CollectionListDB alloc] init];
+    isCollected = [db selectRecordWithTitle:self.contentTitle];
+    NSLog(@"%@",self.contentTitle);
+    if (isCollected) {  // 如果收藏过
+        self.collectionItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"collect_selected.png"] style:(UIBarButtonItemStyleDone) target:self action:@selector(collectionAction)];
+        self.navigationItem.rightBarButtonItem = self.collectionItem;
+    }else{
+        self.collectionItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"collect.png"] style:(UIBarButtonItemStyleDone) target:self action:@selector(collectionAction)];
+        self.navigationItem.rightBarButtonItem = self.collectionItem;
+    }
     
     self.web_URL = self.requestStr;
     
@@ -35,18 +47,26 @@
 }
 
 // 收藏按钮
--(void)collectionAction{
+// 收藏按钮
+- (void)collectionAction{
     NSLog(@"点击了收藏按钮");
-//    CollectionListDB *db = [[CollectionListDB alloc] init];
-//    [db createTable];
-//    DetailHeaderModel *headerModel = self.headerArray[0];
-//    NSLog(@"%@",self.headerArray[0]);
-//    NSArray *array = [[NSArray alloc] initWithObjects:headerModel.title,headerModel.publishTime,self.requestStr, nil];
-//    //    @[headerModel.title,headerModel.publishTime,self.requestStr];
-//    NSLog(@"%@-----%@-------%@",headerModel.title,headerModel.publishTime,self.requestStr);
-//    NSLog(@"////////%@",array);
-//    [db insertCollectionRecordWithArray:array];
+    CollectionListDB *db = [[CollectionListDB alloc] init];
+    if (isCollected) {
+        NSLog(@"想取消收藏");
+        // 取消收藏
+        [self.collectionItem setImage:[UIImage imageNamed:@"collect.png"]];
+        [db deleteRecordWithTitle:self.contentTitle];
+        isCollected = NO;
+    }else{
+        NSLog(@"想收藏这一页");
+        [self.collectionItem setImage:[UIImage imageNamed:@"collect_selected.png"]];
+        [db createTable];
+        NSArray *array = [[NSArray alloc] initWithObjects:self.contentTitle,self.publishTime,self.requestStr, self.type,nil]; // 存标题 链接
+        [db insertCollectionRecordWithArray:array];
+        isCollected = YES;
+    }
 }
+
 
 - (void)setupWebview{
     self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];

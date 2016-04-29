@@ -19,7 +19,7 @@
 @property (nonatomic, strong) UILabel *playCountLabel; // 播放次数
 @property (nonatomic, strong) UILabel *durationLabel; // 视频持续时间
 
-//@property (nonatomic, strong) UIButton *btn;// 控制播放
+@property (nonatomic, strong) UIView *playBackgroud;// 视频播放视图背景
 
 - (void)setDataWithModel:(DataModel *)model;
 @end

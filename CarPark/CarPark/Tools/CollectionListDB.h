@@ -19,6 +19,8 @@
 - (void)deleteRecordWithTitle:(NSString *)title;
 // 查
 - (NSArray *)selectAllRecord;
+// 查询单一记录
+- (BOOL)selectRecordWithTitle:(NSString *)title;
 // 清空
 - (void)deleteAllRecords;
 // 销毁表格

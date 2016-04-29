@@ -14,11 +14,16 @@
 #import "DetailHeaderModel.h"
 #import "CollectionListDB.h"
 
-@interface TextDetailViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface TextDetailViewController ()<UITableViewDataSource,UITableViewDelegate>{
+    BOOL isCollected;
+}
+@property (nonatomic, strong) UIBarButtonItem *collectionItem; // 收藏按钮
 
 @property (nonatomic, strong) NSMutableArray *tableArray;
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *headerArray;
+
+
 
 @end
 
@@ -38,17 +43,26 @@
     return _headerArray;
 }
 
+
+//-(void)viewWillAppear:(BOOL)animated{
+//    CollectionListDB *db = [[CollectionListDB alloc] init];
+//    isCollected = [db selectRecordWithTitle:self.contentTitle];
+//}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    CollectionListDB *db = [[CollectionListDB alloc] init];
+    isCollected = [db selectRecordWithTitle:self.contentTitle];
+    if (isCollected) {  // 如果收藏过
+        self.collectionItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"collect_selected.png"] style:(UIBarButtonItemStyleDone) target:self action:@selector(collectionAction)];
+        self.navigationItem.rightBarButtonItem = self.collectionItem;
+    }else{
+        self.collectionItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"collect.png"] style:(UIBarButtonItemStyleDone) target:self action:@selector(collectionAction)];
+        self.navigationItem.rightBarButtonItem = self.collectionItem;
+    }
     
-//    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"收藏" style:(UIBarButtonItemStyleDone) target:self action:@selector(collectionAction)];
-    UIBarButtonItem *collectionItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"collect.png"] style:(UIBarButtonItemStyleDone) target:self action:@selector(collectionAction)];
-    self.navigationItem.rightBarButtonItem = collectionItem;
     // Do any additional setup after loading the view from its nib.
     [self handleData];
-    
-    
-    
     
 }
 
@@ -62,8 +76,8 @@
         NSDictionary *dataDic = responseObject;
         NSArray *array = dataDic[@"data"][@"content"];
         DetailHeaderModel *headerModel = [[DetailHeaderModel alloc] init];
-        NSDictionary *headerDic = [[NSDictionary alloc] init];
-        headerDic = [dataDic objectForKey:@"data"];
+        NSDictionary *headerDic = [[NSDictionary alloc] initWithDictionary:[dataDic objectForKey:@"data"]];
+//        headerDic = [dataDic objectForKey:@"data"];
         [headerModel setValuesForKeysWithDictionary:headerDic];
         [self.headerArray addObject:headerModel];
         for (NSDictionary *dic in array) {
@@ -80,18 +94,30 @@
 }
 
 // 收藏按钮
--(void)collectionAction{
+- (void)collectionAction{
     NSLog(@"点击了收藏按钮");
     CollectionListDB *db = [[CollectionListDB alloc] init];
-    [db createTable];
-    DetailHeaderModel *headerModel = self.headerArray[0];
-    NSLog(@"%@",self.headerArray[0]);
-    NSArray *array = [[NSArray alloc] initWithObjects:headerModel.title,headerModel.publishTime,self.requestStr, nil];
-//    @[headerModel.title,headerModel.publishTime,self.requestStr];
-    NSLog(@"%@-----%@-------%@",headerModel.title,headerModel.publishTime,self.requestStr);
-    NSLog(@"////////%@",array);
-    [db insertCollectionRecordWithArray:array];
+    if (isCollected) {
+        NSLog(@"想取消收藏");
+        // 取消收藏
+        [self.collectionItem setImage:[UIImage imageNamed:@"collect.png"]];
+        [db deleteRecordWithTitle:self.contentTitle];
+        isCollected = NO;
+    }else{
+        NSLog(@"想收藏这一页");
+        [self.collectionItem setImage:[UIImage imageNamed:@"collect_selected.png"]];
+        [db createTable];
+        DetailHeaderModel *headerModel = self.headerArray[0];
+        NSLog(@"%@",self.headerArray[0]);
+        NSArray *array = [[NSArray alloc] initWithObjects:self.contentTitle,headerModel.publishTime,self.requestStr,self.type,nil];
+        [db insertCollectionRecordWithArray:array];
+        isCollected = YES;
+    }
 }
+
+
+
+
 
 - (void)setupView{
     CGFloat tableViewX = 0;

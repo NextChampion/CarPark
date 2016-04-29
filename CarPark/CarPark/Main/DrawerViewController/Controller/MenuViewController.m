@@ -20,9 +20,11 @@
 #import "VideoViewController.h"
 
 #import "MineViewController.h"
+#import "CollectionViewController.h"
 
 
 #import "BaseViewController.h"
+
 
 @interface MenuViewController ()<UITableViewDelegate,UITableViewDataSource>{
     NSMutableArray *list; // 菜单列表数据源
@@ -198,6 +200,10 @@
 
 - (void)collectionAction{
     NSLog(@"打开个人收藏");
+    CollectionViewController *collectionVC = [[CollectionViewController alloc] init];
+    DrawerViewController *menuController = (DrawerViewController *)((AppDelegate *)[[UIApplication sharedApplication] delegate]).drawerViewController;
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:collectionVC];
+    [menuController setRootViewController:navController animated:YES];
 }
 
 #pragma mark - UITableViewDelegate

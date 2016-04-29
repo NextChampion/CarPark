@@ -15,13 +15,14 @@
 - (UILabel *)titleLabel{
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc] init];
+        _titleLabel.font = [UIFont systemFontOfSize:15];
         [self.contentView addSubview:_titleLabel];
         __weak typeof(self) weakSelf = self;
         [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(weakSelf.contentView.mas_left).offset(8);
             make.top.equalTo(weakSelf.contentView.mas_top).offset(8);
             make.right.equalTo(weakSelf.contentView.mas_right).offset(-8);
-            make.height.equalTo(@21);
+            make.height.equalTo(@15);
         }];
     }
     return _titleLabel;

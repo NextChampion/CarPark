@@ -174,7 +174,7 @@
 }
 
 - (void)registerButtonAction{
-    NSLog(@"注册账号");
+
 }
 
 // 点击屏幕收起键盘

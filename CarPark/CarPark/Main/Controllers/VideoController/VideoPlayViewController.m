@@ -29,10 +29,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"%@",self.contentTitle);
+    
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] init];
+    backItem.title = @"返回";
+    self.navigationItem.backBarButtonItem = backItem;
+    
     CollectionListDB *db = [[CollectionListDB alloc] init];
     isCollected = [db selectRecordWithTitle:self.contentTitle];
-    NSLog(@"%@",self.contentTitle);
+
     if (isCollected) {  // 如果收藏过
         self.collectionItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"collect_selected.png"] style:(UIBarButtonItemStyleDone) target:self action:@selector(collectionAction)];
         self.navigationItem.rightBarButtonItem = self.collectionItem;
@@ -49,16 +53,16 @@
 // 收藏按钮
 // 收藏按钮
 - (void)collectionAction{
-    NSLog(@"点击了收藏按钮");
+
     CollectionListDB *db = [[CollectionListDB alloc] init];
     if (isCollected) {
-        NSLog(@"想取消收藏");
+
         // 取消收藏
         [self.collectionItem setImage:[UIImage imageNamed:@"collect.png"]];
         [db deleteRecordWithTitle:self.contentTitle];
         isCollected = NO;
     }else{
-        NSLog(@"想收藏这一页");
+
         [self.collectionItem setImage:[UIImage imageNamed:@"collect_selected.png"]];
         [db createTable];
         NSArray *array = [[NSArray alloc] initWithObjects:self.contentTitle,self.publishTime,self.requestStr, self.type,nil]; // 存标题 链接
@@ -84,7 +88,7 @@
     
     //先找到布局文件的路径
     NSString *filePath = [[NSBundle mainBundle]pathForResource:@"style" ofType:@"css"];
-    NSLog(@"-%@",filePath);
+
     
     //替换HTML字符串中的布局， 修改为通过本地文件配置
     //1.先写一个可用于配置布局的字符串命令，并设置配置类型为本地的文件（命令都是HTML语言， 可以不用懂， 大致知道什么意思就可以了， 文件内容可以让webView中的图片适应屏幕宽度）

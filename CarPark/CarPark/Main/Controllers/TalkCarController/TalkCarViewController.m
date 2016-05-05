@@ -36,7 +36,7 @@ static NSString *const RecommandId = @"cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.navigationItem.title = @"说车";
     [self setupView];
     //    [self requestData];
 }

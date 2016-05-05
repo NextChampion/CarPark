@@ -23,10 +23,7 @@
 
 // 建表
 - (void)createTable{
-//    if (![dataBase open]) {
-//        NSLog(@"数据库打开失败");
-//        return;
-//    }
+
     NSString *string = [NSString stringWithFormat:@"create table if not exists %@ (title text,publishTime text,requestStr text,type text)",collection];
     BOOL isCreate = [dataBase executeUpdate:string];
     if (isCreate) {
@@ -86,7 +83,6 @@
     }
     NSMutableArray *array = [[NSMutableArray alloc] init];
     NSString *string = [NSString stringWithFormat:@"select * from %@;",collection];
-    NSLog(@"%@",string);
     FMResultSet *result = [dataBase executeQuery:string];
     while ([result next]) {
         NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
@@ -111,7 +107,6 @@
     while ([result next]) {
         resultStr = [result stringForColumn:@"title"];
     }
-    NSLog(@"%@",result);
     if ([resultStr isEqualToString:title]) {
         return  YES;
     }

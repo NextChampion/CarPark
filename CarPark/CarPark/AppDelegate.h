@@ -17,5 +17,6 @@
 @property (nonatomic, strong) DrawerViewController *drawerViewController;
 
 @property (nonatomic, assign) BOOL menuIsShow;
+
 @end
 

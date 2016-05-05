@@ -32,6 +32,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = @"视频";
     [self setupView];
     [self handelData];
     // Do any additional setup after loading the view.
@@ -42,7 +43,7 @@
     count++;
     NSString *str = [NSString stringWithFormat:@"http://api.ycapp.yiche.com/video/getappvideolist?pageindex=%d&pagesize=20&plat=2",count];
     [manager GET:str parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
-        NSLog(@"%@",downloadProgress);
+
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *dataDic = responseObject;
         NSArray *array = dataDic[@"data"][@"list"];

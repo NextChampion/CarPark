@@ -27,7 +27,7 @@
         
         // 创建数据库路径
         NSString *path = [string stringByAppendingPathComponent:SqliteName];
-        NSLog(@"数据库路径:%@",path);
+
         // 打开数据库
         self.database = [[FMDatabase alloc] initWithPath:path];
         BOOL isOpen = [self.database open];

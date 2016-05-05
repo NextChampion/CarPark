@@ -16,8 +16,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor whiteColor];
+    UITextView *textView = [[UITextView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    textView.userInteractionEnabled = NO;
+    [self.view addSubview:textView];
+    textView.text = @"欢迎提出改进意见\n        邮箱:zcx4150@163.com";
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

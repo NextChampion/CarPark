@@ -55,17 +55,8 @@
                                                                         highlightedImage:storyMenuItemImagePressed
                                                                             ContentImage:[UIImage imageNamed:@"collection.png"]
                                                                  highlightedContentImage:nil];
-    // Place MenuItem.
-    NCAnimationViewItem *placeMenuItem = [[NCAnimationViewItem alloc] initWithImage:storyMenuItemImage
-                                                                   highlightedImage:storyMenuItemImagePressed
-                                                                       ContentImage:[UIImage imageNamed:@"icon-star.png"]
-                                                            highlightedContentImage:nil];
-    // Music MenuItem.
-    NCAnimationViewItem *musicMenuItem = [[NCAnimationViewItem alloc] initWithImage:storyMenuItemImage
-                                                                   highlightedImage:storyMenuItemImagePressed
-                                                                       ContentImage:[UIImage imageNamed:@"icon-star.png"]
-                                                            highlightedContentImage:nil];
-    NSArray *menus = [NSArray arrayWithObjects:profileMenuItem, collectionMenuItem, placeMenuItem,musicMenuItem, nil];
+
+    NSArray *menus = [NSArray arrayWithObjects:profileMenuItem, collectionMenuItem, nil];
     self.menu = [NCAnimationView viewWithFrame:self.view.frame viewArray:menus];
     self.menu.userInteractionEnabled = YES;
     self.menu.alpha = 0.3;
@@ -79,12 +70,12 @@
 
         if ([self isKindOfClass:[LoginViewController class]] || [self isKindOfClass:[RegisterViewController class]] || [self isKindOfClass:[CollectionViewController class]] || [self isKindOfClass:[PictureDisplayViewController class]] || [self isKindOfClass:[MineViewController class]]) {
             if (self.menu) {
-
+                
             }
         }else{
-            
-            [self setupMenuView];
-            
+            if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"isAllowMenuShow"] isEqualToString:@"YES"]) {
+                [self setupMenuView];
+            }
         }
 
 }
@@ -102,8 +93,9 @@
 // 控制器消失的时候 移除悬浮按钮
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-        if (self.menu) {
-            [self.menu removeFromSuperview];
+    
+    if (self.menu) {
+        [self.menu removeFromSuperview];
     }
 }
 
@@ -115,7 +107,6 @@
 }
 
 - (void)animationView:(NCAnimationView *)view didSelectedIndex:(NSInteger)index{
-    NSLog(@"点击了第%ld个button",index);
     if (index == 0) {
         MineViewController *mineVC = [[MineViewController alloc] init];
         mineVC.isPresent = YES;

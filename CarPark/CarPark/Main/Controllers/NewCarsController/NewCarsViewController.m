@@ -34,6 +34,7 @@
 - (void)viewDidLoad {
     count = 0;
     [super viewDidLoad];
+    self.navigationItem.title = @"新车";
     [self setupView];
     [self handleData];
     
@@ -44,7 +45,7 @@
     count++;
     NSString *str = [NSString stringWithFormat:@"http://api.ycapp.yiche.com/news/GetNewsList?categoryid=5&serialid=&pageindex=%d&pagesize=20&appver=7.0",count];
     [manager GET:str parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
-        NSLog(@"%@",downloadProgress);
+
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *dataDic = responseObject;
         NSArray *array = dataDic[@"data"][@"list"];

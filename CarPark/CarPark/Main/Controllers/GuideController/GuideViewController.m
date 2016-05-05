@@ -34,7 +34,7 @@ static NSString *const RecommandId = @"cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.navigationItem.title = @"导购";
     [self setupView];
     //    [self requestData];
 }
@@ -96,7 +96,7 @@ static NSString *const RecommandId = @"cell";
         hud.mode = MBProgressHUDModeText;
         hud.labelText = @"您的网络不给力";
         [hud hide:YES afterDelay:2];
-        NSLog(@"请求失败 %@",error);
+
     }];
 }
 

@@ -45,6 +45,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] init];
+    backItem.title = @"返回";
+    self.navigationItem.backBarButtonItem = backItem;
+    
     CollectionListDB *db = [[CollectionListDB alloc] init];
     isCollected = [db selectRecordWithTitle:self.contentTitle];
     if (isCollected) {  // 如果收藏过
@@ -62,20 +67,20 @@
 
 // 收藏按钮
 - (void)collectionAction{
-    NSLog(@"点击了收藏按钮");
+
     CollectionListDB *db = [[CollectionListDB alloc] init];
     if (isCollected) {
-        NSLog(@"想取消收藏");
+
         // 取消收藏
         [self.collectionItem setImage:[UIImage imageNamed:@"collect.png"]];
         [db deleteRecordWithTitle:self.contentTitle];
         isCollected = NO;
     }else{
-        NSLog(@"想收藏这一页");
+
         [self.collectionItem setImage:[UIImage imageNamed:@"collect_selected.png"]];
         [db createTable];
         ImportantDetailheaderModel *headerModel = self.headerArray[0];
-        NSLog(@"%@",self.headerArray[0]);
+
         NSArray *array = [[NSArray alloc] initWithObjects:self.contentTitle,headerModel.publishTime,self.requestStr,self.type,nil];
         [db insertCollectionRecordWithArray:array];
         isCollected = YES;
@@ -87,7 +92,7 @@
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
     [manager GET:self.requestStr parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
-        NSLog(@"downloadProgress = %@",downloadProgress);
+
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         NSDictionary *dataDic = responseObject;
@@ -106,7 +111,7 @@
         [self setupView];
         self.tableView.tableHeaderView = view;
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error = %@",error);
+
     }];
     
 }

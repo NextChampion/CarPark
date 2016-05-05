@@ -190,7 +190,7 @@
 }
 
 -(void)mineAction{
-    NSLog(@"打开个人中心");
+
     MineViewController *mineVC = [[MineViewController alloc] init];
     DrawerViewController *menuController = (DrawerViewController *)((AppDelegate *)[[UIApplication sharedApplication] delegate]).drawerViewController;
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:mineVC];
@@ -199,7 +199,7 @@
 }
 
 - (void)collectionAction{
-    NSLog(@"打开个人收藏");
+
     CollectionViewController *collectionVC = [[CollectionViewController alloc] init];
     DrawerViewController *menuController = (DrawerViewController *)((AppDelegate *)[[UIApplication sharedApplication] delegate]).drawerViewController;
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:collectionVC];

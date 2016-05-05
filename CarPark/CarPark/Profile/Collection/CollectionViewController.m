@@ -40,7 +40,7 @@
     // 数据库 读取数据
     CollectionListDB *db = [[CollectionListDB alloc] init];
     NSArray *array = [db selectAllRecord];
-    NSLog(@"%@",array);
+
     self.tableArray = [array copy];
     if (array.count > 0) {
         isSourceArrayExist = YES;
@@ -61,7 +61,8 @@
 - (void)clearAction{
     // 数据库 读取数据
     CollectionListDB *db = [[CollectionListDB alloc] init];
-    [db dropTable];
+    [db deleteAllRecords];
+//    [db dropTable];
 }
 
 - (void)backAction{
@@ -83,7 +84,7 @@
     if (isSourceArrayExist) {
         return self.tableArray.count;
     }
-    return 10;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -111,9 +112,9 @@
 // tableView点击事件
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSDictionary *dic = self.tableArray[indexPath.row];
-    NSLog(@"%@",dic);
+
     NSInteger type = [dic[@"type"] integerValue];
-    NSLog(@"%ld",type);
+
     switch ([dic[@"type"] integerValue]) {
         case 2:{
             [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -132,19 +133,15 @@
             break;
         case 4:{
             VideoPlayViewController *videoPlayVC = [[VideoPlayViewController alloc] init];
-//            NSString *filePath = dic[@"filePath"];
-//            NSString *string = [filePath substringFromIndex:(filePath.length - 9)];//截取范围类的字符串
-//            NSLog(@"截取的值为：%@",string);
-//            NSString *requestStr = [NSString stringWithFormat:@"http://h5.ycapp.yiche.com/newvideo/%@.html?plat=2&appver=7.0&ts=",string];
+
             videoPlayVC.requestStr = dic[@"requestStr"];
-            NSLog(@"%@",dic[@"requestStr"]);
+
             videoPlayVC.publishTime = dic[@"publishTime"];
-            NSLog(@"%@",dic[@"publishTime"]);
+
             videoPlayVC.type = dic[@"type"];
-            NSLog(@"%@",dic[@"type"]);
+
             videoPlayVC.contentTitle = dic[@"title"];
-            NSLog(@"%@",dic[@"title"]);
-//            NSLog(@"%@",requestStr);
+
             [self.navigationController pushViewController:videoPlayVC animated:YES];
         }
             break;
@@ -153,11 +150,11 @@
         default:{
             ImportDetailsViewController *importantDetailVC = [[ImportDetailsViewController alloc] init];
             importantDetailVC.requestStr = dic[@"requestStr"];
-            NSLog(@"%@",dic[@"requestStr"]);
+
             importantDetailVC.contentTitle = dic[@"title"];
-            NSLog(@"%@",dic[@"title"]);
+
             importantDetailVC.type = dic[@"type"];
-            NSLog(@"%@",dic[@"type"]);
+
             [self.navigationController pushViewController:importantDetailVC animated:YES];
         }
             break;

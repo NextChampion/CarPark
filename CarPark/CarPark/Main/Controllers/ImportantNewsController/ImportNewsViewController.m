@@ -76,6 +76,7 @@
 - (void)viewDidLoad {
     count = 0;
     [super viewDidLoad];
+    self.navigationItem.title = @"首页";
     //注册播放完成通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(videoDidFinished:) name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
     //注册全屏完成通知
@@ -100,7 +101,7 @@
 -(void)RequestData{
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager GET:ImportNews parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
-        NSLog(@"*****%@",downloadProgress);
+
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSArray *ReqArray = [[responseObject objectForKey:@"data" ]objectForKey:@"list"];
         NSArray *reqArray = [NSMutableArray arrayWithArray:ReqArray];
@@ -113,7 +114,7 @@
         
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"Error=====%@",error);
+
     }];
 }
 
@@ -153,7 +154,7 @@
 
 #pragma mark - SDCycleScrollViewDelegate
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index{
-    NSLog(@"---点击了第%ld张图片", (long)index);
+
     DataModel *model = self.tableArray[index];
     ImportDetailsViewController *importantDetailVC = [[ImportDetailsViewController alloc] init];
     NSString *str1 = [NSString stringWithFormat:@"http://api.ycapp.yiche.com/appnews/GetStructNews?newsId=%@&ts=%@&plat=2&theme=0&version=7.0",model.newsId,model.lastModify];
@@ -266,6 +267,9 @@
 
 // 设置table样式
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+//    if (self.tableArray.count == 0) {
+//        return nil;
+//    }
     DataModel *model = self.tableArray[indexPath.row];
     NSInteger type = model.type;
     // 此处因为接口问题,前期cell 创建有问题,实际类型名与type的值不匹配
@@ -319,7 +323,6 @@
             }
         }
         
-        NSLog(@"%@",cell);
         return cell;
     }
     if (type == 5) {
@@ -379,14 +382,11 @@
             VideoPlayViewController *videoPlayVC = [[VideoPlayViewController alloc] init];
             NSString *filePath = model.filePath;
             NSString *string = [filePath substringFromIndex:(filePath.length - 9)];//截取范围类的字符串
-            NSLog(@"截取的值为：%@",string);
             NSString *requestStr = [NSString stringWithFormat:@"http://h5.ycapp.yiche.com/newvideo/%@.html?plat=2&appver=7.0&ts=",string];
             videoPlayVC.requestStr = requestStr;
-            NSLog(@"%@",videoPlayVC.requestStr);
             videoPlayVC.publishTime = model.publishTime;
             videoPlayVC.contentTitle = model.title;
             videoPlayVC.type = [NSString stringWithFormat:@"%ld",model.type];
-            NSLog(@"%@",requestStr);
             [self.navigationController pushViewController:videoPlayVC animated:YES];
             if (wmPlayer) {
                 UIView *view = wmPlayer.superview;
@@ -455,7 +455,6 @@
 -(void)closeTheVideo:(NSNotification *)obj{
 
     MediaCell *currentCell = (MediaCell *)[self.ImportTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:currentIndexPath.row inSection:0]];
-    NSLog(@"%@",currentCell);
     [currentCell.playBackgroud removeFromSuperview];
     //    [currentCell.playButton.superview bringSubviewToFront:currentCell.playButton];
     [self releaseWMPlayer];
@@ -584,7 +583,7 @@
 -(void)toCell{
     MediaCell *currentCell = [self currentCell];
     [wmPlayer removeFromSuperview];
-    NSLog(@"row = %ld",currentIndexPath.row);
+
     [UIView animateWithDuration:0.5f animations:^{
         wmPlayer.transform = CGAffineTransformIdentity;
         wmPlayer.frame = currentCell.playBackgroud.bounds;
@@ -628,7 +627,7 @@
         if (wmPlayer.superview) {
             CGRect rectInTableView = [self.ImportTableView rectForRowAtIndexPath:currentIndexPath];
             CGRect rectInSuperview = [self.ImportTableView convertRect:rectInTableView toView:[self.ImportTableView superview]];
-            NSLog(@"rectInSuperview = %@",NSStringFromCGRect(rectInSuperview));
+//            NSLog(@"rectInSuperview = %@",NSStringFromCGRect(rectInSuperview));
 
             if (rectInSuperview.origin.y < -self.currentCell.playBackgroud.frame.size.height || rectInSuperview.origin.y > self.view.frame.size.height-kNavbarHeight-kTabBarHeight) {//往上拖动
                 
@@ -713,7 +712,7 @@
 }
      
 -(void)dealloc{
- NSLog(@"%@ dealloc",[self class]);
+// NSLog(@"%@ dealloc",[self class]);
  [[NSNotificationCenter defaultCenter] removeObserver:self];
  [self releaseWMPlayer];
 }

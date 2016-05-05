@@ -26,6 +26,8 @@
 		C242E5801CC77BB70097A119 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C242E57F1CC77BB70097A119 /* CollectionViewController.m */; };
 		C242E5831CC77BD10097A119 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C242E5821CC77BD10097A119 /* LoginViewController.m */; };
 		C242E5861CC77BDF0097A119 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C242E5851CC77BDF0097A119 /* RegisterViewController.m */; };
+		C25E8BE01CD8C8F100693F70 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C25E8BDF1CD8C8F100693F70 /* AboutViewController.m */; };
+		C25E8BE21CD8E5EE00693F70 /* 111.png in Resources */ = {isa = PBXBuildFile; fileRef = C25E8BE11CD8E5EE00693F70 /* 111.png */; };
 		C25F46FD1CD0E43200D040B2 /* commenticon.png in Resources */ = {isa = PBXBuildFile; fileRef = C25F46D01CD0E43200D040B2 /* commenticon.png */; };
 		C25F46FE1CD0E43200D040B2 /* icon_play.png in Resources */ = {isa = PBXBuildFile; fileRef = C25F46D11CD0E43200D040B2 /* icon_play.png */; };
 		C25F46FF1CD0E43200D040B2 /* icon_play_Label_left.png in Resources */ = {isa = PBXBuildFile; fileRef = C25F46D21CD0E43200D040B2 /* icon_play_Label_left.png */; };
@@ -184,6 +186,9 @@
 		C242E5821CC77BD10097A119 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		C242E5841CC77BDF0097A119 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		C242E5851CC77BDF0097A119 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		C25E8BDE1CD8C8F100693F70 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		C25E8BDF1CD8C8F100693F70 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		C25E8BE11CD8E5EE00693F70 /* 111.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 111.png; sourceTree = "<group>"; };
 		C25F46D01CD0E43200D040B2 /* commenticon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = commenticon.png; sourceTree = "<group>"; };
 		C25F46D11CD0E43200D040B2 /* icon_play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_play.png; sourceTree = "<group>"; };
 		C25F46D21CD0E43200D040B2 /* icon_play_Label_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_play_Label_left.png; sourceTree = "<group>"; };
@@ -549,6 +554,8 @@
 				C242E56F1CC77B1A0097A119 /* Collection */,
 				C242E5731CC77B1A0097A119 /* Login */,
 				C242E5771CC77B1A0097A119 /* Register */,
+				C25E8BDE1CD8C8F100693F70 /* AboutViewController.h */,
+				C25E8BDF1CD8C8F100693F70 /* AboutViewController.m */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -583,6 +590,7 @@
 		C25F46CE1CD0E43200D040B2 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				C25E8BE11CD8E5EE00693F70 /* 111.png */,
 				C2285E381CD20DEB000347A7 /* collect_selected.png */,
 				C2285E391CD20DEB000347A7 /* collect.png */,
 				C2E6F6B21CD0F3D2004D27E1 /* 1.jpg */,
@@ -1006,7 +1014,7 @@
 				TargetAttributes = {
 					C2269EC61CBE613200A63BD4 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = A6DPYCKQWT;
+						DevelopmentTeam = ZFBE9NJZM6;
 					};
 				};
 			};
@@ -1102,6 +1110,7 @@
 				C2269ED71CBE613200A63BD4 /* Assets.xcassets in Resources */,
 				C2676DA21CD05C6600430133 /* WMPlayer.bundle in Resources */,
 				C25F470C1CD0E43200D040B2 /* nav_menu_icon@2x.png in Resources */,
+				C25E8BE21CD8E5EE00693F70 /* 111.png in Resources */,
 				C25F47181CD0E43200D040B2 /* bg_menuitem_highlighted.png in Resources */,
 				C2E6F6BA1CD0F3D2004D27E1 /* demo－1.tiff in Resources */,
 				C25F47151CD0E43200D040B2 /* bg_addbutton.png in Resources */,
@@ -1153,6 +1162,7 @@
 				C2E6F7361CD0FD36004D27E1 /* MenuViewController.m in Sources */,
 				C2E6F73D1CD0FD36004D27E1 /* PictureModel.m in Sources */,
 				C2D557341CC8C3D100B2737C /* DataModel.m in Sources */,
+				C25E8BE01CD8C8F100693F70 /* AboutViewController.m in Sources */,
 				C2E6F73F1CD0FD36004D27E1 /* DetailHeaderModel.m in Sources */,
 				C2285E311CD1AD7C000347A7 /* DataBaseManager.m in Sources */,
 				C2E6F7391CD0FD36004D27E1 /* ImportDetailModel.m in Sources */,
@@ -1242,7 +1252,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Wei Yang (ZFBE9NJZM6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Wei Yang (ZFBE9NJZM6)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1264,6 +1275,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "db6279d7-d808-402b-8e2e-03adeb10d3a9";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1285,7 +1297,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Wei Yang (ZFBE9NJZM6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Wei Yang (ZFBE9NJZM6)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1300,6 +1313,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "db6279d7-d808-402b-8e2e-03adeb10d3a9";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1311,13 +1325,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Wei Yang (ZFBE9NJZM6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Wei Yang (ZFBE9NJZM6)";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/CarPark/Tools/CarPark.pch";
 				INFOPLIST_FILE = CarPark/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.carpark.zfw.CarPark;
+				PRODUCT_BUNDLE_IDENTIFIER = com.carpark.zfw;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1329,13 +1343,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Wei Yang (ZFBE9NJZM6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Wei Yang (ZFBE9NJZM6)";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/CarPark/Tools/CarPark.pch";
 				INFOPLIST_FILE = CarPark/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.carpark.zfw.CarPark;
+				PRODUCT_BUNDLE_IDENTIFIER = com.carpark.zfw;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

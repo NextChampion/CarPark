@@ -164,7 +164,7 @@
 
 // 登陆接口
 - (void)loginAction{
-    NSLog(@"登录账号");
+//    NSLog(@"登录账号");
 }
 
 // 注册跳转

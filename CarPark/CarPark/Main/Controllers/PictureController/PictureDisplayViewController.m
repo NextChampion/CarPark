@@ -58,20 +58,20 @@
 
 // 收藏按钮
 - (void)collectionAction{
-    NSLog(@"点击了收藏按钮");
+
     CollectionListDB *db = [[CollectionListDB alloc] init];
     if (isCollected) {
-        NSLog(@"想取消收藏");
+
         // 取消收藏
         [self.collectionItem setImage:[UIImage imageNamed:@"collect.png"] forState:UIControlStateNormal];
         [db deleteRecordWithTitle:self.contentTitle];
         isCollected = NO;
     }else{
-        NSLog(@"想收藏这一页");
+
         [self.collectionItem setImage:[UIImage imageNamed:@"collect_selected.png"] forState:UIControlStateNormal];
         [db createTable];
 //        DetailHeaderModel *headerModel = self.headerArray[0];
-//        NSLog(@"%@",self.headerArray[0]);
+
         NSArray *array = [[NSArray alloc] initWithObjects:self.contentTitle,self.publishTime,self.requestStr,self.type,nil];
         [db insertCollectionRecordWithArray:array];
         isCollected = YES;
@@ -83,7 +83,7 @@
     
 //    @"http://api.ycapp.yiche.com/appnews/GetNewsAlbum?newsid=31923"
     [manager GET:self.requestStr parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
-        NSLog(@"%@",downloadProgress);
+
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *dataDic = responseObject;
         NSArray *array = dataDic[@"data"][@"albums"];
